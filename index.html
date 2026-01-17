@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="83 Apps - We build innovative apps and digital products.">
+    <title>83 Apps | We Build Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        img,svg{display:block;max-width:100%}
+        a{text-decoration:none;color:inherit}
+        ul{list-style:none}
+        :root{
+            --bg:#0a0a0f;--bg-2:#12121a;--bg-3:#1a1a24;
+            --text:#fff;--text-muted:#8b8b9e;--text-dim:#5a5a6e;
+            --accent:#6366f1;--accent-light:#818cf8;--accent-glow:rgba(99,102,241,0.4);
+            --grad-1:#6366f1;--grad-2:#8b5cf6;--grad-3:#d946ef;
+            --border:rgba(255,255,255,0.08);--card:rgba(255,255,255,0.03);--card-hover:rgba(255,255,255,0.06);
+            --font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;
+            --max-width:1200px;--header-h:72px;
+        }
+        body{font-family:var(--font-body);background:var(--bg);color:var(--text)}
+        .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.5rem}
+        section{padding:6rem 0;position:relative}
+        
+        /* Background */
+        .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:-1}
+        .bg-glow{position:fixed;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:0.15;pointer-events:none;z-index:-1;transition:transform 0.5s ease-out}
+        .bg-glow-1{top:-200px;right:-200px;background:var(--grad-1)}
+        .bg-glow-2{bottom:20%;left:-200px;background:var(--grad-3)}
+        
+        /* Header */
+        .header{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:1000;transition:0.3s}
+        .header.scrolled{background:rgba(10,10,15,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        .header .container{display:flex;align-items:center;justify-content:space-between;height:100%}
+        .logo{display:flex;align-items:center;gap:0.75rem;font-family:var(--font-display);font-size:1.5rem;font-weight:700}
+        .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:700;box-shadow:0 0 20px var(--accent-glow)}
+        .nav{display:none;gap:2rem}
+        @media(min-width:768px){.nav{display:flex}}
+        .nav-link{font-size:0.9rem;font-weight:500;color:var(--text-muted);transition:0.2s;position:relative}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--grad-1),var(--grad-2));transition:0.3s}
+        .nav-link:hover{color:var(--text)}
+        .nav-link:hover::after{width:100%}
+        
+        /* Mobile Menu */
+        .mobile-menu-btn{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+        @media(min-width:768px){.mobile-menu-btn{display:none}}
+        .mobile-menu-btn span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:0.3s}
+        .mobile-menu-btn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .mobile-menu-btn.active span:nth-child(2){opacity:0}
+        .mobile-menu-btn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .nav-mobile{position:fixed;top:var(--header-h);left:0;right:0;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);padding:2rem;transform:translateY(-100%);opacity:0;visibility:hidden;transition:0.3s;border-bottom:1px solid var(--border)}
+        .nav-mobile.active{transform:translateY(0);opacity:1;visibility:visible}
+        @media(min-width:768px){.nav-mobile{display:none}}
+        .nav-mobile-link{display:block;padding:1rem 0;font-size:1.125rem;font-weight:500;color:var(--text-muted);border-bottom:1px solid var(--border);transition:0.2s}
+        .nav-mobile-link:hover{color:var(--text)}
+        
+        /* Hero */
+        .hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--header-h)}
+        .hero-content{text-align:center;max-width:900px;margin:0 auto}
+        .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:50px;font-size:0.875rem;color:var(--text-muted);margin-bottom:2rem;animation:fadeInUp 0.6s ease forwards}
+        .hero-badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+        .hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,8vw,5rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;animation:fadeInUp 0.6s ease 0.1s forwards;opacity:0}
+        .hero-title-gradient{background:linear-gradient(135deg,var(--grad-1),var(--grad-2),var(--grad-3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:clamp(1.125rem,2.5vw,1.375rem);color:var(--text-muted);max-width:600px;margin:0 auto 3rem;animation:fadeInUp 0.6s ease 0.2s forwards;opacity:0}
+        .hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;animation:fadeInUp 0.6s ease 0.3s forwards;opacity:0}
+        .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;font-family:var(--font-body);font-size:0.95rem;font-weight:600;border-radius:12px;border:none;cursor:pointer;transition:0.3s}
+        .btn-primary{background:linear-gradient(135deg,var(--grad-1),var(--grad-2));color:var(--text);box-shadow:0 4px 20px var(--accent-glow)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--accent-glow)}
+        .btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border)}
+        .btn-secondary:hover{background:var(--card-hover);border-color:var(--accent)}
+        
+        /* Scroll Indicator */
+        .scroll-indicator{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.75rem;color:var(--text-dim);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;animation:fadeIn 1s ease 0.5s forwards;opacity:0}
+        .scroll-indicator-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollLine 2s ease infinite}
+        @keyframes scrollLine{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+        
+        /* About */
+        .about{background:var(--bg-2)}
+        .about-grid{display:grid;gap:4rem;align-items:center}
+        @media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr}}
+        .section-label{display:inline-block;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent-light);margin-bottom:1rem}
+        .section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.75rem);font-weight:700;margin-bottom:1.5rem;line-height:1.2}
+        .about-text{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem;line-height:1.8}
+        .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+        .about-stat{text-align:center}
+        .about-stat-value{font-family:var(--font-display);font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .about-stat-label{font-size:0.8rem;color:var(--text-dim);margin-top:0.5rem}
+        
+        /* Floating Cards */
+        .about-visual{position:relative}
+        .about-card-stack{position:relative;height:400px}
+        .floating-card{position:absolute;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;backdrop-filter:blur(10px);transition:0.5s}
+        .floating-card:hover{transform:translateY(-5px)!important}
+        .floating-card-1{top:0;left:10%;width:200px;animation:float1 6s ease-in-out infinite}
+        .floating-card-2{top:30%;right:5%;width:180px;animation:float2 7s ease-in-out infinite}
+        .floating-card-3{bottom:10%;left:20%;width:220px;animation:float3 8s ease-in-out infinite}
+        .floating-card-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+        .floating-card-icon svg{width:24px;height:24px;color:white}
+        .floating-card-title{font-family:var(--font-display);font-weight:600;margin-bottom:0.5rem}
+        .floating-card-text{font-size:0.85rem;color:var(--text-muted)}
+        @keyframes float1{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-15px) rotate(0deg)}}
+        @keyframes float2{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-20px) rotate(-1deg)}}
+        @keyframes float3{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-12px) rotate(-2deg)}}
+        
+        /* Products */
+        .products-header{text-align:center;margin-bottom:4rem}
+        .products-grid{display:grid;gap:1.5rem}
+        @media(min-width:640px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+        .product-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:0.3s;position:relative}
+        .product-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));opacity:0;transition:0.3s;z-index:0}
+        .product-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 20px 40px rgba(99,102,241,0.15)}
+        .product-card:hover::before{opacity:0.05}
+        .product-preview{height:200px;background:linear-gradient(135deg,var(--bg-3),var(--bg-2));display:flex;align-items:center;justify-content:center;position:relative}
+        .product-preview-icon{width:80px;height:80px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px var(--accent-glow);transition:0.3s}
+        .product-card:hover .product-preview-icon{transform:scale(1.1)}
+        .product-preview-icon svg{width:40px;height:40px;color:white}
+        .product-status{position:absolute;top:1rem;right:1rem;padding:0.5rem 0.75rem;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);border-radius:50px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent-light)}
+        .product-content{padding:1.5rem;position:relative;z-index:1}
+        .product-category{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-light);margin-bottom:0.5rem}
+        .product-title{font-family:var(--font-display);font-size:1.25rem;font-weight:600;margin-bottom:0.75rem}
+        .product-description{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+        
+        /* Capabilities */
+        .capabilities{background:var(--bg-2)}
+        .capabilities-header{text-align:center;margin-bottom:4rem}
+        .capabilities-grid{display:grid;gap:1rem}
+        @media(min-width:640px){.capabilities-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.capabilities-grid{grid-template-columns:repeat(4,1fr)}}
+        .capability-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;text-align:center;transition:0.3s}
+        .capability-card:hover{border-color:var(--accent);background:var(--card-hover);transform:translateY(-4px)}
+        .capability-icon{width:56px;height:56px;margin:0 auto 1rem;background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2));border-radius:12px;display:flex;align-items:center;justify-content:center;transition:0.3s}
+        .capability-card:hover .capability-icon{background:linear-gradient(135deg,var(--grad-1),var(--grad-2))}
+        .capability-icon svg{width:28px;height:28px;color:var(--accent-light);transition:0.3s}
+        .capability-card:hover .capability-icon svg{color:white}
+        .capability-title{font-family:var(--font-display);font-weight:600;margin-bottom:0.5rem}
+        .capability-text{font-size:0.85rem;color:var(--text-muted)}
+        
+        /* Footer */
+        .footer{padding:4rem 0 2rem;border-top:1px solid var(--border)}
+        .footer-content{display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center}
+        @media(min-width:768px){.footer-content{flex-direction:row;justify-content:space-between;text-align:left}}
+        .footer-brand{display:flex;flex-direction:column;align-items:center;gap:1rem}
+        @media(min-width:768px){.footer-brand{align-items:flex-start}}
+        .footer-logo{display:flex;align-items:center;gap:0.75rem;font-family:var(--font-display);font-size:1.25rem;font-weight:700}
+        .footer-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.75rem}
+        .footer-tagline{font-size:0.9rem;color:var(--text-muted)}
+        .footer-links{display:flex;gap:2rem}
+        .footer-link{font-size:0.9rem;color:var(--text-muted);transition:0.2s}
+        .footer-link:hover{color:var(--text)}
+        .footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center}
+        .footer-copyright{font-size:0.85rem;color:var(--text-dim)}
+        
+        /* Back to Top */
+        .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:linear-gradient(135deg,var(--grad-1),var(--grad-2));border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(20px);transition:0.3s;box-shadow:0 4px 20px var(--accent-glow);z-index:100}
+        .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+        .back-to-top:hover{transform:translateY(-4px)}
+        .back-to-top svg{width:24px;height:24px;color:white}
+        
+        /* Animations */
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+        .animate-on-scroll{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
+        .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+        .delay-1{transition-delay:0.1s}.delay-2{transition-delay:0.2s}.delay-3{transition-delay:0.3s}.delay-4{transition-delay:0.4s}
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo"><div class="logo-icon">83</div><span>Apps</span></a>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#capabilities" class="nav-link">Stack</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="#about" class="nav-mobile-link">About</a>
+            <a href="#products" class="nav-mobile-link">Products</a>
+            <a href="#capabilities" class="nav-mobile-link">Stack</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="hero-badge-dot"></span>Building the Future</div>
+                <h1 class="hero-title">We Build<br><span class="hero-title-gradient">Digital Products</span></h1>
+                <p class="hero-subtitle">83 Apps creates innovative applications and digital experiences. From concept to launch, we bring ideas to life.</p>
+                <div class="hero-cta">
+                    <a href="#products" class="btn btn-primary">View Products<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span>Scroll</span><div class="scroll-indicator-line"></div></div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <span class="section-label">About Us</span>
+                    <h2 class="section-title">Crafting Digital Experiences</h2>
+                    <p class="about-text">83 Apps is a software development company focused on building our own products. We create apps and websites that solve real problems and deliver exceptional user experiences.</p>
+                    <p class="about-text">Our approach combines technical excellence with creative design, resulting in products that are both powerful and intuitive.</p>
+                    <div class="about-stats">
+                        <div class="about-stat"><div class="about-stat-value">∞</div><div class="about-stat-label">Ideas</div></div>
+                        <div class="about-stat"><div class="about-stat-value">24/7</div><div class="about-stat-label">Building</div></div>
+                        <div class="about-stat"><div class="about-stat-value">100%</div><div class="about-stat-label">Passion</div></div>
+                    </div>
+                </div>
+                <div class="about-visual animate-on-scroll delay-2">
+                    <div class="about-card-stack">
+                        <div class="floating-card floating-card-1">
+                            <div class="floating-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                            <div class="floating-card-title">Mobile First</div>
+                            <div class="floating-card-text">iOS & Android</div>
+                        </div>
+                        <div class="floating-card floating-card-2">
+                            <div class="floating-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                            <div class="floating-card-title">Web Apps</div>
+                            <div class="floating-card-text">Modern Stack</div>
+                        </div>
+                        <div class="floating-card floating-card-3">
+                            <div class="floating-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                            <div class="floating-card-title">Full Stack</div>
+                            <div class="floating-card-text">End to End</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="products-header animate-on-scroll">
+                <span class="section-label">Our Products</span>
+                <h2 class="section-title">What We're Building</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll delay-1">
+                    <div class="product-preview">
+                        <div class="product-preview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+                        <span class="product-status">Coming Soon</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Mobile App</span>
+                        <h3 class="product-title">Project Alpha</h3>
+                        <p class="product-description">An innovative mobile application currently in development.</p>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll delay-2">
+                    <div class="product-preview">
+                        <div class="product-preview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                        <span class="product-status">Coming Soon</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Web Platform</span>
+                        <h3 class="product-title">Project Beta</h3>
+                        <p class="product-description">A powerful web platform designed to streamline workflows.</p>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll delay-3">
+                    <div class="product-preview">
+                        <div class="product-preview-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></div>
+                        <span class="product-status">Coming Soon</span>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">SaaS</span>
+                        <h3 class="product-title">Project Gamma</h3>
+                        <p class="product-description">A software solution built for scale and performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="capabilities" id="capabilities">
+        <div class="container">
+            <div class="capabilities-header animate-on-scroll">
+                <span class="section-label">Tech Stack</span>
+                <h2 class="section-title">Our Capabilities</h2>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card animate-on-scroll delay-1">
+                    <div class="capability-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                    <h3 class="capability-title">iOS & Android</h3>
+                    <p class="capability-text">Native & cross-platform apps</p>
+                </div>
+                <div class="capability-card animate-on-scroll delay-2">
+                    <div class="capability-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3 class="capability-title">Web Development</h3>
+                    <p class="capability-text">React, Next.js, Node</p>
+                </div>
+                <div class="capability-card animate-on-scroll delay-3">
+                    <div class="capability-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+                    <h3 class="capability-title">Cloud & Backend</h3>
+                    <p class="capability-text">AWS, Firebase, APIs</p>
+                </div>
+                <div class="capability-card animate-on-scroll delay-4">
+                    <div class="capability-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <h3 class="capability-title">AI & ML</h3>
+                    <p class="capability-text">Smart integrations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo"><div class="footer-logo-icon">83</div><span>Apps</span></div>
+                    <p class="footer-tagline">Building digital products that matter.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#products" class="footer-link">Products</a>
+                    <a href="#capabilities" class="footer-link">Stack</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© <span id="currentYear"></span> 83 Apps LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+        const header=document.getElementById('header'),mobileMenuBtn=document.getElementById('mobileMenuBtn'),mobileMenu=document.getElementById('mobileMenu'),backToTopBtn=document.getElementById('backToTop'),currentYearSpan=document.getElementById('currentYear'),animatedElements=document.querySelectorAll('.animate-on-scroll');
+        currentYearSpan.textContent=new Date().getFullYear();
+        function handleScroll(){window.pageYOffset>50?header.classList.add('scrolled'):header.classList.remove('scrolled');window.pageYOffset>300?backToTopBtn.classList.add('visible'):backToTopBtn.classList.remove('visible')}
+        window.addEventListener('scroll',handleScroll);
+        mobileMenuBtn.addEventListener('click',()=>{mobileMenuBtn.classList.toggle('active');mobileMenu.classList.toggle('active')});
+        document.querySelectorAll('.nav-mobile-link').forEach(l=>l.addEventListener('click',()=>{mobileMenuBtn.classList.remove('active');mobileMenu.classList.remove('active')}));
+        document.querySelectorAll('a[href^="#"]').forEach(l=>l.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(l.getAttribute('href'));if(t){const p=t.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:p,behavior:'smooth'})}}));
+        backToTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+        const observer=new IntersectionObserver(e=>e.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+        animatedElements.forEach(el=>observer.observe(el));
+        document.addEventListener('mousemove',e=>{const glows=document.querySelectorAll('.bg-glow'),x=e.clientX/window.innerWidth,y=e.clientY/window.innerHeight;glows.forEach((g,i)=>{const s=(i+1)*20;g.style.transform=`translate(${(x-0.5)*s}px,${(y-0.5)*s}px)`})});
+        handleScroll();
+        animatedElements.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible')});
+    </script>
+</body>
+</html>
