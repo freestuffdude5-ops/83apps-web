@@ -107,7 +107,7 @@ def add(buf, sig, t, gain=1.0, pan=0.0):
     buf[1, i : i + len(s)] += s * gain * r * 1.41
 
 
-def build(cfg):
+def build(cfg, stems=False):
     sec = cfg["sections"]
     D = sec["duration"]
     n = int((D + 0.5) * SR)
@@ -187,14 +187,18 @@ def build(cfg):
     ir = reverb_ir()
     wet_m = np.stack([convolve(music[0], ir[0]), convolve(music[1], ir[1])])
     wet_f = np.stack([convolve(fx[0], ir[0]), convolve(fx[1], ir[1])])
-    mix = music * 0.7 + wet_m * 0.9 + fx * 0.85 + wet_f * 0.45
-    # gentle low-cut on the whole mix (rumble) and fades
-    for ch in range(2):
-        mix[ch] = mix[ch] - lowpass(mix[ch], 28)
+    music_bus = music * 0.7 + wet_m * 0.9
+    fx_bus = fx * 0.85 + wet_f * 0.45
     fade_in = np.minimum(1, np.arange(n) / (0.25 * SR))
     tail = np.clip((D - np.arange(n) / SR) / 1.4, 0, 1) ** 1.5
-    mix *= fade_in * tail
-    mix = mix[:, : int(D * SR)]
+    lowcut = butter(2, 28, 'high', fs=SR, output='sos')  # rumble
+    buses = []
+    for bus in (music_bus, fx_bus):
+        bus = np.stack([sosfilt(lowcut, bus[0]), sosfilt(lowcut, bus[1])]) * fade_in * tail
+        buses.append(bus[:, : int(D * SR)])
+    if stems:
+        return buses  # [music, fx], unnormalised, same scale
+    mix = buses[0] + buses[1]
     mix /= max(1e-9, np.max(np.abs(mix))) / 0.8
     return mix
 
