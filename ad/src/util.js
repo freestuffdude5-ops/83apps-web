@@ -30,31 +30,34 @@ export function noise1(x) {
 }
 
 /**
- * Keyframe track. keys: [{t, v:[...numbers]}], interpolated with a
- * Catmull-Rom spline in value space and a smootherstep in time per segment,
- * so the motion settles into each key without stopping abruptly when keys
- * are flagged `flow`.
+ * Keyframe track. keys: [{t, v:[...numbers]}]. Time-aware cubic Hermite
+ * with monotone (Fritsch-Carlson) tangents: the path passes through every
+ * key, never overshoots between keys, and velocity is continuous, so camera
+ * moves flow from one beat into the next. First/last keys start and end at rest.
  */
 export function track(keys, t) {
+  const n = keys.length;
   if (t <= keys[0].t) return keys[0].v.slice();
-  const last = keys[keys.length - 1];
-  if (t >= last.t) return last.v.slice();
+  if (t >= keys[n - 1].t) return keys[n - 1].v.slice();
   let i = 0;
-  while (i < keys.length - 2 && t > keys[i + 1].t) i++;
-  const k0 = keys[Math.max(0, i - 1)], k1 = keys[i], k2 = keys[i + 1], k3 = keys[Math.min(keys.length - 1, i + 2)];
-  let u = (t - k1.t) / (k2.t - k1.t);
-  const e = k2.ease || 'inout';
-  if (e === 'inout') u = smoother(u);
-  else if (e === 'out') u = easeOutCubic(u);
-  else if (e === 'in') u = easeInCubic(u);
-  else if (e === 'soft') u = lerp(u, smoother(u), 0.6);
-  // linear: leave u
+  while (i < n - 2 && t > keys[i + 1].t) i++;
+  const k1 = keys[i], k2 = keys[i + 1];
+  const h = k2.t - k1.t;
+  const u = (t - k1.t) / h;
+  const tangent = (k, j) => {
+    if (k === 0 || k === n - 1) return 0;
+    const a = keys[k - 1], b = keys[k], c = keys[k + 1];
+    const d0 = (b.v[j] - a.v[j]) / (b.t - a.t), d1 = (c.v[j] - b.v[j]) / (c.t - b.t);
+    if (d0 * d1 <= 0) return 0; // local extremum: hold still, no overshoot
+    // weighted harmonic mean keeps the curve monotone
+    const w0 = 2 * (c.t - b.t) + (b.t - a.t), w1 = (c.t - b.t) + 2 * (b.t - a.t);
+    return (w0 + w1) / (w0 / d0 + w1 / d1);
+  };
+  const u2 = u * u, u3 = u2 * u;
+  const h00 = 2 * u3 - 3 * u2 + 1, h10 = u3 - 2 * u2 + u, h01 = -2 * u3 + 3 * u2, h11 = u3 - u2;
   const out = [];
   for (let j = 0; j < k1.v.length; j++) {
-    const p0 = k0.v[j], p1 = k1.v[j], p2 = k2.v[j], p3 = k3.v[j];
-    // Catmull-Rom (uniform) with tension .5
-    const u2 = u * u, u3 = u2 * u;
-    out.push(0.5 * ((2 * p1) + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u3));
+    out.push(h00 * k1.v[j] + h10 * h * tangent(i, j) + h01 * k2.v[j] + h11 * h * tangent(i + 1, j));
   }
   return out;
 }

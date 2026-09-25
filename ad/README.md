@@ -21,7 +21,7 @@ A 30-second 3D commercial for 83 App Studio in two compositions: vertical 9:16 a
 | 23–26 | The ribbon becomes one of two silver rails that travel and twist around a blue-violet glass infinity band, keeping the infinity silhouette. | Smarter systems. Better ways to work. |
 | 26–30 | The sculpture settles back and the actual 83 logo resolves with one light sweep. The final frame holds for about 3 s. | 83 APPS · Websites / Business tools / Workflow automation · Book a free 25-minute consultation · 83appstudio.com · Serving Florida |
 
-The 15-second cut is not a separate animation. It re-times the same master: `REMAP15` in `src/timeline.js` maps output time to master time, and the cut has its own copy (`COPY15`).
+The 15-second cut is not a separate animation. It uses the same master with speed ramps through the action, and it only skips moments where the picture is holding still. `REMAP15` in `src/timeline.js` maps output time to master time, and the cut has its own copy (`COPY15`).
 
 ## Brand accuracy notes
 
@@ -68,6 +68,8 @@ node tools/render.mjs --format landscape --stills 4.5,12,27 --scale 0.5   # revi
 node tools/cues.mjs 30 > out/cues-30.json && python3 tools/audio.py out/cues-30.json out/audio-30.wav
 node tools/mux.mjs out/v30.mp4 out/audio-30.wav out/v30-final.mp4
 ```
+
+`tools/qa.py video.mp4` is a motion check. It reports any stretch where the picture changes much faster than the rest of the film, which catches camera whips, pops and flashes. Run it on a quick `--scale 0.25` render before committing to a full-resolution render.
 
 The renderer uses software WebGL (SwiftShader), so it works without a GPU. That takes about 1 s per 1080p frame with 3 workers, or about 17 minutes per 30-second version. On a machine with a GPU, you can drop the `--use-angle=swiftshader` flags in `tools/render.mjs` for a large speed-up. Encoding is H.264 High, CRF 16, BT.709, `+faststart`.
 

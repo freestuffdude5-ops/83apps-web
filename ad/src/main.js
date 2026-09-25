@@ -46,9 +46,9 @@ const camera = new THREE.PerspectiveCamera(V ? 30 : 23, W / H, 0.1, 80);
 // ------------------------------------------------------------------ layout
 // Set centres. Vertical travels downward between scenes, landscape travels right.
 const A = v3(0, 0, 0);
-const C = V ? v3(0, -7, -1) : v3(8.5, 0, -1);
-const D = V ? v3(0, -14, -1) : v3(17, 0, -1);
-const E = V ? v3(0, -14.1, -2.2) : v3(17.1, 0, -2.2);
+const C = V ? v3(0, -4.4, -1) : v3(5.6, 0, -1);
+const D = V ? v3(0, -9.2, -1) : v3(11.4, 0, -1);
+const E = V ? v3(0, -9.3, -2.2) : v3(11.5, 0, -2.2);
 const P = (base, x, y, z) => base.clone().add(v3(x, y, z));
 
 const L = V ? {
@@ -170,8 +170,8 @@ const CAM = V ? [
   shot(4.9, add(A, 0.05, -0.1, -0.2), 4.0, { az: -0.1, el: 0.02, ap: 0.6 }),
   shot(5.7, [pPos.x + 0.05, pPos.y, pPos.z], 2.85, { az: 0.2, el: 0.02, ap: 0.9, sy: -215 }),
   shot(8.6, [pPos.x + 0.05, pPos.y - 0.02, pPos.z], 2.7, { az: 0.16, el: 0.0, ap: 0.9, sy: -215, ease: 'linear' }),
-  shot(9.4, add(A, -0.1, -0.45, 0.5), 3.7, { az: 0.05, el: 0.02, ap: 0.6 }),
-  shot(10.5, add(C, 0.05, -0.02, 0), 4.5, { az: 0.04, el: 0.03, ap: 0.6 }),
+  shot(9.0, [pPos.x + 0.05, pPos.y - 0.02, pPos.z], 2.68, { az: 0.155, el: 0.0, ap: 0.9, sy: -215, ease: 'linear' }),
+  shot(10.55, add(C, 0.05, -0.02, 0), 4.5, { az: 0.04, el: 0.03, ap: 0.6 }),
   shot(12.4, add(C, 0.05, -0.06, 0), 4.35, { az: 0.08, el: 0.0, ap: 0.6, ease: 'soft' }),
   shot(16.1, add(C, 0.05, -0.08, 0), 4.3, { az: -0.02, el: -0.01, ap: 0.6, ease: 'soft' }),
   shot(17.3, add(D, 0.05, -0.03, 0), 4.75, { az: 0.08, el: 0.03, ap: 0.55, sy: -185 }),
@@ -189,8 +189,8 @@ const CAM = V ? [
   shot(4.9, add(A, 0.3, -0.05, -0.3), 3.15, { az: -0.08, el: 0.02, ap: 0.6 }),
   shot(5.7, [dPos.x, dPos.y - 0.02, dPos.z], 2.6, { az: -0.12, el: 0.02, ap: 0.8, sx: -390 }),
   shot(8.6, [dPos.x, dPos.y - 0.03, dPos.z], 2.5, { az: -0.15, el: 0.0, ap: 0.8, sx: -390, ease: 'linear' }),
-  shot(9.4, add(A, 1.0, -0.2, 0.4), 2.9, { az: 0.05, el: 0.02, ap: 0.6 }),
-  shot(10.5, add(C, 0.3, 0.02, 0), 3.35, { az: 0.04, el: 0.03, ap: 0.6 }),
+  shot(9.0, [dPos.x, dPos.y - 0.03, dPos.z], 2.49, { az: -0.155, el: 0.0, ap: 0.8, sx: -390, ease: 'linear' }),
+  shot(10.55, add(C, 0.3, 0.02, 0), 3.35, { az: 0.04, el: 0.03, ap: 0.6 }),
   shot(12.4, add(C, 0.3, -0.02, 0), 3.3, { az: 0.08, el: 0.0, ap: 0.6, ease: 'soft' }),
   shot(16.1, add(C, 0.3, -0.03, 0), 3.3, { az: 0.03, el: -0.01, ap: 0.6, ease: 'soft' }),
   shot(17.3, add(D, -0.5, 0.0, 0), 3.85, { az: 0.08, el: 0.03, ap: 0.55 }),
@@ -262,7 +262,7 @@ function update(T, tOut) {
   phone.group.position.y += (1 - dev) * -0.45; phone.group.position.z -= (1 - dev) * 0.4;
   phone.group.rotation.y += (1 - dev) * 0.25;
   drift(display.group, T, 11, 0.5); drift(phone.group, T, 12, 0.6);
-  const devOut = win(T, 9.2, 10.2);
+  const devOut = win(T, 9.05, 9.9);
   display.group.position.z -= devOut * 0.8; phone.group.position.z -= devOut * 0.5;
   const devO = smooth(invLerp(4.05, 4.8, T)) * (1 - devOut);
   display.setOpacity(devO); phone.setOpacity(devO);
@@ -428,12 +428,6 @@ function update(T, tOut) {
 
   // ---------- camera
   const cv = track(CAM, T);
-  // follow the inquiry card while it travels to the workspace
-  const fol = Math.min(win(T, K.lift[0] + 0.15, K.lift[0] + 0.6), 1 - win(T, K.lift[1] - 0.45, K.lift[1] + 0.1)) * 0.75;
-  if (fol > 0) {
-    const dx = (tokenPos.x - cv[3]) * fol, dy = (tokenPos.y - cv[4]) * fol, dz = (tokenPos.z - cv[5]) * fol * 0.5;
-    cv[0] += dx; cv[1] += dy; cv[2] += dz; cv[3] += dx; cv[4] += dy; cv[5] += dz;
-  }
   camera.position.set(cv[0], cv[1], cv[2]);
   // subtle hand-held float
   camera.position.x += noise1(T * 0.4 + 3) * 0.025;
@@ -442,7 +436,10 @@ function update(T, tOut) {
   // composition offset (text area), eases out for the end card
   camera.setViewOffset(W, H, cv[7], cv[8], W, H);
   camera.updateProjectionMatrix();
-  const focus = camera.position.distanceTo(tmpA.set(cv[3], cv[4], cv[5]));
+  let focus = camera.position.distanceTo(tmpA.set(cv[3], cv[4], cv[5]));
+  // rack focus onto the inquiry card while it travels
+  const rack = Math.min(win(T, K.lift[0] + 0.1, K.lift[0] + 0.5), 1 - win(T, K.lift[1] - 0.3, K.lift[1] + 0.2));
+  if (rack > 0) focus = lerp(focus, camera.position.distanceTo(tokenPos), rack);
   return { focus, aperture: cv[6] * 40 * SCALE, maxCoc: 16 * SCALE };
 }
 

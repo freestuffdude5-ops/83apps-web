@@ -37,29 +37,29 @@ export const COPY30 = {
 };
 
 // 15-second cut: segments of master time played back-to-back
-// [outStart, outEnd, masterStart, masterEnd]. Jumps land on moments where
-// the frame is in motion or mid-transition so the cut reads as continuous.
+// [outStart, outEnd, masterStart, masterEnd]. Speed ramps carry the action;
+// the few jumps only skip moments where the picture is holding still.
 export const REMAP15 = [
-  [0.0, 2.3, 0.9, 3.5],     // hook (slightly faster)
-  [2.3, 3.2, 3.5, 4.9],     // ribbon connects → devices
-  [3.2, 5.0, 6.9, 8.9],     // finish form + submit
-  [5.0, 5.9, 9.0, 10.55],   // inquiry flies to workspace
-  [5.9, 7.6, 12.2, 14.9],   // appointment, stage move, next step
-  [7.6, 8.4, 16.15, 17.3],  // to automation
-  [8.4, 10.2, 17.8, 20.4],  // three steps fire
-  [10.2, 11.3, 22.15, 23.7],// resolve into infinity
-  [11.3, 12.0, 25.2, 26.6], // → logo
-  [12.0, 15.0, 26.6, 29.6], // end card hold
+  [0.0, 2.3, 0.8, 3.5],      // hook
+  [2.3, 5.1, 3.5, 8.85],     // ribbon connects → devices → form is sent
+  [5.1, 6.3, 9.0, 10.55],    // inquiry flies to the workspace
+  [6.3, 7.9, 10.55, 14.85],  // record, appointment, stage, next step
+  [7.9, 8.8, 16.1, 17.35],   // to automation
+  [8.8, 10.1, 17.35, 20.3],  // three steps fire
+  [10.1, 11.2, 22.1, 23.75], // resolve into the infinity
+  [11.2, 12.2, 25.3, 26.7],  // → logo
+  [12.2, 15.0, 26.7, 29.5],  // end card hold
 ];
 
 export const COPY15 = {
   blocks: [
-    { lines: ['Too much busywork?'], in: 0.35, out: 2.35 },
-    { eyebrow: ['01', 'Websites'], lines: ['Websites'], in: 2.75, out: 5.05 },
-    { eyebrow: ['02', 'Business tools'], lines: ['Business tools'], in: 5.35, out: 7.65 },
-    { eyebrow: ['03', 'Workflow automation'], lines: ['Workflow', 'automation'], in: 7.95, out: 10.25, lineDelay: [0, 0.08] },
+    { lines: ['Too much busywork?'], in: 0.3, out: 2.35 },
+    { eyebrow: ['01', 'Websites'], lines: ['Websites'], in: 2.9, out: 5.05 },
+    { eyebrow: ['02', 'Business tools'], lines: ['Business tools'], in: 5.6, out: 7.85 },
+    { eyebrow: ['03', 'Workflow automation'], lines: ['Workflow', 'automation'], in: 8.3, out: 10.05, lineDelay: [0, 0.08] },
+    { lines: ['Smarter systems.'], in: 10.35, out: 11.75 },
   ],
-  endcard: { in: 11.45 },
+  endcard: { in: 11.84 },
 };
 
 export function remap(cut, t) {
