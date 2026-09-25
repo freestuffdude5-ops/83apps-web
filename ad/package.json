@@ -1,0 +1,21 @@
+{
+  "name": "83apps-ad",
+  "version": "1.0.0",
+  "description": "83 APPS 3D advertisement (Three.js, rendered frame-by-frame)",
+  "main": "index.js",
+  "scripts": {
+    "preview": "node tools/serve.mjs 8383",
+    "render:vertical": "node tools/render.mjs --format vertical --cut 30 --workers 3",
+    "render:landscape": "node tools/render.mjs --format landscape --cut 30 --workers 3",
+    "render:15": "node tools/render.mjs --format vertical --cut 15 --workers 3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "geist": "^1.7.2",
+    "playwright": "^1.56.1",
+    "three": "^0.186.1"
+  },
+  "type": "module"
+}

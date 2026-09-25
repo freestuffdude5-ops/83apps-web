@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>83 APPS — 3D advertisement</title>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<style>
+  @font-face { font-family: 'Geist'; src: url(assets/fonts/Geist-Variable.woff2) format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'Geist Mono'; src: url(assets/fonts/GeistMono-Variable.woff2) format('woff2'); font-weight: 100 900; }
+  :root { --bg: #060608; --text: #F4F4F7; --muted: #A1A1AE; --violet: #BDA6FF; --hair: rgba(255,255,255,.09); }
+  html, body { margin: 0; background: var(--bg); overflow: hidden; }
+  #stage { position: relative; transform-origin: 0 0; }
+  canvas { display: block; }
+  #overlay { position: absolute; inset: 0; pointer-events: none; color: var(--text); font-family: 'Geist', sans-serif; -webkit-font-smoothing: antialiased; }
+  .scrim { position: absolute; inset: 0; opacity: 0; }
+  .block { position: absolute; display: none; }
+  .eyebrow { font-family: 'Geist Mono', monospace; font-weight: 500; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; }
+  .eyebrow .num { color: var(--violet); }
+  .eyebrow .bar { display: inline-block; height: 1px; background: rgba(255,255,255,.35); }
+  .headline { margin: 0; font-weight: 600; letter-spacing: -0.035em; line-height: 1.04; }
+  .headline .line { display: block; white-space: nowrap; }
+  .headline .w { display: inline-block; will-change: transform, opacity, filter; }
+  .end { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; }
+  /* the supplied logo is on opaque black: screen-blend the whole group so its
+     black drops out against the stage while the artwork itself is unaltered */
+  .logo-wrap { position: relative; mix-blend-mode: screen; }
+  .logo { display: block; width: 100%; height: auto; }
+  .glint { position: absolute; inset: 0; filter: brightness(1.9) saturate(0); mix-blend-mode: screen; }
+  .wordmark { font-weight: 650; letter-spacing: .14em; }
+  .services { color: var(--muted); font-weight: 450; display: flex; flex-wrap: nowrap; }
+  .services i { font-style: normal; color: var(--violet); opacity: .9; }
+  .cta { display: inline-flex; align-items: center; border: 1.5px solid rgba(255,255,255,.22); background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.035)); border-radius: 999px; font-weight: 550; color: #fff; box-shadow: 0 0 0 1px rgba(189,166,255,.10) inset, 0 18px 60px rgba(120,100,255,.18); }
+  .cta svg { color: var(--violet); }
+  .url { font-weight: 600; letter-spacing: -0.02em; }
+  .region { font-family: 'Geist Mono', monospace; text-transform: uppercase; color: var(--muted); letter-spacing: .2em; }
+
+  /* ---------- vertical 1080 x 1920 ---------- */
+  .vertical .scrim { background: linear-gradient(180deg, rgba(6,6,8,.9) 0%, rgba(6,6,8,.72) 22%, rgba(6,6,8,0) 37%); }
+  .vertical .block { left: 0; right: 0; top: 300px; text-align: center; }
+  .vertical .eyebrow { justify-content: center; font-size: 25px; letter-spacing: .2em; gap: 18px; margin-bottom: 26px; }
+  .vertical .eyebrow .bar { width: 40px; }
+  .vertical .headline { font-size: 92px; }
+  .vertical .end { flex-direction: column; justify-content: flex-start; padding-top: 250px; box-sizing: border-box; }
+  .vertical .logo-wrap { width: 500px; }
+  .vertical .lockup { display: flex; flex-direction: column; align-items: center; margin-top: 18px; }
+  .vertical .wordmark { font-size: 70px; }
+  .vertical .services { font-size: 32px; gap: 16px; margin-top: 22px; }
+  .vertical .cta { font-size: 36px; gap: 16px; padding: 30px 46px; margin-top: 70px; }
+  .vertical .url { font-size: 66px; margin-top: 52px; }
+  .vertical .region { font-size: 22px; margin-top: 26px; }
+
+  /* ---------- landscape 1920 x 1080 ---------- */
+  .landscape .scrim { background: linear-gradient(90deg, rgba(6,6,8,.9) 0%, rgba(6,6,8,.7) 26%, rgba(6,6,8,0) 44%); }
+  .landscape .block { left: 150px; top: 0; bottom: 0; display: none; flex-direction: column; justify-content: center; }
+  .landscape .eyebrow { font-size: 21px; letter-spacing: .2em; gap: 16px; margin-bottom: 26px; }
+  .landscape .eyebrow .bar { width: 34px; }
+  .landscape .headline { font-size: 76px; }
+  .landscape .end { flex-direction: row; gap: 90px; }
+  .landscape .logo-wrap { width: 470px; }
+  .landscape .lockup { display: flex; flex-direction: column; align-items: flex-start; }
+  .landscape .wordmark { font-size: 64px; }
+  .landscape .services { font-size: 29px; gap: 14px; margin-top: 16px; }
+  .landscape .cta { font-size: 32px; gap: 14px; padding: 26px 40px; margin-top: 56px; }
+  .landscape .url { font-size: 58px; margin-top: 40px; }
+  .landscape .region { font-size: 20px; margin-top: 22px; }
+
+  /* preview controls (not captured in renders) */
+  #controls { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 12px; align-items: center; padding: 10px 16px; background: rgba(0,0,0,.7); color: #ccc; font: 13px 'Geist Mono', monospace; z-index: 10; }
+  #controls input[type=range] { flex: 1; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="overlay"></div></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
