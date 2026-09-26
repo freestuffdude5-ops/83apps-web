@@ -243,3 +243,91 @@ def score(sec, n):
     tight = butter(2, 38, 'high', fs=SR, output='sos')
     drums, tonal, fxb = (np.stack([sosfilt(tight, b[0]), sosfilt(tight, b[1])]) for b in (drums, tonal, fxb))
     return drums, tonal, fxb
+
+
+# ------------------------------------------------------------------ makeover arrangement
+def score_makeover(sec, n):
+    """Starts muffled ("old website" / old radio), filter opens through the
+    rebuild, full-range drop the moment the new site lands."""
+    g0, build, drop, brand, logo, final = (sec[k] for k in ('grid0', 'build', 'drop', 'brand', 'logo', 'final'))
+    end = sec['duration']
+    drums = np.zeros((2, n)); tonal = np.zeros((2, n)); fxb = np.zeros((2, n))
+    kicks = []
+    arp = [0, 1, 2, 1, 3, 2, 1, 2]
+    t, step = g0, 0
+    while t < final - 1e-6:
+        b16 = step % 16
+        root, ch = PROG[int(np.floor((t - g0) / BAR)) % len(PROG)]
+        old = t < build
+        building = build <= t < drop
+        groove = drop <= t < final
+        if t >= 0:
+            if groove and b16 % 4 == 0 and not (logo <= t < logo + BEAT * 0.9):
+                put(drums, kick(), t, 0.62); kicks.append(t)
+            if old and b16 in (0, 8) and t >= g0 + BAR:
+                put(drums, kick(), t, 0.5); kicks.append(t)       # lazy half-time pulse
+            if building and b16 % 4 == 0:
+                put(drums, kick(), t, 0.55); kicks.append(t)
+            if groove and b16 in (4, 12):
+                put(drums, clap(), t, 0.75, 0.05)
+            if old and b16 == 8 and t >= g0 + BAR:
+                put(drums, clap(), t, 0.35, 0.05)
+            if groove and b16 % 4 == 2:
+                put(drums, hat(), t, 0.34, 0.3)
+            if groove and b16 % 2 == 1:
+                put(drums, hat(), t, 0.13, -0.35)
+            if building:
+                frac = (t - build) / (drop - build)
+                div = 4 if frac < 0.5 else 2 if frac < 0.75 else 1
+                if b16 % div == 0:
+                    put(drums, clap(), t, 0.15 + 0.3 * frac)
+            if groove and b16 % 2 == 0:
+                put(tonal, bass(root + 12 if b16 % 4 == 2 else root, BEAT / 2 * 0.95), t, 0.2)
+            if (old or building) and b16 == 0:
+                put(tonal, bass(root, BAR * 0.9), t, 0.16)
+            if b16 == 0:
+                bar_end = min(t + BAR, final)
+                put(tonal, pad(ch + ([ch[0] + 12] if t >= brand else []), bar_end - t, 3600 if groove else 2400), t, 0.42 if groove else 0.36)
+            tones = [ch[0] + 12, ch[1] + 12, ch[2] + 12, ch[0] + 24]
+            if groove or building or step % 2 == 0:   # eighths in the old section, sixteenths after
+                put(tonal, pluck(tones[arp[step % 8]], BEAT * 0.9, 1.0 if groove else 0.7), t, 0.3, 0.25 * np.sin(step * 0.9))
+        t += BEAT / 4
+        step += 1
+
+    # the "old radio": low-passed and narrow until the rebuild, then it opens up
+    def open_at(s):
+        if s < build: return 850.0
+        if s >= drop: return 19000.0
+        f = (s - build) / (drop - build)
+        return 850.0 * (19000 / 850) ** (f ** 1.6)
+    for bus in (drums, tonal):
+        for c in range(2):
+            bus[c] = tv_filter(bus[c], open_at, blk=512)
+    mono = (drums[0] + drums[1]) / 2, (tonal[0] + tonal[1]) / 2
+    pre = np.arange(n) / SR < drop
+    for bus, m in zip((drums, tonal), mono):
+        bus[:, pre] = bus[:, pre] * 0.35 + m[pre] * 0.65   # narrow stereo while "old"
+
+    put(fxb, riser(drop - build), build, 0.14)
+    put(fxb, crash(), drop, 0.16, 0.1)
+    put(fxb, impact(), drop, 0.35)
+    if brand < logo:
+        put(fxb, crash(), brand, 0.1, -0.1)
+    put(fxb, impact(), logo, 0.5)
+    put(fxb, crash(2.6), logo, 0.1, -0.1)
+    root, ch = PROG[0]
+    put(drums, kick(), final, 0.9)
+    put(fxb, crash(end - final + 0.5), final, 0.12)
+    put(tonal, pad([50, 62, 66, 69, 74], end - final, 3200) * np.exp(-np.arange(int((end - final) * SR)) / SR * 1.2), final, 0.3)
+    put(tonal, bass(38, end - final), final, 0.35)
+    for k, m in enumerate([74, 78, 81, 86]):
+        put(tonal, pluck(m, end - final, 1.0), final + k * 0.012, 0.1, (k - 1.5) * 0.3)
+
+    sc = np.ones(n)
+    for kt in kicks:
+        i = int(kt * SR); L = int(0.28 * SR)
+        seg = 1 - 0.55 * np.exp(-np.arange(L) / (0.07 * SR))
+        sc[i:i + L] = np.minimum(sc[i:i + L], seg[: max(0, min(L, n - i))])
+    tonal *= sc
+    tight = butter(2, 38, 'high', fs=SR, output='sos')
+    return tuple(np.stack([sosfilt(tight, b[0]), sosfilt(tight, b[1])]) for b in (drums, tonal, fxb))

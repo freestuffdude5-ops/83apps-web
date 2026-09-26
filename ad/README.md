@@ -34,6 +34,22 @@ The 15-second cut is not a separate animation. It uses the same master with spee
 
 `tools/music.py` synthesizes an upbeat track from scratch (about 120 BPM, D major). The beat drops as the website scene arrives, builds into the infinity reveal, and hits on the logo. `tools/audio.py` layers the sound effects on top: whooshes, typing ticks, chimes as each automation step fires. It uses no samples or third-party music, so there is nothing to license. It is synced to the cue sheet that `tools/cues.mjs` derives from the timeline, and `tools/mux.mjs` normalizes it to −16 LUFS / −1.5 dBTP. The film is fully understandable with the sound off. To use a licensed track instead, run `python3 tools/audio.py out/cues-30.json out/audio-30.wav --track your-track.mp3 --start 12`. `--start` skips into the track. Then mux the result with `tools/mux.mjs`; the sound effects stay on top. The `-silent` versions have no audio at all.
 
+## Film 2: website makeover
+
+A second 30s/15s ad focused on website design and redesign. It opens on a dated site for the fictional **Palmetto Plumbing Co.**: a clip-art header, a scrolling marquee, a hit counter, and the phone number buried in the footer. On a phone, a visitor pinch-zooms, hunts for the number and swipes back. A chrome ribbon scans the page. The page then splits into six 3D blocks that lift, flip over in mid-air and land as a modern, mobile-first site, timed to the music's drop. The film shows three benefits, then a visitor books in one tap and requests stack up (labeled as examples). It ends on the infinity, the logo and an end card with "New websites / Redesigns / Built for every screen".
+
+The music follows the story: it starts muffled and narrow like an old radio under the "before" site, opens up during the rebuild, and hits full range the moment the new site lands.
+
+| File (in `renders/`) | |
+|---|---|
+| `83apps-makeover-30s-vertical.mp4` / `-landscape.mp4` | 30 s |
+| `83apps-makeover-15s-vertical.mp4` / `-landscape.mp4` | 15 s |
+| `*-silent.mp4` | no audio |
+
+Preview: `http://localhost:8383/?film=makeover&format=vertical&cut=30&preview=1`. Build everything: `./tools/build.sh makeover`. Source files: `src/makeover.js` (director), `src/makeover-timeline.js` (timing and copy), `src/ui/oldsite.js`, `src/ui/newsite.js` and `src/ui/makeover-cards.js` (the websites and cards), and `score_makeover` in `tools/music.py`.
+
+Honesty notes: the business, its people and its requests are fictional. The redesigned site's footer says "Sample redesign for a fictional business", the booking form says "Sample form · no data is sent", and the ad shows no numbers, ratings or results claims. The period fonts for the old site are bundled open-licensed fonts (Tinos and Comic Neue, SIL OFL), so it renders the same everywhere.
+
 ## Voiceover (optional, not in the current renders)
 
 `tools/voiceover.py` can generate a narrated version with ElevenLabs and lower the music under the voice. Read the script at the top of the file for usage. The first test used the free-plan voice "Brian" and was rejected as too robotic, so no voiceover files ship in `renders/`. A human read would be the better route if narration is wanted later.
@@ -64,7 +80,8 @@ Requirements: Node 18+, Chromium via Playwright, and Python 3 with `numpy scipy 
 cd ad
 npm install && npx playwright install chromium
 pip install numpy scipy imageio-ffmpeg
-./tools/build.sh                                  # everything → out/final/
+./tools/build.sh                                  # main film, everything → out/final/
+./tools/build.sh makeover                         # website makeover film
 
 # individual pieces
 node tools/render.mjs --format vertical --cut 30 --workers 3 --out out/v30.mp4

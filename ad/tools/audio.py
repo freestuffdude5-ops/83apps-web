@@ -104,6 +104,8 @@ def add(buf, sig, t, gain=1.0, pan=0.0):
     i = int(t * SR)
     if i >= buf.shape[1] or i + len(sig) <= 0:
         return
+    if i < 0:  # sound starts before the video does: keep only its tail
+        sig, i = sig[-i:], 0
     s = sig[: buf.shape[1] - i]
     l, r = np.cos((pan + 1) * np.pi / 4), np.sin((pan + 1) * np.pi / 4)
     buf[0, i : i + len(s)] += s * gain * l * 1.41
@@ -125,6 +127,8 @@ def build(cfg, stems=False):
         tr = np.frombuffer(raw, np.float32).reshape(-1, 2).T.astype(float)[:, int(cfg.get("track_start", 0) * SR):]
         drums = np.zeros((2, n)); drums[:, : min(n, tr.shape[1])] = tr[:, :n] * 1.6
         tonal = np.zeros((2, n)); mfx = np.zeros((2, n))
+    elif sec.get("film") == "makeover":
+        drums, tonal, mfx = music_mod.score_makeover(sec, n)
     else:
         drums, tonal, mfx = music_mod.score(sec, n)
     # --- fx
@@ -151,6 +155,12 @@ def build(cfg, stems=False):
         elif ty == "step":
             m = [79, 83, 86][c.get("i", 0) % 3]
             add(fx, bell(midi(m), 1.6, 0.1 * v), tt, pan=[-0.25, 0.0, 0.25][c.get("i", 0) % 3])
+        elif ty == "bad":  # soft "nope" for each pain callout
+            for j, m in enumerate([69, 65]):
+                add(fx, bell(midi(m), 0.5, 0.06 * v) * np.exp(-np.arange(int(0.5 * SR)) / SR * 6), tt + j * 0.09, pan=0.15)
+        elif ty == "snap":  # a rebuilt block clicking into place
+            add(fx, tick(2400, 0.05, 0.1 * v), tt, pan=c.get("pan", 0))
+            add(fx, bell(midi(86 + (c.get("i", 0) % 3) * 2), 0.6, 0.03 * v), tt, pan=c.get("pan", 0))
         elif ty == "logo":
             for j, m in enumerate([74, 81, 86, 90]):
                 add(fx, bell(midi(m), 2.6, 0.05), tt + j * 0.03, pan=(j - 1.5) * 0.25)

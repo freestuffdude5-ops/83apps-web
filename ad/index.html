@@ -7,6 +7,12 @@
 <style>
   @font-face { font-family: 'Geist'; src: url(assets/fonts/Geist-Variable.woff2) format('woff2'); font-weight: 100 900; }
   @font-face { font-family: 'Geist Mono'; src: url(assets/fonts/GeistMono-Variable.woff2) format('woff2'); font-weight: 100 900; }
+  /* period fonts for the "before" website in the makeover film */
+  @font-face { font-family: 'Tinos'; src: url(assets/fonts/tinos-latin-400-normal.woff2) format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Tinos'; src: url(assets/fonts/tinos-latin-700-normal.woff2) format('woff2'); font-weight: 700; }
+  @font-face { font-family: 'Tinos'; src: url(assets/fonts/tinos-latin-700-italic.woff2) format('woff2'); font-weight: 700; font-style: italic; }
+  @font-face { font-family: 'Comic Neue'; src: url(assets/fonts/comic-neue-latin-400-normal.woff2) format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Comic Neue'; src: url(assets/fonts/comic-neue-latin-700-normal.woff2) format('woff2'); font-weight: 700; }
   :root { --bg: #060608; --text: #F4F4F7; --muted: #A1A1AE; --violet: #BDA6FF; --hair: rgba(255,255,255,.09); }
   html, body { margin: 0; background: var(--bg); overflow: hidden; }
   #stage { position: relative; transform-origin: 0 0; }
@@ -71,6 +77,10 @@
 </head>
 <body>
 <div id="stage"><div id="overlay"></div></div>
-<script type="module" src="src/main.js"></script>
+<script type="module">
+  // film=main (default) or film=makeover
+  const film = new URLSearchParams(location.search).get('film');
+  import(film === 'makeover' ? './src/makeover.js' : './src/main.js');
+</script>
 </body>
 </html>

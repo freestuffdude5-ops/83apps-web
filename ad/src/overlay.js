@@ -41,7 +41,7 @@ export class Overlay {
       <div class="logo-wrap"><img class="logo" src="assets/brand/83-logo.png" alt="83 APPS logo"><img class="logo glint" src="assets/brand/83-logo.png" alt=""></div>
       <div class="lockup">
         <div class="wordmark">83 APPS</div>
-        <div class="services"><span>Websites</span><i>/</i><span>Business tools</span><i>/</i><span>Workflow automation</span></div>
+        <div class="services">${(this.endcard.services || ['Websites', 'Business tools', 'Workflow automation']).map(esc).map((x) => `<span>${x}</span>`).join('<i>/</i>')}</div>
         <div class="cta"><span>Book a free 25-minute consultation</span><svg viewBox="0 0 24 24" width="1em" height="1em"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="url">83appstudio.com</div>
         <div class="region">Serving Florida</div>

@@ -3,6 +3,7 @@
 //
 //   node tools/render.mjs --format vertical --cut 30 --out out/83apps-30s-vertical.mp4
 //   node tools/render.mjs --format landscape --stills 0,4.5,12 --scale 0.5   (review stills)
+//   node tools/render.mjs --film makeover --format vertical                 (website makeover film)
 //
 // Options: --format vertical|landscape  --cut 30|15  --workers N  --scale S
 //          --from s --to s  --stills a,b,c  --out file  --crf 16
@@ -17,6 +18,7 @@ import { ffmpegPath } from './ffmpeg.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1] && !arr[i + 1].startsWith('--') ? arr[i + 1] : '1']] : a), []));
 const format = args.format || 'vertical';
+const film = args.film || 'main';
 const cut = +(args.cut || 30);
 const scale = +(args.scale || 1);
 const workers = +(args.workers || 1);
@@ -29,7 +31,7 @@ async function openPage(browser, port) {
   const page = await browser.newPage({ viewport: { width: Math.round(W * scale), height: Math.round(H * scale) }, deviceScaleFactor: 1 });
   page.on('pageerror', (e) => console.error('[page error]', e.message));
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.error('[page]', m.text()); });
-  await page.goto(`http://127.0.0.1:${port}/index.html?format=${format}&cut=${cut}&scale=${scale}`);
+  await page.goto(`http://127.0.0.1:${port}/index.html?film=${film}&format=${format}&cut=${cut}&scale=${scale}`);
   await page.waitForFunction('window.AD && window.AD.ready', null, { timeout: 180000 });
   await page.evaluate(() => window.AD.ready);
   return page;
@@ -51,7 +53,7 @@ try {
       const t = +s;
       await frame(page, Math.max(0, t - 1 / FPS)); // warm caches with the previous frame
       const buf = await frame(page, t);
-      const f = path.join(dir, `${format}-${cut}-${t.toFixed(2).padStart(5, '0')}.png`);
+      const f = path.join(dir, `${film === 'main' ? '' : film + '-'}${format}-${cut}-${t.toFixed(2).padStart(5, '0')}.png`);
       fs.writeFileSync(f, buf);
       console.log(f);
     }
@@ -59,7 +61,7 @@ try {
     const dur = cut;
     const from = +(args.from || 0), to = +(args.to || dur);
     const f0 = Math.round(from * FPS), f1 = Math.round(to * FPS);
-    const out = path.resolve(args.out || path.join(root, 'out', `83apps-${cut}s-${format}.mp4`));
+    const out = path.resolve(args.out || path.join(root, 'out', `83apps-${film === 'main' ? '' : film + '-'}${cut}s-${format}.mp4`));
     fs.mkdirSync(path.dirname(out), { recursive: true });
     const per = Math.ceil((f1 - f0) / workers);
     const segs = [];
