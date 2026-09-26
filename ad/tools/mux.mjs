@@ -9,7 +9,7 @@ const m = spawnSync(ff, ['-hide_banner', '-i', audio, '-af', 'ebur128', '-f', 'n
 const I = +m.match(/I:\s+(-?[\d.]+) LUFS/g).pop().match(/-?[\d.]+/)[0];
 const gain = (-16 - I).toFixed(2);
 const r = spawnSync(ff, ['-y', '-loglevel', 'error', '-i', video, '-i', audio, '-map', '0:v:0', '-map', '1:a:0',
-  '-af', `volume=${gain}dB,alimiter=limit=0.84:attack=5:release=60:level=disabled`,
+  '-af', `volume=${gain}dB,alimiter=limit=0.74:attack=2:release=50:level=disabled`,
   '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', '-ar', '48000', '-shortest', '-movflags', '+faststart', out], { stdio: 'inherit' });
 if (r.status !== 0) process.exit(r.status);
 console.log(`muxed ${out} (music measured ${I} LUFS, gain ${gain} dB)`);

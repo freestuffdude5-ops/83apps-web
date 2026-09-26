@@ -25,7 +25,9 @@ function toOut(m) {
 }
 const cues = [];
 for (const c of master) for (const t of toOut(c.t)) cues.push({ ...c, t: +t.toFixed(3) });
-// section markers drive the music arrangement
+// section markers drive the music arrangement (beat grid at 120 BPM)
 const copy = cut === 15 ? COPY15 : COPY30;
-const sections = { duration: cut, pulseIn: cut === 15 ? 2.3 : 4.0, pulseOut: toOut(K.toE[0] + 0.4)[0] ?? (cut === 15 ? 10.4 : 22.6), endIn: copy.endcard.in };
+const sections = cut === 15
+  ? { duration: 15, grid0: 0.3, drop: 2.3, build: 9.8, brand: 10.8, logo: 11.8, final: 13.8, endIn: copy.endcard.in }
+  : { duration: 30, grid0: 0.0, drop: 4.0, build: 22.0, brand: 24.0, logo: 26.0, final: 28.0, endIn: copy.endcard.in };
 console.log(JSON.stringify({ cues: cues.sort((a, b) => a.t - b.t), sections }, null, 1));

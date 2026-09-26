@@ -32,22 +32,11 @@ The 15-second cut is not a separate animation. It uses the same master with spee
 
 ## Audio
 
-`tools/audio.py` synthesizes the soundtrack from scratch: a pad, a soft pulse, and effects (whooshes, typing ticks, chimes as each automation step fires, a logo hit). It uses no samples or third-party music, so there is nothing to license. It is synced to the cue sheet that `tools/cues.mjs` derives from the timeline, and `tools/mux.mjs` normalizes it to −16 LUFS / −1.5 dBTP. The film is fully understandable with the sound off. Use the `-silent` versions if you want to add your own licensed music or a voiceover.
+`tools/music.py` synthesizes an upbeat track from scratch (about 120 BPM, D major). The beat drops as the website scene arrives, builds into the infinity reveal, and hits on the logo. `tools/audio.py` layers the sound effects on top: whooshes, typing ticks, chimes as each automation step fires. It uses no samples or third-party music, so there is nothing to license. It is synced to the cue sheet that `tools/cues.mjs` derives from the timeline, and `tools/mux.mjs` normalizes it to −16 LUFS / −1.5 dBTP. The film is fully understandable with the sound off. To use a licensed track instead, run `python3 tools/audio.py out/cues-30.json out/audio-30.wav --track your-track.mp3 --start 12`. `--start` skips into the track. Then mux the result with `tools/mux.mjs`; the sound effects stay on top. The `-silent` versions have no audio at all.
 
-## Voiceover
+## Voiceover (optional, not in the current renders)
 
-The `*-voiceover.mp4` files add a narrated version, made with ElevenLabs (voice "Brian", model `eleven_multilingual_v2`). `tools/voiceover.py` generates each line, fits it to its scene and lowers the music under the voice (about 10 dB). The result is normalized to −16 LUFS. The video stays exactly the same; only the audio track changes.
-
-```bash
-export ELEVENLABS_API_KEY=...          # never commit it
-node tools/cues.mjs 30 > out/cues-30.json
-python3 tools/voiceover.py 30          # set VO_VOICE=<voice id> to try another voice
-node tools/mux.mjs renders/83apps-30s-vertical-silent.mp4 out/vo/audio-30-vo.wav renders/83apps-30s-vertical-voiceover.mp4
-```
-
-Delete `out/vo/*.mp3` to regenerate lines. Edit the `SCRIPT` table in `tools/voiceover.py` to change wording or timing.
-
-**Licensing:** these lines were generated on a free ElevenLabs plan, and free-plan audio isn't licensed for commercial use. Upgrade to a paid plan (Starter or higher) and regenerate before running the voiceover versions as paid ads.
+`tools/voiceover.py` can generate a narrated version with ElevenLabs and lower the music under the voice. Read the script at the top of the file for usage. The first test used the free-plan voice "Brian" and was rejected as too robotic, so no voiceover files ship in `renders/`. A human read would be the better route if narration is wanted later.
 
 ## Editing and previewing
 
