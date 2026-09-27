@@ -99,6 +99,9 @@ def score(r):
     return round(s * r['_w'], 1)
 
 
+# removed after re-check: now has its own working domain
+EXCLUDE = {'justincredibledetailing': 'wixsite now redirects to its own domain justin-credible-detailing.com'}
+uniq = [r for r in uniq if norm(r.get('name')) not in EXCLUDE]
 for r in uniq:
     r['_score'] = score(r); r['_reviews'] = reviews(r)
 ranked = sorted(uniq, key=lambda r: -r['_score'])
@@ -117,7 +120,7 @@ def pitch(r):
     return 'Reviews but no site: menu/hours/photos site that shows up on Google, with ordering links.'
 
 
-wb = Workbook(); ws = wb.active; ws.title = 'Ormond Beach: no website'
+wb = Workbook(); ws = wb.active; ws.title = 'Ormond Beach - no website'
 hdr = Font(bold=True, color='FFFFFF'); fill = PatternFill('solid', fgColor='1F1F2A')
 cols = [('#', 5), ('Business', 30), ('Type', 20), ('Group', 15), ('Google rating', 9), ('Google reviews', 9), ('Other reviews', 22),
         ('Website status', 34), ('Address', 30), ('Phone', 15), ('Facebook / links', 34), ('Why it qualifies', 46), ('Pitch angle', 46),
