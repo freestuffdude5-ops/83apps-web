@@ -95,7 +95,7 @@ async function worker() {
     if (r.verdict !== 'OK') console.log(`${r.verdict.padEnd(12)} ${r.name.slice(0, 34).padEnd(34)} ${r.website}  ${r.why}`);
   }
 }
-await Promise.all([worker(), worker(), worker(), worker()]);
+await Promise.all(Array.from({ length: 8 }, worker));
 fs.writeFileSync(outFile, JSON.stringify(results, null, 1));
 await browser.close();
 console.log('done', results.length);
