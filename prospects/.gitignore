@@ -4,3 +4,6 @@ __pycache__/
 mockups/
 ormond/*.json
 83apps-ormond-prospects.xlsx
+ormond-broken-sites/
+ormond-broken-sites.zip
+ormond/broken-shots/
