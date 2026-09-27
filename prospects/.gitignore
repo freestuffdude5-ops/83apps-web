@@ -19,3 +19,8 @@ gmaps/*-db.*
 83apps-*-google-verified.xlsx
 *-google-broken/
 *-google-broken.zip
+gmaps/*-nsb.*
+gmaps/*-pc.*
+gmaps/*-dl.*
+gmaps/*-hh.*
+gmaps/areas.done
