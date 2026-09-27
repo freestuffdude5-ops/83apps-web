@@ -23,12 +23,15 @@ def cat(r): return ', '.join((r.get('cats') or [])[:2])
 def rv(r): return r.get('reviews') or 0
 
 
+# removed after reviewing screenshots: chains, or a working site where Google links one dead sub-page
+DROP = re.compile(r"^(moe's|atlantic animal hospital|critical energy|ppg paint|north american van|dr nawrocki|monica garnache|cathie stull|calvary christian|ifixscreens)", re.I)
 broken, check, nosite, social = [], [], [], []
 for r in T:
     if SKIPCAT.search(cat(r)): continue
     if r['kind'] == 'own site':
         c = C.get(r['cid'])
         if not c: continue
+        if DROP.search(r['name']): continue
         if c['verdict'] == 'BROKEN': broken.append({**r, **c})
         elif c['verdict'] == 'CHECK': check.append({**r, **c})
     elif r['kind'] == 'none' and rv(r) >= 5: nosite.append(r)
