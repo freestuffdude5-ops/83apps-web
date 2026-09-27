@@ -11,8 +11,9 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 
-T = json.load(open('targets.json'))
-C = {c['cid']: c for c in json.load(open('checked.json'))}
+SFX = ('-' + sys.argv[2]) if len(sys.argv) > 2 else ''
+T = json.load(open(f'targets{SFX}.json'))
+C = {c['cid']: c for c in json.load(open(f'checked{SFX}.json'))}
 SKIPCAT = re.compile(r'church|government|school|park|library|post office|hospital|city hall|association|non-profit|atm|apartment|condominium|hotel|motel|resort|gas station', re.I)
 
 

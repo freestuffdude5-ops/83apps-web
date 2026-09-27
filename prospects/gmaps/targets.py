@@ -29,4 +29,4 @@ dc = Counter(r['domain'] for r in rows if r['domain'])
 for r in rows:
     if r['domain'] and dc[r['domain']] >= 4: r['kind'] = 'multi-location'
 json.dump(rows, open(sys.argv[2], 'w'), indent=1)
-print(len(rows), 'Ormond independents;', Counter(r['kind'] for r in rows))
+print(len(rows), 'independents;', Counter(r['kind'] for r in rows))
