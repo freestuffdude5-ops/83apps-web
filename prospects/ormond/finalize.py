@@ -100,7 +100,8 @@ def score(r):
 
 
 # removed after re-check: now has its own working domain
-EXCLUDE = {'justincredibledetailing': 'wixsite now redirects to its own domain justin-credible-detailing.com'}
+EXCLUDE = {'justincredibledetailing': 'wixsite now redirects to its own domain justin-credible-detailing.com',
+           'thaierawan': 'thaierawanrestaurant.com works', 'dianespetgrooming': 'dianespetgrooming.com works (one-page site)'}
 uniq = [r for r in uniq if norm(r.get('name')) not in EXCLUDE]
 for r in uniq:
     r['_score'] = score(r); r['_reviews'] = reviews(r)

@@ -23,10 +23,19 @@ SEEN = {
     'Veranda Pampering Salon': 'Cloudflare error 521 "Web server is down"',
     'Utopian Photos': 'Squarespace "Website Expired" page',
     "Owen Heating & Cooling Inc.": 'Site will not load (security/certificate error)',
+    'Molto Bella Boutique': 'Domain hijacked: redirects to an Indonesian gambling site',
+    'Thai Wood House (Thai Woodhouse)': 'Domain hijacked: redirects to a gambling site',
+    "Lucy's Gift Boutique": 'Domain hijacked: shows a slot-gambling site',
+    'The Flower Market (Ormond Beach Flower Market)': 'Domain hijacked: redirects to a gambling site',
+    'The Pocket Jeweler': 'Domain hijacked: redirects to an ADULT website (no screenshot saved)',
+    'Beach Village Gift Shop (Beach Village Gift Emporium)': 'Squarespace "Coming Soon, under construction" page',
+    'Fugu Sushi': 'Cloudflare error 522 "Connection timed out"',
+    'Pirana Grille': 'Cloudflare "DNS resolution error": site is gone',
 }
 CONFIRM = {'Southern Auto Source', 'Kimble Electric Co.', 'Tire City (Tire City of Volusia County)', 'Browns Electric of Central Florida',
-           'Carey Plumbing Inc.', 'Lars Air, LLC', 'Air One Heating & Cooling', 'Buckels Sprinklers'}
-DROP = {"Diane's Pet Grooming": 'site works (one-page site with contact form)'}
+           'Carey Plumbing Inc.', 'Lars Air, LLC', 'Air One Heating & Cooling', 'Buckels Sprinklers',
+           "Don Pepper's Mexican Grill & Cantina", 'Dog Hut', 'Joyologie Boutique'}
+DROP = {"Diane's Pet Grooming": 'site works (one-page site with contact form)', 'Thai Erawan': 'thaierawanrestaurant.com works'}
 
 
 def is_confirm(name):
@@ -79,14 +88,14 @@ def pitch(x):
 wb = load_workbook('../83apps-ormond-prospects.xlsx')
 if 'Broken websites' in wb.sheetnames: del wb['Broken websites']
 ws = wb.create_sheet('Broken websites', 0)
-cols = [('#', 5), ('Business', 30), ('Type', 20), ('Google rating', 9), ('Google reviews', 9), ('Broken link', 30), ('What customers see', 46),
+cols = [('#', 5), ('Business', 30), ('Type', 20), ('Google rating', 9), ('Google reviews', 9), ('Other reviews', 20), ('Broken link', 30), ('What customers see', 46),
         ('Link appears on', 22), ('Screenshot', 30), ('Address', 30), ('Phone', 15), ('What to say', 56), ('Contacted?', 11), ('Notes', 30)]
 ws.append([c for c, _ in cols])
 hdr = Font(bold=True, color='FFFFFF'); fill = PatternFill('solid', fgColor='8B1E1E')
 for c in ws[1]: c.font = hdr; c.fill = fill
 for i, x in enumerate(rows, 1):
     r = x['r']
-    ws.append([i, x['name'], r.get('category'), r.get('googleRating'), r.get('googleReviewCount'), x['v']['url'], x['seen'], listed_where(r),
+    ws.append([i, x['name'], r.get('category'), r.get('googleRating'), r.get('googleReviewCount'), r.get('otherReviews'), x['v']['url'], x['seen'], listed_where(r),
                x.get('shotfile', ''), r.get('address'), r.get('phone'), pitch(x), '', r.get('notes')])
 for i, (_, w) in enumerate(cols, 1): ws.column_dimensions[get_column_letter(i)].width = w
 for row in ws.iter_rows(min_row=2):
