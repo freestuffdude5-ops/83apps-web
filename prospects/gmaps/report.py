@@ -29,7 +29,7 @@ def rv(r): return r.get('reviews') or 0
 
 
 # removed after reviewing screenshots: chains, or a working site where Google links one dead sub-page
-DROP = re.compile(r"^(moe's|atlantic animal hospital|critical energy|ppg paint|north american van|dr nawrocki|monica garnache|cathie stull|calvary christian|ifixscreens|dunlawton square|westport plaza|jimmy john|habitat for humanity|watson realty|kid city|proforma|mflgnj|minute key|coast dental|health first|humana|tippi|port orange music academy|bytelink|craig's electric)", re.I)
+DROP = re.compile(r"^(moe's|atlantic animal hospital|critical energy|ppg paint|north american van|dr nawrocki|monica garnache|cathie stull|calvary christian|ifixscreens|dunlawton square|westport plaza|jimmy john|habitat for humanity|watson realty|kid city|proforma|mflgnj|minute key|coast dental|health first|humana|tippi|port orange music academy|bytelink|craig's electric|bellair plaza|winghouse|ifixandrepair|florida department|oceansone|homeless assistance|american givers|the olive branch church|mental health association|david temple|daytona laser lipo|chris avellar|ring power|thomas a\. barnard|medicare insurance|amscot|intelligent office|auntie anne|riverfront market|halifax art festival)", re.I)
 broken, check, nosite, social = [], [], [], []
 for r in T:
     if SKIPCAT.search(cat(r)): continue
