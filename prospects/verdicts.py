@@ -7,14 +7,12 @@ T3 = '3 · Free builder web address'
 
 VERIFIED = {
     # name: (tier, what we saw, angle)
-    'Next Level Pool Cleaning and Supplies': (T1, 'Homepage returns a server error (HTTP 500, checked twice).', 'Replacement site; weekly-service signup form.'),
-    'EverGreen Landscapes': (T1, 'Homepage returns "page not found" (404, checked twice).', 'Replacement site with a free-estimate form.'),
-    'ReFine Pressure Washing and Exteriors': (T1, 'Homepage returns "page not found" (404, checked twice).', 'Replacement site; before/after gallery + quote form.'),
+    'Next Level Pool Cleaning and Supplies': (T1, 'The site shows a WordPress "critical error" (HTTP 500), and their BBB and Facebook pages still link to it.', 'Replacement site; weekly-service signup form.'),
+    'EverGreen Landscapes': (T1, 'Their host says the site is not published. No other site found. Yelp has one listing marked closed and another active, so call first.', 'Replacement site with a free-estimate form.'),
     'Port Orange Car Doctor': (T1, 'Their site is labeled "Unofficial Website" on someone else\'s domain (haamacon.com).',
         'They don\'t own their web presence. Offer an official site on their own domain.'),
     'PawZazz Pet Salon': (T1, 'Site is still a "Launching Soon" placeholder, © 2021.', 'Finish what they started: simple site + online grooming booking.'),
-    'Lee Nails': (T1, 'Their Google "business.site" page is dead (Google shut those down).', 'Small, cheap site + booking link; many salons lost these sites the same way.'),
-    'Fleur De Lis Salon': (T2, 'Desktop-only layout: on a phone the text is tiny and the page scrolls sideways.', 'Phone-vs-mockup side by side; add online booking.'),
+    'Lee Nails': (T1, 'Their Google "business.site" page is dead (Google shut those down). All that is left is Facebook and a salon-software booking page.', 'Small, cheap site + booking link; many salons lost these sites the same way.'),
     'Nord Pest Control': (T2, 'No mobile layout; dated design.', 'Mobile rebuild with tap-to-call and a quote form.'),
     'Port Orange Pest Control': (T2, 'No mobile layout; dated design.', 'Mobile rebuild with tap-to-call and a quote form.'),
     'Terry Blanks Jr DDS Family Dental Care': (T2, 'Dated, not mobile-friendly.', 'New-patient booking, insurance info up front, reminders later.'),
@@ -54,4 +52,6 @@ FINE = {
     'Main Street Barber Shop': 'Moved to daytonabarbershop.com, which works well (old address now shows spam)',
     'HD Drain Cleaning': 'Moved to daytonadraincleaning.com, which works well (old address now shows spam)',
     'Mid Florida Pool & Spa': 'Listed as CLOSED on Yelp',
+    'Fleur De Lis Salon': 'Moved to fdlsalon.com, which is modern and mobile-friendly (the old site still loads)',
+    'ReFine Pressure Washing and Exteriors': 'Rebranded as Top Elite Properties (topeliteproperties.com), which is modern',
 }
