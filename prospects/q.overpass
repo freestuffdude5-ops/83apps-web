@@ -1,0 +1,10 @@
+[out:json][timeout:120];
+(
+  nwr["website"]["craft"~"plumber|hvac|electrician|roofer|painter|carpenter|gardener|builder|glaziery|tiler|window_construction|floorer"](28.75,-81.60,29.65,-80.85);
+  nwr["website"]["shop"~"car_repair|tyres|hairdresser|beauty|pet_grooming|florist|bicycle|furniture|hardware"](28.75,-81.60,29.65,-80.85);
+  nwr["website"]["amenity"~"dentist|clinic|veterinary"](28.75,-81.60,29.65,-80.85);
+  nwr["website"]["healthcare"](28.75,-81.60,29.65,-80.85);
+  nwr["website"]["office"~"company|lawyer|accountant|estate_agent|insurance"](28.75,-81.60,29.65,-80.85);
+  nwr["website"]["leisure"="fitness_centre"](28.75,-81.60,29.65,-80.85);
+);
+out tags center;

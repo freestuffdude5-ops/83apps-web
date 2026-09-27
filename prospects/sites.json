@@ -1,0 +1,4618 @@
+[
+ {
+  "name": "Total Comfort Plumbing",
+  "trade": "plumber",
+  "city": "Ormond Beach",
+  "website": "https://tcplumbingfl.com",
+  "notes": "Ormond Beach based since 1976; sister HVAC site totalcomfortfl.com",
+  "source": "web search",
+  "page": "https://tcplumbingfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lou's Plumbing",
+  "trade": "plumber",
+  "city": "Ormond Beach",
+  "website": "https://lousplumbingfl.com",
+  "notes": "821 N US 1, Ormond Beach; 35+ years",
+  "source": "web search",
+  "page": "https://lousplumbingfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kraken Plumbing",
+  "trade": "plumber",
+  "city": "Ormond Beach",
+  "website": "https://www.krakenplumbingcompany.com",
+  "notes": "Residential plumber, Ormond Beach",
+  "source": "web search",
+  "page": "https://www.krakenplumbingcompany.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mastercraft Plumbing",
+  "trade": "plumber",
+  "city": "Daytona Beach",
+  "website": "https://mastercraftfl.com",
+  "notes": "Family-run since 1977",
+  "source": "web search",
+  "page": "https://mastercraftfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Daytona Plumbing",
+  "trade": "plumber",
+  "city": "Daytona Beach",
+  "website": "https://www.daytonaplumb.com",
+  "notes": "Water heater focus",
+  "source": "web search",
+  "page": "https://www.daytonaplumb.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Matt's Plumbing Services",
+  "trade": "plumber",
+  "city": "Holly Hill",
+  "website": "https://mattsplumbingpros.com",
+  "notes": "Serving Holly Hill since 2016",
+  "source": "web search",
+  "page": "https://mattsplumbingpros.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Andy's Plumbing",
+  "trade": "plumber",
+  "city": "Holly Hill",
+  "website": "https://andysplumbing.com",
+  "notes": "(386) 384-9040; also listed for Daytona",
+  "source": "web search",
+  "page": "https://andysplumbing.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Total Comfort HVAC",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://totalcomfortfl.com",
+  "notes": "HQ Ormond Beach since 1976; same owner as Total Comfort Plumbing",
+  "source": "web search",
+  "page": "https://totalcomfortfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Von Aire",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://vonaireinc.com",
+  "notes": "Volusia/Flagler since 1968",
+  "source": "web search",
+  "page": "https://vonaireinc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Advanced Air Home Services",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://www.advancedairandheat.com",
+  "notes": "HVAC/plumbing/electrical, (386) 260-2330; appears Volusia-based but multi-trade, verify independence",
+  "source": "web search",
+  "page": "https://www.advancedairandheat.com/",
+  "alsoCities": [
+   "Bunnell",
+   "Edgewater"
+  ]
+ },
+ {
+  "name": "Arctic Breeze Air Conditioning & Heating",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://arcticbreezeair.com",
+  "notes": "Described as family-owned; verify HQ location",
+  "source": "web search",
+  "page": "https://arcticbreezeair.com/",
+  "alsoCities": [
+   "Palm Coast"
+  ]
+ },
+ {
+  "name": "Rack Air Conditioning",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://rackairconditioning.com",
+  "notes": "Has Ormond Beach service-area page; verify HQ",
+  "source": "web search",
+  "page": "https://rackairconditioning.com/",
+  "alsoCities": [
+   "DeLand"
+  ]
+ },
+ {
+  "name": "Air Cunningham & Sons",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://www.aircunninghamandsons.com",
+  "notes": "Family-owned, 20+ years",
+  "source": "web search",
+  "page": "https://www.aircunninghamandsons.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Atlantic Air Conditioning & Heating",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://atlantic-air-heat.com",
+  "notes": "Family-owned, four generations",
+  "source": "web search",
+  "page": "https://atlantic-air-heat.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Best Value A/C & Heating",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://www.bestvalueac.com",
+  "notes": "Local family-owned, Volusia & Flagler",
+  "source": "web search",
+  "page": "https://www.bestvalueac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Current Energy Solutions",
+  "trade": "AC repair / HVAC",
+  "city": "Ormond Beach",
+  "website": "https://www.currentenergysolutionsfl.com",
+  "notes": "Family-owned (Ken & Adlin Coleman)",
+  "source": "web search",
+  "page": "https://www.currentenergysolutionsfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "All Volusia & Flagler Heating & Air",
+  "trade": "AC repair / HVAC",
+  "city": "Daytona Beach",
+  "website": "https://volusiaflaglerac.com",
+  "notes": "Same-day service",
+  "source": "web search",
+  "page": "https://volusiaflaglerac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Davis Bros. Cooling & Heating",
+  "trade": "AC repair / HVAC",
+  "city": "Daytona Beach",
+  "website": "https://davisbroscooling.com",
+  "notes": "Serves Daytona Beach",
+  "source": "web search",
+  "page": "https://davisbroscooling.com/",
+  "alsoCities": [
+   "New Smyrna Beach"
+  ]
+ },
+ {
+  "name": "Tomco HVAC",
+  "trade": "AC repair / HVAC",
+  "city": "Daytona Beach",
+  "website": "https://tomco-hvac.com",
+  "notes": "Daytona Beach & Palm Coast",
+  "source": "web search",
+  "page": "https://tomco-hvac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Jerry Brittingham A/C & Heat",
+  "trade": "AC repair / HVAC",
+  "city": "Daytona Beach",
+  "website": "https://www.brittinghamac.com",
+  "notes": "Also ranks for Holly Hill",
+  "source": "web search",
+  "page": "https://www.brittinghamac.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Cunningham AC, Heat & Propane (Cunningham Oil)",
+  "trade": "AC repair / HVAC",
+  "city": "Holly Hill",
+  "website": "https://cunninghamoil.com",
+  "notes": "400 Carswell Ave, Holly Hill; family-owned",
+  "source": "web search",
+  "page": "https://cunninghamoil.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Scott's Heating & Air Conditioning",
+  "trade": "AC repair / HVAC",
+  "city": "Holly Hill",
+  "website": "https://www.scottsair.com",
+  "notes": "Has Holly Hill page; HQ not confirmed, verify local",
+  "source": "web search",
+  "page": "https://www.scottsair.com/",
+  "alsoCities": [
+   "New Smyrna Beach"
+  ]
+ },
+ {
+  "name": "Four Seasons Pools LLC",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://poolservicespecialists.com",
+  "notes": "Since 1992, Ormond Beach/Palm Coast",
+  "source": "web search",
+  "page": "https://poolservicespecialists.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Float On Pools & Spas",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://floatonpoolsandspas.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://floatonpoolsandspas.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pure Pool Solutions",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://purepoolfl.com",
+  "notes": "Since 2014",
+  "source": "web search",
+  "page": "https://purepoolfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "SunTime Pool & Spa",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://suntimepool.com",
+  "notes": "Equipment repair and service",
+  "source": "web search",
+  "page": "https://suntimepool.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "East Coast Pool Maintenance",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://eastcoastpoolmaintenance.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://eastcoastpoolmaintenance.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pool Zone",
+  "trade": "pool service",
+  "city": "Ormond Beach",
+  "website": "https://www.poolzonefl.com",
+  "notes": "Ormond Beach / Ormond-by-the-Sea",
+  "source": "web search",
+  "page": "https://www.poolzonefl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Paradigm Pools LLC",
+  "trade": "pool service",
+  "city": "Daytona Beach",
+  "website": "https://www.paradigmpoolsflorida.com",
+  "notes": "Family-owned, Ormond Beach address",
+  "source": "web search",
+  "page": "https://www.paradigmpoolsflorida.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Splash Authority",
+  "trade": "pool service",
+  "city": "Daytona Beach",
+  "website": "https://splashauthority.com",
+  "notes": "(386) 871-4534",
+  "source": "web search",
+  "page": "https://splashauthority.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Port Orange Pools",
+  "trade": "pool service",
+  "city": "Daytona Beach",
+  "website": "http://portorangepools.com",
+  "notes": "http only (no https seen)",
+  "source": "web search",
+  "page": "http://portorangepools.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Pool Butler of Daytona Beach",
+  "trade": "pool service",
+  "city": "Daytona Beach",
+  "website": "https://daytonapoolservice.com",
+  "notes": "15+ years",
+  "source": "web search",
+  "page": "https://daytonapoolservice.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Daytona's Best Pool Service",
+  "trade": "pool service",
+  "city": "Holly Hill",
+  "website": "https://www.daytonasbestpoolservice.com",
+  "notes": "Owner Mike Ruff",
+  "source": "web search",
+  "page": "https://www.daytonasbestpoolservice.com/",
+  "alsoCities": [
+   "New Smyrna Beach"
+  ]
+ },
+ {
+  "name": "Service Pest Control",
+  "trade": "pest control",
+  "city": "Ormond Beach",
+  "website": "https://www.servicepestfl.com",
+  "notes": "Pest + lawn, 386-615-6915",
+  "source": "web search",
+  "page": "https://www.servicepestfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ryan's Pest Control",
+  "trade": "pest control",
+  "city": "Ormond Beach",
+  "website": "https://www.ryanspestcontrol.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.ryanspestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Universal Pest Control",
+  "trade": "pest control",
+  "city": "Ormond Beach",
+  "website": "https://bugandtermitecontrol.com",
+  "notes": "Since 1994; Facebook facebook.com/Universalpestcontrolfl",
+  "source": "web search",
+  "page": "https://bugandtermitecontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Prime Pest Services",
+  "trade": "pest control",
+  "city": "Daytona Beach",
+  "website": "https://primepestservices.com",
+  "notes": "Local family-owned",
+  "source": "web search",
+  "page": "https://primepestservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Liberty Lawn and Pest",
+  "trade": "pest control",
+  "city": "Daytona Beach",
+  "website": "https://www.libertylawnfl.com",
+  "notes": "Pest + lawn, family-owned",
+  "source": "web search",
+  "page": "https://www.libertylawnfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Shumaker's Pest Control",
+  "trade": "pest control",
+  "city": "Daytona Beach",
+  "website": "https://shumakerspestcontrol.com",
+  "notes": "Family-owned, Volusia County",
+  "source": "web search",
+  "page": "https://shumakerspestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Green Wing Lawn and Pest Services",
+  "trade": "pest control",
+  "city": "Daytona Beach",
+  "website": "https://www.greenwingservices.com",
+  "notes": "Family-owned claim; has city subpages, verify not multi-market",
+  "source": "web search",
+  "page": "https://www.greenwingservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Imperial Pest Prevention",
+  "trade": "pest control",
+  "city": "Daytona Beach",
+  "website": "https://www.imperialpestprevent.com",
+  "notes": "Family-owned claim but serves multiple FL counties; borderline regional",
+  "source": "web search",
+  "page": "https://www.imperialpestprevent.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ormond Lawn Care",
+  "trade": "lawn care / landscaping",
+  "city": "Ormond Beach",
+  "website": "https://www.ormondlawncare.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.ormondlawncare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Nelly's Landscape Services",
+  "trade": "lawn care / landscaping",
+  "city": "Ormond Beach",
+  "website": "https://nellyslandscapeservicesllc.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://nellyslandscapeservicesllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Leafy Landscapes",
+  "trade": "lawn care / landscaping",
+  "city": "Ormond Beach",
+  "website": "https://www.leafylandscapes.com",
+  "notes": "(386) 492-8862; city-page site structure, verify local",
+  "source": "web search",
+  "page": "https://www.leafylandscapes.com/",
+  "alsoCities": [
+   "New Smyrna Beach",
+   "Palm Coast"
+  ]
+ },
+ {
+  "name": "Cole's Landscaping and Property Maintenance",
+  "trade": "lawn care / landscaping",
+  "city": "Daytona Beach",
+  "website": "https://www.coles-landscaping.com",
+  "notes": "Family-owned since 2014",
+  "source": "web search",
+  "page": "https://www.coles-landscaping.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cunningham's Lawn & Landscaping",
+  "trade": "lawn care / landscaping",
+  "city": "Daytona Beach",
+  "website": "https://cunninghamslawnandlandscapingllc.com",
+  "notes": "Since 2013",
+  "source": "web search",
+  "page": "https://cunninghamslawnandlandscapingllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Halifax Landscaping",
+  "trade": "lawn care / landscaping",
+  "city": "Daytona Beach",
+  "website": "https://www.halifaxlandscapinginc.com",
+  "notes": "Family-owned since 1981",
+  "source": "web search",
+  "page": "https://www.halifaxlandscapinginc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Yard Shark",
+  "trade": "lawn care / landscaping",
+  "city": "Daytona Beach",
+  "website": "https://yardsharklandscaping.com",
+  "notes": "Since 1999",
+  "source": "web search",
+  "page": "https://yardsharklandscaping.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Elevation Electrical",
+  "trade": "electrician",
+  "city": "Ormond Beach",
+  "website": "https://www.elevationelectricalfl.com",
+  "notes": "Has /locations/ pages; verify local",
+  "source": "web search",
+  "page": "https://www.elevationelectricalfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "APEX Electrical Services",
+  "trade": "electrician",
+  "city": "Ormond Beach",
+  "website": "https://www.electricianfl.com",
+  "notes": "Also ranks for Daytona Beach",
+  "source": "web search",
+  "page": "https://www.electricianfl.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Millard Electric LLC",
+  "trade": "electrician",
+  "city": "Daytona Beach",
+  "website": "https://www.millardelectricllc.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.millardelectricllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Paul's Electric",
+  "trade": "electrician",
+  "city": "Holly Hill",
+  "website": "https://www.paulselectric.com",
+  "notes": "320 Aragon St, Holly Hill",
+  "source": "web search",
+  "page": "https://www.paulselectric.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Taranto Electric",
+  "trade": "electrician",
+  "city": "Holly Hill",
+  "website": "https://tarantoelectric.com",
+  "notes": "30 years, Volusia County",
+  "source": "web search",
+  "page": "https://tarantoelectric.com/",
+  "alsoCities": [
+   "DeLand"
+  ]
+ },
+ {
+  "name": "Tom's Automotive",
+  "trade": "auto repair",
+  "city": "Ormond Beach",
+  "website": "https://www.tomsautoormond.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.tomsautoormond.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "T&D Auto Repair",
+  "trade": "auto repair",
+  "city": "Ormond Beach",
+  "website": "https://www.tdautorepairs.com",
+  "notes": "268 Hand Ave; also facebook.com/TDAutoRepair",
+  "source": "web search",
+  "page": "https://www.tdautorepairs.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Auto Solutions",
+  "trade": "auto repair",
+  "city": "Ormond Beach",
+  "website": "https://autosolutionsofob.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://autosolutionsofob.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lonnie's Automotive",
+  "trade": "auto repair",
+  "city": "Ormond Beach",
+  "website": "https://lonniesautomotive.com",
+  "notes": "European specialist",
+  "source": "web search",
+  "page": "https://lonniesautomotive.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Reilly Auto Repair",
+  "trade": "auto repair",
+  "city": "Daytona Beach",
+  "website": "https://www.reillyautorepair.com",
+  "notes": "Family-owned since 2001; Facebook lists Holly Hill",
+  "source": "web search",
+  "page": "https://www.reillyautorepair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Michael's British, American & Foreign Auto Repair",
+  "trade": "auto repair",
+  "city": "Daytona Beach",
+  "website": "https://www.daytonabeachautorepair.com",
+  "notes": "241 S Palmetto Ave",
+  "source": "web search",
+  "page": "https://www.daytonabeachautorepair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "British American Auto Repair By George",
+  "trade": "auto repair",
+  "city": "Daytona Beach",
+  "website": "https://www.georgesbritishamericanautorepair.com",
+  "notes": "Since 1983",
+  "source": "web search",
+  "page": "https://www.georgesbritishamericanautorepair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Daytona Auto Repair",
+  "trade": "auto repair",
+  "city": "Holly Hill",
+  "website": "https://www.daytonarepair.com",
+  "notes": "1521 Ridgewood Ave, Holly Hill; since 1979",
+  "source": "web search",
+  "page": "https://www.daytonarepair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Hansard's Service Center",
+  "trade": "auto repair",
+  "city": "Holly Hill",
+  "website": "https://www.hansardsservicecenter.com",
+  "notes": "170 Ridgewood Ave",
+  "source": "web search",
+  "page": "https://www.hansardsservicecenter.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Car Shop Holly Hill",
+  "trade": "auto repair",
+  "city": "Holly Hill",
+  "website": "https://www.thecarshophollyhill.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.thecarshophollyhill.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Toy Connection Auto Repair",
+  "trade": "auto repair",
+  "city": "Holly Hill",
+  "website": "https://www.toyconnectionautorepair.com",
+  "notes": "Asian car specialist",
+  "source": "web search",
+  "page": "https://www.toyconnectionautorepair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sunny Side Clean Team",
+  "trade": "house cleaning",
+  "city": "Ormond Beach",
+  "website": "https://www.sunny-side-clean-team.com",
+  "notes": "Since 2018; also ranks for Daytona/Holly Hill",
+  "source": "web search",
+  "page": "https://www.sunny-side-clean-team.com/",
+  "alsoCities": [
+   "New Smyrna Beach",
+   "Palm Coast"
+  ]
+ },
+ {
+  "name": "Just Peachy Clean LLC",
+  "trade": "house cleaning",
+  "city": "Daytona Beach",
+  "website": "https://alwaysjustpeachyclean.com",
+  "notes": "Port Orange based",
+  "source": "web search",
+  "page": "https://alwaysjustpeachyclean.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "LPGA Maids",
+  "trade": "house cleaning",
+  "city": "Daytona Beach",
+  "website": "https://www.lpgamaids.com",
+  "notes": "Also ranks for Holly Hill",
+  "source": "web search",
+  "page": "https://www.lpgamaids.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Costa's Pressure Cleaning",
+  "trade": "pressure washing",
+  "city": "Ormond Beach",
+  "website": "https://www.costaspressurecleaning.com",
+  "notes": "Veteran-owned",
+  "source": "web search",
+  "page": "https://www.costaspressurecleaning.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Soap & Sea Soft Washing",
+  "trade": "pressure washing",
+  "city": "Ormond Beach",
+  "website": "https://soapandsea.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://soapandsea.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Wash And Go Pressure Cleaning",
+  "trade": "pressure washing",
+  "city": "Daytona Beach",
+  "website": "https://washandgofl.com",
+  "notes": "(386) 516-4464",
+  "source": "web search",
+  "page": "https://washandgofl.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "Daytona Softwash",
+  "trade": "pressure washing",
+  "city": "Daytona Beach",
+  "website": "https://daytonasoftwash.com",
+  "notes": "(386) 267-6800",
+  "source": "web search",
+  "page": "https://daytonasoftwash.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "All Star Pressure Wash",
+  "trade": "pressure washing",
+  "city": "Daytona Beach",
+  "website": "https://www.daytonabeachsoftwash.com",
+  "notes": "386-451-6658",
+  "source": "web search",
+  "page": "https://www.daytonabeachsoftwash.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pressure Clean USA",
+  "trade": "pressure washing",
+  "city": "Daytona Beach",
+  "website": "https://www.pressurecleanusa.com",
+  "notes": "Volusia County since 2006 despite national-sounding name",
+  "source": "web search",
+  "page": "https://www.pressurecleanusa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Michael's House Washing",
+  "trade": "pressure washing",
+  "city": "Daytona Beach",
+  "website": "https://www.michaelshousewashing.com",
+  "notes": "Daytona to DeLand",
+  "source": "web search",
+  "page": "https://www.michaelshousewashing.com/",
+  "alsoCities": [
+   "DeLand"
+  ]
+ },
+ {
+  "name": "Razzle Dazzle's Soft Suds LLC",
+  "trade": "pressure washing",
+  "city": "Holly Hill",
+  "website": "https://www.razzledazzlessoftsuds.com",
+  "notes": "(386) 488-3045",
+  "source": "web search",
+  "page": "https://www.razzledazzlessoftsuds.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sparkle Tech",
+  "trade": "pressure washing",
+  "city": "Holly Hill",
+  "website": "https://sparkletechfl.com",
+  "notes": "Name inferred from domain; verify local",
+  "source": "web search",
+  "page": "https://sparkletechfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "DaytonaHandy",
+  "trade": "handyman",
+  "city": "Ormond Beach",
+  "website": "https://daytonahandy.com",
+  "notes": "(386) 384-8444; also ranks for Daytona and Holly Hill",
+  "source": "web search",
+  "page": "https://daytonahandy.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "On-Demand Handyman",
+  "trade": "handyman",
+  "city": "Ormond Beach",
+  "website": "https://www.odhmfl.com",
+  "notes": "309 Sandoval Dr, Ormond Beach",
+  "source": "web search",
+  "page": "https://www.odhmfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Daytona Handyman",
+  "trade": "handyman",
+  "city": "Daytona Beach",
+  "website": "https://www.daytona-handyman.com",
+  "notes": "(386) 506-8000",
+  "source": "web search",
+  "page": "https://www.daytona-handyman.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "A1 Handyman Services LLC",
+  "trade": "handyman",
+  "city": "Daytona Beach",
+  "website": "https://a1handymanfl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://a1handymanfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida's Handyman and Renovation Services",
+  "trade": "handyman",
+  "city": "Daytona Beach",
+  "website": "https://floridashandymanandrenovationservices.com",
+  "notes": "Port Orange/Daytona",
+  "source": "web search",
+  "page": "https://floridashandymanandrenovationservices.com/",
+  "alsoCities": [
+   "Port Orange"
+  ]
+ },
+ {
+  "name": "All of the Above Handyman Solutions LLC",
+  "trade": "handyman",
+  "city": "Daytona Beach",
+  "website": "https://aotahs.jobbersites.com/",
+  "notes": "Site is a Jobber template subdomain, not own domain; weak web presence",
+  "source": "web search",
+  "page": "https://aotahs.jobbersites.com/",
+  "alsoCities": [],
+  "freeSubdomain": true
+ },
+ {
+  "name": "ZZ the Handyman",
+  "trade": "handyman",
+  "city": "Daytona Beach",
+  "website": "https://zzthehandyman.com",
+  "notes": "Lists an 808 phone number; verify local",
+  "source": "web search",
+  "page": "https://zzthehandyman.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "All American Home Pros",
+  "trade": "handyman",
+  "city": "Holly Hill",
+  "website": "https://www.allamericanhomepros.com",
+  "notes": "(386) 845-7767; since 1999; verify not a lead-gen site",
+  "source": "web search",
+  "page": "https://www.allamericanhomepros.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Certified Plumbing Services",
+  "trade": "plumber",
+  "city": "Port Orange",
+  "website": "https://www.certifiedplumbingservice.com",
+  "notes": "Since 1996, state certified master plumber, 24/7",
+  "source": "web search",
+  "page": "https://www.certifiedplumbingservice.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Plumbing, Inc.",
+  "trade": "plumber",
+  "city": "Port Orange",
+  "website": "https://www.portorangeplumbing.com",
+  "notes": "Family-owned, 45+ yrs, 386-756-0848",
+  "source": "web search",
+  "page": "https://www.portorangeplumbing.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pro Craft Plumbing",
+  "trade": "plumber",
+  "city": "Port Orange",
+  "website": "http://procraftplumbing.net",
+  "notes": "URL seen was a Port Orange page on its own domain",
+  "source": "web search",
+  "page": "http://procraftplumbing.net/m.port-orange-plumber.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Rick's Sewer, Drain & Plumbing Services",
+  "trade": "plumber",
+  "city": "Port Orange",
+  "website": "https://www.rsd-plumbing.com",
+  "notes": "Family-run",
+  "source": "web search",
+  "page": "https://www.rsd-plumbing.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Integrity Air and Heat",
+  "trade": "AC repair / HVAC",
+  "city": "Port Orange",
+  "website": "https://integrityairheat.com",
+  "notes": "386-243-4850",
+  "source": "web search",
+  "page": "https://integrityairheat.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "ACR Air Conditioning & Refrigeration",
+  "trade": "AC repair / HVAC",
+  "city": "Port Orange",
+  "website": "https://www.callacr.com",
+  "notes": "Family-owned, but serves nine Central FL counties (larger)",
+  "source": "web search",
+  "page": "https://www.callacr.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Pest Control",
+  "trade": "pest control",
+  "city": "Port Orange",
+  "website": "https://portorangepest.com",
+  "notes": "Family-owned since 1988",
+  "source": "web search",
+  "page": "https://portorangepest.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Pest Control ($29.99 monthly)",
+  "trade": "pest control",
+  "city": "Port Orange",
+  "website": "https://portorangepestcontrol.com",
+  "notes": "May be a lead-gen or marketing site; check it is a real operator",
+  "source": "web search",
+  "page": "https://portorangepestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dave's Pest Control",
+  "trade": "pest control",
+  "city": "Port Orange",
+  "website": "https://www.davespestcontrol.com",
+  "notes": "Family/veteran-owned, 45 yrs; has Volusia city pages including NSB and DeLand",
+  "source": "web search",
+  "page": "https://www.davespestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Bulldog Lawn & Landscaping",
+  "trade": "lawn care / landscaping",
+  "city": "Port Orange",
+  "website": "https://www.bulldoglawnandlandscaping.com",
+  "notes": "Has city pages for Port Orange, NSB and DeLand",
+  "source": "web search",
+  "page": "https://www.bulldoglawnandlandscaping.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ready Set Mow",
+  "trade": "lawn care / landscaping",
+  "city": "Port Orange",
+  "website": "https://www.readysetmowfl.com",
+  "notes": "Also does pressure washing and tree work",
+  "source": "web search",
+  "page": "https://www.readysetmowfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "James Lawn Service",
+  "trade": "lawn care / landscaping",
+  "city": "Port Orange",
+  "website": "https://jameslawnservicefl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://jameslawnservicefl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Masters Electric",
+  "trade": "electrician",
+  "city": "Port Orange",
+  "website": "https://www.masterselectricportorange.com",
+  "notes": "Family-owned since 1998",
+  "source": "web search",
+  "page": "https://www.masterselectricportorange.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Repair 1",
+  "trade": "auto repair",
+  "city": "Port Orange",
+  "website": "https://www.repairone.com",
+  "notes": "501 Old Dunlawton Ave",
+  "source": "web search",
+  "page": "https://www.repairone.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mason's Automotive",
+  "trade": "auto repair",
+  "city": "Port Orange",
+  "website": "https://masonsauto.repair",
+  "notes": "Since 1963",
+  "source": "web search",
+  "page": "https://masonsauto.repair/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Car Doctor",
+  "trade": "auto repair",
+  "city": "Port Orange",
+  "website": "http://portorangecardoctor.com",
+  "notes": "Family-owned; site is http only",
+  "source": "web search",
+  "page": "http://portorangecardoctor.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "G & M Automotive Center Inc",
+  "trade": "auto repair",
+  "city": "Port Orange",
+  "website": "https://g-inc-port-orange.edan.io/",
+  "notes": "Site-builder subdomain, not its own domain (strong prospect)",
+  "source": "web search",
+  "page": "https://g-inc-port-orange.edan.io/",
+  "alsoCities": [],
+  "freeSubdomain": true
+ },
+ {
+  "name": "Mop and Bucket",
+  "trade": "house cleaning",
+  "city": "Port Orange",
+  "website": "https://mopandbucketclean.com",
+  "notes": "14+ yrs",
+  "source": "web search",
+  "page": "https://mopandbucketclean.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Safe Shine LLC",
+  "trade": "pressure washing",
+  "city": "Port Orange",
+  "website": "https://www.safeshine.org",
+  "notes": "386-588-8474",
+  "source": "web search",
+  "page": "https://www.safeshine.org/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Pressure Washing",
+  "trade": "pressure washing",
+  "city": "Port Orange",
+  "website": "https://portorangepressurewash.com",
+  "notes": "BBB accredited",
+  "source": "web search",
+  "page": "https://portorangepressurewash.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Blaner's Pressure Cleaning",
+  "trade": "pressure washing",
+  "city": "Port Orange",
+  "website": "https://www.blanerspressurecleaning.com",
+  "notes": "Also serves Edgewater",
+  "source": "web search",
+  "page": "https://www.blanerspressurecleaning.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Handyman",
+  "trade": "handyman",
+  "city": "Port Orange",
+  "website": "https://www.portorangehandymanpros.com",
+  "notes": "May be a lead-gen site; check it",
+  "source": "web search",
+  "page": "https://www.portorangehandymanpros.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Howell Plumbing",
+  "trade": "plumber",
+  "city": "New Smyrna Beach",
+  "website": "https://howellplumbingfl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://howellplumbingfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "J&B Gould Air Conditioning Inc.",
+  "trade": "AC repair / HVAC",
+  "city": "New Smyrna Beach",
+  "website": "https://jbgouldac.com",
+  "notes": "Since 2002",
+  "source": "web search",
+  "page": "https://jbgouldac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Anderson Performance Heat and Air",
+  "trade": "AC repair / HVAC",
+  "city": "New Smyrna Beach",
+  "website": "https://www.andersonhvac.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.andersonhvac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mid Florida Pool & Spa",
+  "trade": "pool service",
+  "city": "New Smyrna Beach",
+  "website": "http://midfloridapoolspa.com",
+  "notes": "http only",
+  "source": "web search",
+  "page": "http://midfloridapoolspa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "NSB Pools",
+  "trade": "pool service",
+  "city": "New Smyrna Beach",
+  "website": "http://nsbpools.com",
+  "notes": "Looks like the same operator as portorangepools.com",
+  "source": "web search",
+  "page": "http://nsbpools.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "SE Pool & Spa, LLC",
+  "trade": "pool service",
+  "city": "New Smyrna Beach",
+  "website": "https://www.sepoolandspa.com",
+  "notes": "Store at 646 N Dixie Fwy",
+  "source": "web search",
+  "page": "https://www.sepoolandspa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Pool Fam",
+  "trade": "pool service",
+  "city": "New Smyrna Beach",
+  "website": "https://thepoolfam.com",
+  "notes": "Family-owned",
+  "source": "web search",
+  "page": "https://thepoolfam.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Globe Exterminators",
+  "trade": "pest control",
+  "city": "New Smyrna Beach",
+  "website": "https://globeexterminators.com",
+  "notes": "Since 1975, Volusia and Flagler",
+  "source": "web search",
+  "page": "https://globeexterminators.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Smyrna Pest Control",
+  "trade": "pest control",
+  "city": "New Smyrna Beach",
+  "website": "https://smyrnapest.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://smyrnapest.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sorko Lawn and Pest Control",
+  "trade": "pest control",
+  "city": "New Smyrna Beach",
+  "website": "https://sorkolawnandpestcontrol.com",
+  "notes": "Probably Daytona-based",
+  "source": "web search",
+  "page": "https://sorkolawnandpestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "NEXTLAWN",
+  "trade": "lawn care / landscaping",
+  "city": "New Smyrna Beach",
+  "website": "https://nextlawnfl.com",
+  "notes": "Also serves Edgewater and Port Orange",
+  "source": "web search",
+  "page": "https://nextlawnfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "A Beach Lawn Care",
+  "trade": "lawn care / landscaping",
+  "city": "New Smyrna Beach",
+  "website": "https://abeachlawncare.com",
+  "notes": "Since 1979",
+  "source": "web search",
+  "page": "https://abeachlawncare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lightyear Electric LLC",
+  "trade": "electrician",
+  "city": "New Smyrna Beach",
+  "website": "https://lightyearelectricl.wixsite.com/my-site",
+  "notes": "Free Wix subdomain (strong prospect), Generac dealer",
+  "source": "web search",
+  "page": "https://lightyearelectricl.wixsite.com/my-site",
+  "alsoCities": [],
+  "freeSubdomain": true
+ },
+ {
+  "name": "Coastal Electrical Contracting Inc",
+  "trade": "electrician",
+  "city": "New Smyrna Beach",
+  "website": "https://coastalelectricalcontracting.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://coastalelectricalcontracting.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "American Auto Tire & Service",
+  "trade": "auto repair",
+  "city": "New Smyrna Beach",
+  "website": "https://www.americanautonsb.com",
+  "notes": "1523 S Dixie Fwy",
+  "source": "web search",
+  "page": "https://www.americanautonsb.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Four Seasons Pressure Washing",
+  "trade": "pressure washing",
+  "city": "New Smyrna Beach",
+  "website": "https://fourseasonspressure.com",
+  "notes": "386-221-4891, also serves Edgewater",
+  "source": "web search",
+  "page": "https://fourseasonspressure.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dykes Services LLC",
+  "trade": "pressure washing",
+  "city": "New Smyrna Beach",
+  "website": "https://dykesservices.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://dykesservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cape Coast Cleaning",
+  "trade": "pressure washing",
+  "city": "New Smyrna Beach",
+  "website": "https://capecoastcleaning.com",
+  "notes": "Locally owned, founded 2018",
+  "source": "web search",
+  "page": "https://capecoastcleaning.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "R.J.P Handyman LLC",
+  "trade": "handyman",
+  "city": "New Smyrna Beach",
+  "website": "https://rjpcmp.wixsite.com/rjphandymanllc",
+  "notes": "Free Wix subdomain (strong prospect)",
+  "source": "web search",
+  "page": "https://rjpcmp.wixsite.com/rjphandymanllc",
+  "alsoCities": [],
+  "freeSubdomain": true
+ },
+ {
+  "name": "Coleman Plumbing",
+  "trade": "plumber",
+  "city": "Edgewater",
+  "website": "https://www.colemanplumbing.net",
+  "notes": "1812 Hibiscus Dr, 25+ yrs, also serves NSB",
+  "source": "web search",
+  "page": "https://www.colemanplumbing.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "ServairAC",
+  "trade": "AC repair / HVAC",
+  "city": "Edgewater",
+  "website": "https://servairac.com",
+  "notes": "386-427-1531",
+  "source": "web search",
+  "page": "https://servairac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Innovative Air & Heat",
+  "trade": "AC repair / HVAC",
+  "city": "Edgewater",
+  "website": "https://innovativeairandheat.com",
+  "notes": "386-689-0445",
+  "source": "web search",
+  "page": "https://innovativeairandheat.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ellington AC",
+  "trade": "AC repair / HVAC",
+  "city": "Edgewater",
+  "website": "https://ellingtonac.com",
+  "notes": "Office at 1947 W Park Ave, but may be a larger multi-office FL company",
+  "source": "web search",
+  "page": "https://ellingtonac.com/service-area/edgewater-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "Peninsula Pools, LLC",
+  "trade": "pool service",
+  "city": "Edgewater",
+  "website": "https://peninsulapoolsnsb.com",
+  "notes": "Since 2002",
+  "source": "web search",
+  "page": "https://peninsulapoolsnsb.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "386 Pools LLC",
+  "trade": "pool service",
+  "city": "Edgewater",
+  "website": "https://386poolsllc.com",
+  "notes": "Husband and wife owned",
+  "source": "web search",
+  "page": "https://386poolsllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "All Pools Matter LLC",
+  "trade": "pool service",
+  "city": "Edgewater",
+  "website": "https://www.allpoolsmatter.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.allpoolsmatter.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Next Level Pool Cleaning and Supplies",
+  "trade": "pool service",
+  "city": "Edgewater",
+  "website": "https://nextlevelpoolcleaning.com",
+  "notes": "Family-owned; also on Facebook",
+  "source": "web search",
+  "page": "https://nextlevelpoolcleaning.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Wilkie's Pest Control and Lawn Services",
+  "trade": "pest control",
+  "city": "Edgewater",
+  "website": "https://wilkiespestcontrol.com",
+  "notes": "Since 1987",
+  "source": "web search",
+  "page": "https://wilkiespestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Budget Pest Control",
+  "trade": "pest control",
+  "city": "Edgewater",
+  "website": "https://budgetpestinc.com",
+  "notes": "30+ yrs",
+  "source": "web search",
+  "page": "https://budgetpestinc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Nord Pest Control",
+  "trade": "pest control",
+  "city": "Edgewater",
+  "website": "https://www.nordpestcontrol.com",
+  "notes": "Family-owned",
+  "source": "web search",
+  "page": "https://www.nordpestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Grow with the Flow Lawn Service",
+  "trade": "lawn care / landscaping",
+  "city": "Edgewater",
+  "website": "https://www.growwiththeflowlawnservice.com",
+  "notes": "20+ yrs",
+  "source": "web search",
+  "page": "https://www.growwiththeflowlawnservice.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dial Duron Service Co.",
+  "trade": "electrician",
+  "city": "Edgewater",
+  "website": "https://www.dialduron.com",
+  "notes": "321 phone number, probably Brevard-based multi-trade; may be too large",
+  "source": "web search",
+  "page": "https://www.dialduron.com/edgewater-fl/electrical-services/",
+  "alsoCities": []
+ },
+ {
+  "name": "Myron's Auto Service",
+  "trade": "auto repair",
+  "city": "Edgewater",
+  "website": "https://myronsautoserviceinc.com",
+  "notes": "2033 S Ridgewood Ave",
+  "source": "web search",
+  "page": "https://myronsautoserviceinc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Blue Line Automotive",
+  "trade": "auto repair",
+  "city": "Edgewater",
+  "website": "https://www.bluelineautomotive.shop",
+  "notes": "3290 S Ridgewood Ave",
+  "source": "web search",
+  "page": "https://www.bluelineautomotive.shop/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lift Off Pressure Washing",
+  "trade": "pressure washing",
+  "city": "Edgewater",
+  "website": "https://liftoffpressurewashing.com",
+  "notes": "386-478-9484",
+  "source": "web search",
+  "page": "https://liftoffpressurewashing.com/edgewater.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Gen1 Pressure Washing LLC",
+  "trade": "pressure washing",
+  "city": "Edgewater",
+  "website": "https://gen1pressurewash.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://gen1pressurewash.com/edgewater",
+  "alsoCities": []
+ },
+ {
+  "name": "Fellman Painting & Waterproofing",
+  "trade": "pressure washing",
+  "city": "Edgewater",
+  "website": "https://fellmanpainting.com",
+  "notes": "Painting company that also pressure washes, 46 yrs, also serves DeLand",
+  "source": "web search",
+  "page": "https://fellmanpainting.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Colonial Plumbing",
+  "trade": "plumber",
+  "city": "DeLand",
+  "website": "https://www.colonialplmg.com",
+  "notes": "48 yrs",
+  "source": "web search",
+  "page": "https://www.colonialplmg.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Allen Plumbing DeLand",
+  "trade": "plumber",
+  "city": "DeLand",
+  "website": "https://www.allenplumbingdeland.com",
+  "notes": "Also does backflow",
+  "source": "web search",
+  "page": "https://www.allenplumbingdeland.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Jacob Heating & Air Conditioning",
+  "trade": "AC repair / HVAC",
+  "city": "DeLand",
+  "website": "https://www.jacobhac.com",
+  "notes": "Since 1921, third generation",
+  "source": "web search",
+  "page": "https://www.jacobhac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Certified Climate Control",
+  "trade": "AC repair / HVAC",
+  "city": "DeLand",
+  "website": "https://www.certifiedclimate.com",
+  "notes": "386-675-6963",
+  "source": "web search",
+  "page": "https://www.certifiedclimate.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mid Florida A/C",
+  "trade": "AC repair / HVAC",
+  "city": "DeLand",
+  "website": "https://www.mid-floridaair.com",
+  "notes": "Family-owned since 1980",
+  "source": "web search",
+  "page": "https://www.mid-floridaair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "AmeriTech AC & Heating",
+  "trade": "AC repair / HVAC",
+  "city": "DeLand",
+  "website": "https://ameritechfl.com",
+  "notes": "Locally owned since 2009, 407 number (Orlando area)",
+  "source": "web search",
+  "page": "https://ameritechfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ansley's Pool Service",
+  "trade": "pool service",
+  "city": "DeLand",
+  "website": "https://www.ansleyspoolservice.com",
+  "notes": "Family-owned, 386-804-1160",
+  "source": "web search",
+  "page": "https://www.ansleyspoolservice.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kevin's Pool Service",
+  "trade": "pool service",
+  "city": "DeLand",
+  "website": "https://www.kevinspoolservices.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.kevinspoolservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Aquarian Pools of Deland",
+  "trade": "pool service",
+  "city": "DeLand",
+  "website": "https://aquarianpoolsofdeland.com",
+  "notes": "Mobile service",
+  "source": "web search",
+  "page": "https://aquarianpoolsofdeland.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Driggers Pest Control",
+  "trade": "pest control",
+  "city": "DeLand",
+  "website": "https://www.driggerspestcontrol.com",
+  "notes": "West Volusia",
+  "source": "web search",
+  "page": "https://www.driggerspestcontrol.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pioneer Pest Services, Inc.",
+  "trade": "pest control",
+  "city": "DeLand",
+  "website": "https://www.pioneerpestservices.com",
+  "notes": "Family-owned since 1985",
+  "source": "web search",
+  "page": "https://www.pioneerpestservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Deland Pest Control ($29.99 monthly)",
+  "trade": "pest control",
+  "city": "DeLand",
+  "website": "https://www.pestcontroldelandfl.com",
+  "notes": "May be a lead-gen site; check it",
+  "source": "web search",
+  "page": "https://www.pestcontroldelandfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Yard Dogs Lawn Care",
+  "trade": "lawn care / landscaping",
+  "city": "DeLand",
+  "website": "https://yarddogsfl.com",
+  "notes": "Sod and drainage",
+  "source": "web search",
+  "page": "https://yarddogsfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Elite Electrical Contracting, LLC",
+  "trade": "electrician",
+  "city": "DeLand",
+  "website": "http://www.delandelectrician.com",
+  "notes": "Family-operated, residential",
+  "source": "web search",
+  "page": "http://www.delandelectrician.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Vincent Anthony Electric",
+  "trade": "electrician",
+  "city": "DeLand",
+  "website": "https://vincentanthonyelectric.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://vincentanthonyelectric.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Deltron Electric",
+  "trade": "electrician",
+  "city": "DeLand",
+  "website": "https://www.deltronelectricfl.com",
+  "notes": "20+ yrs",
+  "source": "web search",
+  "page": "https://www.deltronelectricfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "DeLand Auto Fix",
+  "trade": "auto repair",
+  "city": "DeLand",
+  "website": "https://delandautofix.com",
+  "notes": "Owner is a BMW-certified tech",
+  "source": "web search",
+  "page": "https://delandautofix.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Shop DeLand LLC",
+  "trade": "auto repair",
+  "city": "DeLand",
+  "website": "https://www.theshopdeland.com",
+  "notes": "Family-owned",
+  "source": "web search",
+  "page": "https://www.theshopdeland.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "LP & Sons Auto Care",
+  "trade": "auto repair",
+  "city": "DeLand",
+  "website": "https://lpandsonsautocare.com",
+  "notes": "European cars",
+  "source": "web search",
+  "page": "https://lpandsonsautocare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Tom's Auto Repair",
+  "trade": "auto repair",
+  "city": "DeLand",
+  "website": "https://www.tomsautorepairfl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.tomsautorepairfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "HTD Cleaning Services",
+  "trade": "house cleaning",
+  "city": "DeLand",
+  "website": "https://htdcleaningservices.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://htdcleaningservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Maids Are Us Inc.",
+  "trade": "house cleaning",
+  "city": "DeLand",
+  "website": "https://www.maidsareusinc.com",
+  "notes": "Volusia",
+  "source": "web search",
+  "page": "https://www.maidsareusinc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pristine Pressure Washing & Soft Wash Solutions LLC",
+  "trade": "pressure washing",
+  "city": "DeLand",
+  "website": "https://www.pristinepressurewash.net",
+  "notes": "Also on Facebook",
+  "source": "web search",
+  "page": "https://www.pristinepressurewash.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Perez Pressure Washing and Soft Wash Pro Service",
+  "trade": "pressure washing",
+  "city": "DeLand",
+  "website": "https://www.perezproservice.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.perezproservice.com/",
+  "alsoCities": [
+   "Palm Coast"
+  ]
+ },
+ {
+  "name": "My Fix It Friend LLC",
+  "trade": "handyman",
+  "city": "DeLand",
+  "website": "https://handymandelandfl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://handymandelandfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "HandyCandor Home Repair",
+  "trade": "handyman",
+  "city": "DeLand",
+  "website": "https://handycandor.com",
+  "notes": "Palm Coast-based, has DeLand and Port Orange pages",
+  "source": "web search",
+  "page": "https://handycandor.com/",
+  "alsoCities": [
+   "Palm Coast"
+  ]
+ },
+ {
+  "name": "Royal Palm Pest Control",
+  "trade": "pest control",
+  "city": "Palm Coast",
+  "website": "https://royalpalmpest.com",
+  "notes": "FB https://www.facebook.com/RoyalPalmPestControl/",
+  "source": "web search",
+  "page": "https://royalpalmpest.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mangano Plumbing Services",
+  "trade": "plumber",
+  "city": "Palm Coast",
+  "website": "https://www.manganoplumbingservices.com",
+  "notes": "third-generation",
+  "source": "web search",
+  "page": "https://www.manganoplumbingservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cook's Air Conditioning & Heating",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://www.cooksair.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.cooksair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sea Breeze Heating & Air Conditioning",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://seabreezeheatingair.net",
+  "notes": "",
+  "source": "web search",
+  "page": "https://seabreezeheatingair.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kool Air Florida",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://koolairflorida.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://koolairflorida.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast HVAC",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://palmcoasthvac.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://palmcoasthvac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sunshine State Heating & Air",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://sunshinestateac.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://sunshinestateac.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Total Comfort",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://www.totalcomfortpalmcoast.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.totalcomfortpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Elite AC LLC",
+  "trade": "HVAC",
+  "city": "Palm Coast",
+  "website": "https://eliteacllc.com",
+  "notes": "Carrier dealer",
+  "source": "web search",
+  "page": "https://eliteacllc.com/palm-coast-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "DC Pools",
+  "trade": "pool service",
+  "city": "Palm Coast",
+  "website": "https://dcpools.us",
+  "notes": "",
+  "source": "web search",
+  "page": "https://dcpools.us/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Pool Cleaning Services",
+  "trade": "pool service",
+  "city": "Palm Coast",
+  "website": "https://poolservicepalmcoast.com",
+  "notes": "may be lead-gen site",
+  "source": "web search",
+  "page": "https://poolservicepalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "TruBlue Pools LLC",
+  "trade": "pool service",
+  "city": "Palm Coast",
+  "website": "https://www.trubluepoolsllc.com",
+  "notes": "10 Dawson Dr; not TruBlue franchise",
+  "source": "web search",
+  "page": "https://www.trubluepoolsllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Perfect Pools of Palm Coast",
+  "trade": "pool service",
+  "city": "Palm Coast",
+  "website": "https://perfectpoolsofpalmcoast.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://perfectpoolsofpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Not Just Another Pool Service",
+  "trade": "pool service",
+  "city": "Palm Coast",
+  "website": "https://www.njapsinc.com",
+  "notes": "appeared in Palm Coast search; location unverified",
+  "source": "web search",
+  "page": "https://www.njapsinc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Taormina Landscaping",
+  "trade": "lawn care / landscaping",
+  "city": "Palm Coast",
+  "website": "https://www.taorminalandscaping.com",
+  "notes": "city page; HQ location unverified",
+  "source": "web search",
+  "page": "https://www.taorminalandscaping.com/palm-coast",
+  "alsoCities": []
+ },
+ {
+  "name": "Lawn Care Pros of Palm Coast",
+  "trade": "lawn care / landscaping",
+  "city": "Palm Coast",
+  "website": "https://www.lawncarepalmcoast.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.lawncarepalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Corey Enterprises",
+  "trade": "lawn care / landscaping",
+  "city": "Palm Coast",
+  "website": "https://coreylawn.com",
+  "notes": "40+ yrs, Flagler & Volusia",
+  "source": "web search",
+  "page": "https://coreylawn.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "EverGreen Landscapes",
+  "trade": "lawn care / landscaping",
+  "city": "Palm Coast",
+  "website": "https://www.evergreenlandscapes.co",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.evergreenlandscapes.co/",
+  "alsoCities": []
+ },
+ {
+  "name": "JSA Lawncare",
+  "trade": "lawn care / landscaping",
+  "city": "Palm Coast",
+  "website": "https://www.jsalawncare.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.jsalawncare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Seacoast Electric",
+  "trade": "electrician",
+  "city": "Palm Coast",
+  "website": "https://seacoastelectricpalmcoast.com",
+  "notes": "since 1997, owner Scott Woodard",
+  "source": "web search",
+  "page": "https://seacoastelectricpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Blondin Electric Inc",
+  "trade": "electrician",
+  "city": "Palm Coast",
+  "website": "https://blondinelectric.com",
+  "notes": "family-run since 2007",
+  "source": "web search",
+  "page": "https://blondinelectric.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Little Electrical Solutions",
+  "trade": "electrician",
+  "city": "Palm Coast",
+  "website": "https://littleelectricalsolutions.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://littleelectricalsolutions.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Auto Repair",
+  "trade": "auto repair",
+  "city": "Palm Coast",
+  "website": "https://www.palmcoastautorepair.biz",
+  "notes": "30+ yrs; FB https://www.facebook.com/PalmCoastAutoRepair/",
+  "source": "web search",
+  "page": "https://www.palmcoastautorepair.biz/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mobil Mark",
+  "trade": "auto repair",
+  "city": "Bunnell",
+  "website": "https://www.mobilmark.biz",
+  "notes": "family-owned since 2005, Bunnell shops + mobile",
+  "source": "web search",
+  "page": "https://www.mobilmark.biz/",
+  "alsoCities": []
+ },
+ {
+  "name": "Evans Automotive & Tire Center",
+  "trade": "auto repair",
+  "city": "Palm Coast",
+  "website": "https://www.evans-automotive.com",
+  "notes": "service-area page; shop location unverified",
+  "source": "web search",
+  "page": "https://www.evans-automotive.com/Palm-Coast.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Cleaning Service Palm Coast",
+  "trade": "house cleaning",
+  "city": "Palm Coast",
+  "website": "https://cleaningservicepalmcoast.com",
+  "notes": "possibly lead-gen site; verify",
+  "source": "web search",
+  "page": "https://cleaningservicepalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Going Green Cleaning Services",
+  "trade": "house cleaning",
+  "city": "Palm Coast",
+  "website": "https://goinggreencs.com",
+  "notes": "10+ yrs Flagler",
+  "source": "web search",
+  "page": "https://goinggreencs.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Maids LLC",
+  "trade": "house cleaning",
+  "city": "Palm Coast",
+  "website": "https://www.palmmaidsllc.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.palmmaidsllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "ReFine Pressure Washing and Exteriors",
+  "trade": "pressure washing",
+  "city": "Palm Coast",
+  "website": "https://refinepressurewashingandexteriors.com",
+  "notes": "veteran-owned since 2019",
+  "source": "web search",
+  "page": "https://refinepressurewashingandexteriors.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Bruno's Pressure Wash Pro",
+  "trade": "pressure washing",
+  "city": "Palm Coast",
+  "website": "https://brunospressurewash.com",
+  "notes": "service-area page",
+  "source": "web search",
+  "page": "https://brunospressurewash.com/pressure-washing-palm-coast-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Pressure Washing",
+  "trade": "pressure washing",
+  "city": "Palm Coast",
+  "website": "https://palmcoastpw.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://palmcoastpw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Handyman Painting and Home Repair",
+  "trade": "handyman",
+  "city": "Palm Coast",
+  "website": "https://www.palm-coast-handyman-painting-and-home-repair.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.palm-coast-handyman-painting-and-home-repair.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Jeff Handyman 2 The Rescue LLC",
+  "trade": "handyman",
+  "city": "Palm Coast",
+  "website": "https://jeffhandyman2therescue.com",
+  "notes": "licensed res contractor since 2004",
+  "source": "web search",
+  "page": "https://jeffhandyman2therescue.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Terry's Plumbing Inc",
+  "trade": "plumber",
+  "city": "Flagler Beach",
+  "website": "https://terrysplumbingfl.com",
+  "notes": "909 Magnolia Ter; family-owned 30+ yrs; 386-439-3191",
+  "source": "web search",
+  "page": "https://terrysplumbingfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dreamscapes",
+  "trade": "lawn care / landscaping",
+  "city": "Bunnell",
+  "website": "https://dreamscapesflorida.com",
+  "notes": "service-area page",
+  "source": "web search",
+  "page": "https://dreamscapesflorida.com/lawn-maintenance-in-bunnell-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "A&D Auto Workz",
+  "trade": "auto repair",
+  "city": "Bunnell",
+  "website": "https://aanddautoworkz.com",
+  "notes": "1302 S State St; VW/import",
+  "source": "web search",
+  "page": "https://aanddautoworkz.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Del's Garage",
+  "trade": "auto repair",
+  "city": "Bunnell",
+  "website": "https://www.delsgarage.net",
+  "notes": "2700 E Moody Blvd",
+  "source": "web search",
+  "page": "https://www.delsgarage.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Serene Med Spa (Ormond Beach)",
+  "trade": "med spa",
+  "city": "Ormond Beach",
+  "website": "https://serenemedspas.com",
+  "notes": "under Arora Aesthetics; has 'locations' path - may be multi-location, verify",
+  "source": "web search",
+  "page": "https://serenemedspas.com/locations/ormond-beach/",
+  "alsoCities": []
+ },
+ {
+  "name": "Enchanted Medical Aesthetics",
+  "trade": "med spa",
+  "city": "Ormond Beach",
+  "website": "https://enchantedmedicalaesthetics.com",
+  "notes": "Ormond Beach, DeLand & Palm Coast locations (local)",
+  "source": "web search",
+  "page": "https://enchantedmedicalaesthetics.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lentz Plastic Surgery (Medical Spa)",
+  "trade": "med spa",
+  "city": "Ormond Beach",
+  "website": "https://www.drlentz.com",
+  "notes": "plastic surgery practice med spa",
+  "source": "web search",
+  "page": "https://www.drlentz.com/medical-spa-daytona-beach/",
+  "alsoCities": []
+ },
+ {
+  "name": "Divine MedSpa",
+  "trade": "med spa",
+  "city": "Ormond Beach",
+  "website": "https://divinelaser.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://divinelaser.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Amethyst Wellness",
+  "trade": "med spa",
+  "city": "Palm Coast",
+  "website": "https://www.amethystwellness.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.amethystwellness.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lifted Aesthetics and Wellness",
+  "trade": "med spa",
+  "city": "Palm Coast",
+  "website": "https://www.liftedaestheticswellness.com",
+  "notes": "mobile services Volusia/Flagler",
+  "source": "web search",
+  "page": "https://www.liftedaestheticswellness.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Europa Salon & Spa",
+  "trade": "med spa",
+  "city": "Palm Coast",
+  "website": "https://relaxateuropa.com",
+  "notes": "salon + med spa",
+  "source": "web search",
+  "page": "https://relaxateuropa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cypress Point Medical Spa",
+  "trade": "med spa",
+  "city": "Palm Coast",
+  "website": "https://cypresspointmedspa.com",
+  "notes": "FB https://www.facebook.com/cypresspointmedspa/",
+  "source": "web search",
+  "page": "https://cypresspointmedspa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Modern Dental (R. Jacob DMD)",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://www.rjacobdmd.com",
+  "notes": "17 Old Kings Rd N Ste H",
+  "source": "web search",
+  "page": "https://www.rjacobdmd.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dentique Dental",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://dentique-dental.com",
+  "notes": "35+ yrs",
+  "source": "web search",
+  "page": "https://dentique-dental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida Family Dentistry (Travis Ray DMD)",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://www.floridafamilydentistry.com",
+  "notes": "family-owned since 1976",
+  "source": "web search",
+  "page": "https://www.floridafamilydentistry.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Advanced Dental Care of Florida",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://www.dentalcarepalmcoast.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.dentalcarepalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Boulder Rock Dental",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://www.boulderrockdental.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.boulderrockdental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Old Kings Dental Care",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://oldkingsdentalcare.com",
+  "notes": "250 Palm Coast Pkwy NE; similar site template to Palm Coast Dental Care / Smiles on Cypress Point - possibly same DSO",
+  "source": "web search",
+  "page": "https://oldkingsdentalcare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Dental Care",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://palmcoastdentalcare.com",
+  "notes": "possibly DSO-affiliated, verify",
+  "source": "web search",
+  "page": "https://palmcoastdentalcare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Smiles on Cypress Point",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://smilesoncypresspoint.com",
+  "notes": "possibly DSO-affiliated, verify",
+  "source": "web search",
+  "page": "https://smilesoncypresspoint.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Christopher J. Cowell DMD",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://www.cowelldental.com",
+  "notes": "228 E New York Ave",
+  "source": "web search",
+  "page": "https://www.cowelldental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "DeLand Implant Dentistry",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://delandimplants.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://delandimplants.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "DeLand Smiles",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://www.delandsmiles.com",
+  "notes": "158 McGregor Rd",
+  "source": "web search",
+  "page": "https://www.delandsmiles.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Batten Dental",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://battendental.com",
+  "notes": "123 W Plymouth Ave",
+  "source": "web search",
+  "page": "https://battendental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Woodland Dental Care",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://woodlanddentalcarefl.com",
+  "notes": "Dr. Maria Martinez Carrillo",
+  "source": "web search",
+  "page": "https://woodlanddentalcarefl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "DeLand Family Dental",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://delandfamilydental.com",
+  "notes": "since 1945, Dr. Craig Barney",
+  "source": "web search",
+  "page": "https://delandfamilydental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Terry Blanks Jr DDS Family Dental Care",
+  "trade": "dentist",
+  "city": "DeLand",
+  "website": "https://www.terryblanksjrdds.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.terryblanksjrdds.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Port Orange Chiropractor (yourchiroportorange.com)",
+  "trade": "chiropractor",
+  "city": "Port Orange",
+  "website": "https://www.yourchiroportorange.com",
+  "notes": "practice name not shown in result title",
+  "source": "web search",
+  "page": "https://www.yourchiroportorange.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Beacon Chiropractic & Wellness",
+  "trade": "chiropractor",
+  "city": "Port Orange",
+  "website": "https://www.beaconchiroportorange.com",
+  "notes": "Dr. Diones Valentin",
+  "source": "web search",
+  "page": "https://www.beaconchiroportorange.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Atlantic Chiropractic and Wellness Center",
+  "trade": "chiropractor",
+  "city": "Port Orange",
+  "website": "https://www.atlanticchirofl.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.atlanticchirofl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Radiant Health Chiropractic",
+  "trade": "chiropractor",
+  "city": "Port Orange",
+  "website": "https://portorangechiropractor.com",
+  "notes": "Dr. Brandon LaVelle",
+  "source": "web search",
+  "page": "https://portorangechiropractor.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "HEAL with Chiropractic",
+  "trade": "chiropractor",
+  "city": "Port Orange",
+  "website": "https://www.healchiro.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.healchiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Edge Chiropractic",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://www.theedgechiro.com",
+  "notes": "Dr. Jason Dunlap, 4 Pearl Dr",
+  "source": "web search",
+  "page": "https://www.theedgechiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ormond's Family Chiropractic Center",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://www.ormondfamilychiro.com",
+  "notes": "$29 adjustments",
+  "source": "web search",
+  "page": "https://www.ormondfamilychiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ormond Aligned Chiropractic",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://www.lombardochiro.com",
+  "notes": "Drs. Rebecca Bruno & Meagan Vecino",
+  "source": "web search",
+  "page": "https://www.lombardochiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ormond Beach Chiropractic",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://ormondbeachchiropractor.com",
+  "notes": "FB https://www.facebook.com/ormondbeachchiropractic/",
+  "source": "web search",
+  "page": "https://ormondbeachchiropractor.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Hill Family Chiropractic P.A.",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://www.ormondhillfamilychiropractic.com",
+  "notes": "Drs. Mike & Sarah Hill",
+  "source": "web search",
+  "page": "https://www.ormondhillfamilychiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida Spine & Disc Institute",
+  "trade": "chiropractor",
+  "city": "Ormond Beach",
+  "website": "https://flspinedisc.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://flspinedisc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Animal Clinic of New Smyrna Beach",
+  "trade": "veterinarian",
+  "city": "New Smyrna Beach",
+  "website": "http://www.animalclinicofnsb.com",
+  "notes": "1984 SR 44; Ken Cox DVM; site is http (no https)",
+  "source": "web search",
+  "page": "http://www.animalclinicofnsb.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Glencoe Veterinary Hospital",
+  "trade": "veterinarian",
+  "city": "New Smyrna Beach",
+  "website": "https://glencoevethospital.com",
+  "notes": "423 N Glencoe Rd",
+  "source": "web search",
+  "page": "https://glencoevethospital.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "East Coast Animal Hospital",
+  "trade": "veterinarian",
+  "city": "Palm Coast",
+  "website": "https://www.eastcoastanimalhospital.com",
+  "notes": "10 Florida Park Dr",
+  "source": "web search",
+  "page": "https://www.eastcoastanimalhospital.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pine Lakes Animal Hospital",
+  "trade": "veterinarian",
+  "city": "Palm Coast",
+  "website": "https://pinelakesanimal.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://pinelakesanimal.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Safe Haven Veterinary Hospital",
+  "trade": "veterinarian",
+  "city": "Palm Coast",
+  "website": "https://safehavenvet.com",
+  "notes": "since 1997",
+  "source": "web search",
+  "page": "https://safehavenvet.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Animal Emergency Hospital Palm Coast",
+  "trade": "veterinarian (emergency)",
+  "city": "Palm Coast",
+  "website": "https://animalerpalmcoast.com",
+  "notes": "124 Flagler Plaza Dr; ownership (independent vs corporate) unverified",
+  "source": "web search",
+  "page": "https://animalerpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Thomas Center for Physical Therapy",
+  "trade": "physical therapy",
+  "city": "Daytona Beach",
+  "website": "https://www.thomasphysicaltherapy.com",
+  "notes": "private practice, 1717 N Clyde Morris Blvd",
+  "source": "web search",
+  "page": "https://www.thomasphysicaltherapy.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Greater Daytona Physical Therapy",
+  "trade": "physical therapy",
+  "city": "Daytona Beach",
+  "website": "https://daytonapt.com",
+  "notes": "1901 Mason Ave Ste 105",
+  "source": "web search",
+  "page": "https://daytonapt.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "HomeDocs (In-Home Physical Therapy)",
+  "trade": "physical therapy",
+  "city": "Daytona Beach",
+  "website": "https://www.homedocsfla.com",
+  "notes": "in-home care provider; service page",
+  "source": "web search",
+  "page": "https://www.homedocsfla.com/physical-therapy-daytona-beach.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Landis, Graham & French",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://www.landispa.com",
+  "notes": "Volusia County firm (DeLand-based)",
+  "source": "web search",
+  "page": "https://www.landispa.com/family-law-attorney-daytona-beach-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "Rice Law Firm",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://www.ricelawflorida.com",
+  "notes": "Paul E. Rice Jr., board certified",
+  "source": "web search",
+  "page": "https://www.ricelawflorida.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cobb Cole",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://cobbcole.com",
+  "notes": "larger local multi-practice firm",
+  "source": "web search",
+  "page": "https://cobbcole.com/service/family-law/",
+  "alsoCities": []
+ },
+ {
+  "name": "Law Office of Carol Lee Peake",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://www.carolpeakeattorney.com",
+  "notes": "also Palm Coast office page",
+  "source": "web search",
+  "page": "https://www.carolpeakeattorney.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Law Offices of Robert Stepniak",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://www.stepniaklaw.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.stepniaklaw.com/index.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Law Office of Jeffrey A. Klein",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://www.floridakleinlaw.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.floridakleinlaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Daytona Divorce Lawyer (daytonabeachfamilylawyer.com)",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://daytonabeachfamilylawyer.com",
+  "notes": "firm name not shown in result",
+  "source": "web search",
+  "page": "https://daytonabeachfamilylawyer.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lauren Koleilat (Daytona Family Law)",
+  "trade": "family law attorney",
+  "city": "Daytona Beach",
+  "website": "https://daytonafamilylaw.com",
+  "notes": "(386) 253-4720",
+  "source": "web search",
+  "page": "https://daytonafamilylaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Wing, Weber & Co, PL",
+  "trade": "CPA / tax preparer",
+  "city": "Ormond Beach",
+  "website": "https://www.wwcocpa.com",
+  "notes": "since 1978; 595 W Granada Blvd",
+  "source": "web search",
+  "page": "https://www.wwcocpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Travis Perry CPA, PA",
+  "trade": "CPA / tax preparer",
+  "city": "Ormond Beach",
+  "website": "https://www.tperrycpa.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.tperrycpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Olivari & Associates",
+  "trade": "CPA / tax preparer",
+  "city": "Ormond Beach",
+  "website": "https://www.olivaricpa.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.olivaricpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Goan Law",
+  "trade": "family law attorney",
+  "city": "Palm Coast",
+  "website": "https://www.goanlaw.com",
+  "notes": "30+ yrs",
+  "source": "web search",
+  "page": "https://www.goanlaw.com/family-law-attorney/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dwyer & Knight Law Firm",
+  "trade": "family law attorney",
+  "city": "Palm Coast",
+  "website": "https://www.dwyerknight.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.dwyerknight.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Steven deLaroche Attorney at Law",
+  "trade": "family law attorney",
+  "city": "Palm Coast",
+  "website": "https://delaroche-law.com",
+  "notes": "386-947-0909",
+  "source": "web search",
+  "page": "https://delaroche-law.com/family-law.php?city=Palm+Coast",
+  "alsoCities": []
+ },
+ {
+  "name": "Goodfellow & Company, CPA",
+  "trade": "CPA / tax preparer",
+  "city": "DeLand",
+  "website": "https://www.delandcpa.com",
+  "notes": "since 2006; also delandaccountingfirm.com",
+  "source": "web search",
+  "page": "https://www.delandcpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Stevenson & Blinn, CPA, PA",
+  "trade": "CPA / tax preparer",
+  "city": "DeLand",
+  "website": "https://www.stevensonandblinncpa.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.stevensonandblinncpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dickinson & McDonald, PA",
+  "trade": "CPA / tax preparer",
+  "city": "DeLand",
+  "website": "https://www.dickinsoncpa.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.dickinsoncpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Physical Therapy",
+  "trade": "physical therapy",
+  "city": "Palm Coast",
+  "website": "https://www.palmcoastpt.com",
+  "notes": "Dr. Lori Criswell, 34+ yrs",
+  "source": "web search",
+  "page": "https://www.palmcoastpt.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Sports Medicine",
+  "trade": "physical therapy",
+  "city": "Palm Coast",
+  "website": "https://palmcoastsportsmedicine.net",
+  "notes": "",
+  "source": "web search",
+  "page": "https://palmcoastsportsmedicine.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ability Rehabilitation (Palm Coast Clinic)",
+  "trade": "physical therapy",
+  "city": "Palm Coast",
+  "website": "https://abilityrehabilitation.com",
+  "notes": "10 Cypress Point Pkwy; has multiple NE FL clinics - verify size",
+  "source": "web search",
+  "page": "https://abilityrehabilitation.com/palm-coast-clinic/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Med Spa of New Smyrna Beach",
+  "trade": "med spa",
+  "city": "New Smyrna Beach",
+  "website": "https://themedspansb.com",
+  "notes": "physician-owned, est. 2013; 115 N Orange St",
+  "source": "web search",
+  "page": "https://themedspansb.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Goldfingers Aesthetics",
+  "trade": "med spa",
+  "city": "New Smyrna Beach",
+  "website": "https://goldfingersaesthetics.com",
+  "notes": "location page; may have multiple locations",
+  "source": "web search",
+  "page": "https://goldfingersaesthetics.com/new-smyrna-beach",
+  "alsoCities": []
+ },
+ {
+  "name": "Atlantic Animal Hospital of Port Orange",
+  "trade": "veterinarian",
+  "city": "Port Orange",
+  "website": "https://www.atlanticdvm.com",
+  "notes": "3506 S Nova Rd",
+  "source": "web search",
+  "page": "https://www.atlanticdvm.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Halifax Vet Center",
+  "trade": "veterinarian",
+  "city": "Port Orange",
+  "website": "https://halifaxvetcenter.com",
+  "notes": "1734 Dunlawton Ave",
+  "source": "web search",
+  "page": "https://halifaxvetcenter.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Beville Animal Hospital",
+  "trade": "veterinarian",
+  "city": "Port Orange",
+  "website": "https://bevilleanimalhospital.com",
+  "notes": "location page",
+  "source": "web search",
+  "page": "https://bevilleanimalhospital.com/port-orange/",
+  "alsoCities": []
+ },
+ {
+  "name": "My Pets Wellness",
+  "trade": "veterinarian",
+  "city": "Port Orange",
+  "website": "https://mypetswellness.net",
+  "notes": "",
+  "source": "web search",
+  "page": "https://mypetswellness.net/veterinary-hospital/port-orange-vet/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ravenwood Veterinary Clinic",
+  "trade": "veterinarian",
+  "city": "Port Orange",
+  "website": "https://www.ravenwoodvet.net",
+  "notes": "AAHA accredited",
+  "source": "web search",
+  "page": "https://www.ravenwoodvet.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Miranda & Ortega Dental Group",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://www.mirandaandortegadental.com",
+  "notes": "386-428-2958",
+  "source": "web search",
+  "page": "https://www.mirandaandortegadental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Precision Cosmetic and Family Dentistry",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://newsmyrnadentistry.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://newsmyrnadentistry.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Hammock Gardens Dental Care",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://hammockgardensdentalcare.com",
+  "notes": "Dr. Skyler Terrell; site template similar to other possible DSO sites - verify",
+  "source": "web search",
+  "page": "https://hammockgardensdentalcare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "McDonnell Hovencamp Dental Care",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://www.mcdonnelldentalcare.com",
+  "notes": "NSB & Port Orange",
+  "source": "web search",
+  "page": "https://www.mcdonnelldentalcare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kilman Dental",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://www.kilmandental.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.kilmandental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Atlantic Family Dental",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://atlanticdental.net",
+  "notes": "",
+  "source": "web search",
+  "page": "https://atlanticdental.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "McKenzie Dental Group",
+  "trade": "dentist",
+  "city": "New Smyrna Beach",
+  "website": "https://www.mckenziedentalgroup.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.mckenziedentalgroup.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "LCI Taxes",
+  "trade": "CPA / tax preparer",
+  "city": "Palm Coast",
+  "website": "https://www.lcitaxes.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.lcitaxes.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Phelan, Schroeder & Taylor, LLC",
+  "trade": "CPA / tax preparer",
+  "city": "Palm Coast",
+  "website": "https://www.pstcpa.com",
+  "notes": "50 Leanni Way",
+  "source": "web search",
+  "page": "https://www.pstcpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Certified Financial & Tax",
+  "trade": "CPA / tax preparer",
+  "city": "Palm Coast",
+  "website": "https://www.cftcpa.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.cftcpa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pamela B. Hathaway, CPA",
+  "trade": "CPA / tax preparer",
+  "city": "Palm Coast",
+  "website": "https://www.pbhcpa.net",
+  "notes": "not accepting new clients per result",
+  "source": "web search",
+  "page": "https://www.pbhcpa.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Tax Services",
+  "trade": "CPA / tax preparer",
+  "city": "Palm Coast",
+  "website": "https://palmcoastaccountant.com",
+  "notes": "possibly Convery Tax (2,000+ returns/yr) - verify name",
+  "source": "web search",
+  "page": "https://palmcoastaccountant.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Chiropractor Palm Coast (chiropractorpalmcoast.com)",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://www.chiropractorpalmcoast.com",
+  "notes": "practice name not shown in title",
+  "source": "web search",
+  "page": "https://www.chiropractorpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Coast Acupuncture & Chiropractic",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://palmcoastacupuncture.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://palmcoastacupuncture.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pearson Family Chiropractic",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://pearsonfamilychiropractic.com",
+  "notes": "Dr. David B. Pearson",
+  "source": "web search",
+  "page": "https://pearsonfamilychiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Davis Chiropractic Center",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://www.drkenchiropractic.com",
+  "notes": "Dr. Kenneth Davis",
+  "source": "web search",
+  "page": "https://www.drkenchiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Wellness One Chiropractic",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://www.wellnessonechiropractic.com",
+  "notes": "auto accident focus",
+  "source": "web search",
+  "page": "https://www.wellnessonechiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Pivotal Health Systems",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://pivotalhealthsystems.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://pivotalhealthsystems.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "New Spring Chiropractic",
+  "trade": "chiropractor",
+  "city": "Palm Coast",
+  "website": "https://newspringchiro.com",
+  "notes": "4.9 stars 200+ reviews",
+  "source": "web search",
+  "page": "https://newspringchiro.com/chiropractor-palm-coast-welcome-2/",
+  "alsoCities": []
+ },
+ {
+  "name": "Paul, Elkind, Branz & Paul",
+  "trade": "family law attorney",
+  "city": "DeLand",
+  "website": "https://www.paulandelkind.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.paulandelkind.com/family-law/",
+  "alsoCities": []
+ },
+ {
+  "name": "Downer Law",
+  "trade": "family law attorney",
+  "city": "DeLand",
+  "website": "https://www.delandlegal.com",
+  "notes": "family & business law",
+  "source": "web search",
+  "page": "https://www.delandlegal.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Leonard Legal, P.A.",
+  "trade": "family law attorney",
+  "city": "DeLand",
+  "website": "https://leonardlegal.net",
+  "notes": "Christine Leonard",
+  "source": "web search",
+  "page": "https://leonardlegal.net/deland-family-law.html",
+  "alsoCities": []
+ },
+ {
+  "name": "Law Office of Christine Aung PLLC",
+  "trade": "family law attorney",
+  "city": "DeLand",
+  "website": "https://www.aunglaw.com",
+  "notes": "",
+  "source": "web search",
+  "page": "https://www.aunglaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Masters Lawn & Pest",
+  "trade": "lawn care / landscaping",
+  "city": "Flagler Beach",
+  "website": "https://themasterslawncare.com",
+  "notes": "20+ yrs North FL, 904 number; may be multi-location - verify",
+  "source": "web search",
+  "page": "https://themasterslawncare.com/Flagler-Beach-Lawn-Care-Pest-Control",
+  "alsoCities": []
+ },
+ {
+  "name": "Criscione Electrical Services",
+  "trade": "electrician",
+  "city": "Bunnell",
+  "website": "https://criscione-electric.com",
+  "notes": "since 1986; service-area page",
+  "source": "web search",
+  "page": "https://criscione-electric.com/service-areas/bunnell/",
+  "alsoCities": []
+ },
+ {
+  "name": "Salon 7 & Medi Spa",
+  "trade": "hairdresser",
+  "city": "",
+  "website": "www.salon7.vpweb.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "www.salon7.vpweb.com",
+  "alsoCities": [],
+  "freeSubdomain": true
+ },
+ {
+  "name": "First Impressions Barbershop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.sanfordbarbershop.net",
+  "phone": "+1-954-609-8150",
+  "source": "OpenStreetMap",
+  "page": "www.sanfordbarbershop.net",
+  "alsoCities": []
+ },
+ {
+  "name": "The Cardiovascular Center, P.A.",
+  "trade": "doctors",
+  "city": "Deltona",
+  "website": "https://www.thecvcenter.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.thecvcenter.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Newman Veterinary Centers",
+  "trade": "veterinary",
+  "city": "Deltona",
+  "website": "https://www.newmanvets.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.newmanvets.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Alvarez Family Chiropractic",
+  "trade": "alternative",
+  "city": "DeLand",
+  "website": "https://alvarezchiropractic.com",
+  "phone": "+1-386-734-2522",
+  "source": "OpenStreetMap",
+  "page": "https://alvarezchiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mary Lynn Realty",
+  "trade": "estate_agent",
+  "city": "Daytona Beach",
+  "website": "https://www.marylynnrealty.com",
+  "phone": "+1 386 788 4338",
+  "source": "OpenStreetMap",
+  "page": "https://www.marylynnrealty.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Taborda Dentistry",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://tabordadentistry.com",
+  "phone": "+1-386-310-3060",
+  "source": "OpenStreetMap",
+  "page": "https://tabordadentistry.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lee Nails & Spa",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://www.volusiamall.net",
+  "phone": "+1 386 255 2007",
+  "source": "OpenStreetMap",
+  "page": "https://www.volusiamall.net/store/lee_nails_spa",
+  "alsoCities": []
+ },
+ {
+  "name": "Grand Living Realty",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.grandlivingrealty.net",
+  "phone": "+1-386-447-0800",
+  "source": "OpenStreetMap",
+  "page": "https://www.grandlivingrealty.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Deltona Car Accident Lawyer Group",
+  "trade": "lawyer",
+  "city": "Deltona",
+  "website": "http://caraccident.the-company-lawyer.com",
+  "phone": "+1-386-516-4188",
+  "source": "OpenStreetMap",
+  "page": "http://caraccident.the-company-lawyer.com/deltona-fl",
+  "alsoCities": []
+ },
+ {
+  "name": "Cat-A-Holic Cats",
+  "trade": "pet_grooming",
+  "city": "Port Orange",
+  "website": "https://cat-a-holiccats.com",
+  "phone": "+1-386-212-5523",
+  "source": "OpenStreetMap",
+  "page": "https://cat-a-holiccats.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Rebuilding Life Esthetics",
+  "trade": "company",
+  "city": "Lake Mary",
+  "website": "http://orlandoesthetics.com",
+  "phone": "+1 407-878-7889",
+  "source": "OpenStreetMap",
+  "page": "http://orlandoesthetics.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Charley Baldwin Realtor",
+  "trade": "estate_agent",
+  "city": "New Smyrna Beach",
+  "website": "http://charleybaldwinrealtor.com",
+  "phone": "+1-386-689-8184",
+  "source": "OpenStreetMap",
+  "page": "http://charleybaldwinrealtor.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Stanley Moving & Deliveries",
+  "trade": "moving_company",
+  "city": "Port Orange",
+  "website": "https://www.stanleymovinganddeliveries.com",
+  "phone": "+1-386-767-5090",
+  "source": "OpenStreetMap",
+  "page": "https://www.stanleymovinganddeliveries.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Tropical Auto Air Repair Center",
+  "trade": "car_repair",
+  "city": "Edgewater",
+  "website": "https://www.tropicalautofl.com",
+  "phone": "+1-386-428-3787",
+  "source": "OpenStreetMap",
+  "page": "https://www.tropicalautofl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Tim Tiralosi DMD",
+  "trade": "dentist",
+  "city": "Lake Mary",
+  "website": "https://www.tiralosidental.com",
+  "phone": "+1-407-333-1335",
+  "source": "OpenStreetMap",
+  "page": "https://www.tiralosidental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "National Investigative Training Academy",
+  "trade": "company",
+  "city": "Lake Mary",
+  "website": "https://investigativeacademy.com",
+  "phone": "+1-800-730-6482",
+  "source": "OpenStreetMap",
+  "page": "https://investigativeacademy.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Advanced Gastroenterology & Endoscopy Center",
+  "trade": "doctors",
+  "city": "",
+  "website": "http://www.advancedgi.org",
+  "phone": "+1 386 763 4920",
+  "source": "OpenStreetMap",
+  "page": "http://www.advancedgi.org/",
+  "alsoCities": []
+ },
+ {
+  "name": "Greg Reynolds Construction Lc",
+  "trade": "construction_company",
+  "city": "Daytona Beach",
+  "website": "https://www.gregreynoldsconstructionlc.com",
+  "phone": "+1-386-671-2569",
+  "source": "OpenStreetMap",
+  "page": "https://www.gregreynoldsconstructionlc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kremer Sales",
+  "trade": "company",
+  "city": "DeLand",
+  "website": "http://kremersales.com",
+  "phone": "+1-352-357-3118",
+  "source": "OpenStreetMap",
+  "page": "http://kremersales.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Pride Lawn Service LLC",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://pridelawnsrv.com",
+  "phone": "+1-386-847-8471",
+  "source": "OpenStreetMap",
+  "page": "https://pridelawnsrv.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Darcy Diamond Realtor",
+  "trade": "estate_agent",
+  "city": "Flagler Beach",
+  "website": "https://www.darcydiamondrealtor.com",
+  "phone": "+1 386-986-7880",
+  "source": "OpenStreetMap",
+  "page": "https://www.darcydiamondrealtor.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "White Wolf Dental",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://whitewolfdental.com",
+  "phone": "+1 386 882 9900",
+  "source": "OpenStreetMap",
+  "page": "https://whitewolfdental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Vigo Chiropractic LLC",
+  "trade": "alternative",
+  "city": "Deland",
+  "website": "https://www.vigochiropractic.com",
+  "phone": "+1 386-624-6770",
+  "source": "OpenStreetMap",
+  "page": "https://www.vigochiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Elegant Dominican Beauty Salon",
+  "trade": "beauty",
+  "city": "Orange City",
+  "website": "https://www.elegantdominicanbeautysalon.com",
+  "phone": "+1-240-346-0453",
+  "source": "OpenStreetMap",
+  "page": "https://www.elegantdominicanbeautysalon.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Fleur De Lis Salon",
+  "trade": "hairdresser",
+  "city": "Port Orange",
+  "website": "http://www.fleurdelissaloninc.com",
+  "phone": "+1-386-760-3515",
+  "source": "OpenStreetMap",
+  "page": "http://www.fleurdelissaloninc.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Park Air Inc",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://www.parkairfl.com",
+  "phone": "+1-407-628-4254",
+  "source": "OpenStreetMap",
+  "page": "https://www.parkairfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Venetian Nail Spa",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://venetiansalon.com",
+  "phone": "+1 386 603 9999",
+  "source": "OpenStreetMap",
+  "page": "https://venetiansalon.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cypress Point Family Dentistry",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://cypresspointdentist.com",
+  "phone": "+1-386-445-6677",
+  "source": "OpenStreetMap",
+  "page": "https://cypresspointdentist.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Zimmet & Zimmet",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://zimmetzimmet.com",
+  "phone": "+1-386-255-6400",
+  "source": "OpenStreetMap",
+  "page": "https://zimmetzimmet.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Natural Health and Wellness Chiropractic, LLC",
+  "trade": "massage",
+  "city": "Daytona Beach",
+  "website": "https://www.nhwchiro.com",
+  "phone": "+1 386 872 7167",
+  "source": "OpenStreetMap",
+  "page": "https://www.nhwchiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Geri Westfall Real Estate",
+  "trade": "estate_agent",
+  "city": "Ormond Beach",
+  "website": "https://www.geriwestfallre.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.geriwestfallre.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cherise's Salon",
+  "trade": "hairdresser",
+  "city": "Daytona Beach Shores",
+  "website": "https://www.cherises.com",
+  "phone": "+1 386 760-2035",
+  "source": "OpenStreetMap",
+  "page": "https://www.cherises.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cash Home Buyer Florida",
+  "trade": "estate_agent",
+  "city": "Ormond Beach",
+  "website": "https://cashhomebuyerflorida.com",
+  "phone": "+1-386-383-2085",
+  "source": "OpenStreetMap",
+  "page": "https://cashhomebuyerflorida.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Electrical Energy Systems",
+  "trade": "electrician",
+  "city": "Edgewater",
+  "website": "https://electricalenergysystemsinc.com",
+  "phone": "+1 386-423-6700",
+  "source": "OpenStreetMap",
+  "page": "https://electricalenergysystemsinc.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Mercado Family Law Mediation",
+  "trade": "lawyer",
+  "city": "New Smyrna Beach",
+  "website": "https://mercadofamilylaw.com",
+  "phone": "+1-386-269-9799",
+  "source": "OpenStreetMap",
+  "page": "https://mercadofamilylaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Venus Nails and Spa",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://www.thepavilionatportorange.com",
+  "phone": "+1 386 788 6789",
+  "source": "OpenStreetMap",
+  "page": "https://www.thepavilionatportorange.com/store/venus_nail_and_spa",
+  "alsoCities": []
+ },
+ {
+  "name": "Berlin & Denys Insurance",
+  "trade": "insurance",
+  "city": "New Smyrna Beach",
+  "website": "https://www.berlindenys.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.berlindenys.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Collaborative Divorce Center",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://masterscdc.com",
+  "phone": "+1-386-271-8044",
+  "source": "OpenStreetMap",
+  "page": "https://masterscdc.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Wholesale Furnature Outlet",
+  "trade": "furniture",
+  "city": "Daytona Beach",
+  "website": "http://www.wfoutlets.com",
+  "phone": "+1-386-301-4969",
+  "source": "OpenStreetMap",
+  "page": "http://www.wfoutlets.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Khaotic Offroad",
+  "trade": "car_repair",
+  "city": "Debary",
+  "website": "https://khaoticoffroad.com",
+  "phone": "+1-386-848-2716",
+  "source": "OpenStreetMap",
+  "page": "https://khaoticoffroad.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Vogel Chiropractic Clinic",
+  "trade": "alternative",
+  "city": "South Daytona",
+  "website": "https://www.vogelchiropractic.com",
+  "phone": "+1 386 788 4778",
+  "source": "OpenStreetMap",
+  "page": "https://www.vogelchiropractic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Nest Luxury Living",
+  "trade": "furniture",
+  "city": "South Daytona",
+  "website": "https://designkollective.com",
+  "phone": "+1 386 238 9044",
+  "source": "OpenStreetMap",
+  "page": "https://designkollective.com/stores/nestluxuryliving",
+  "alsoCities": []
+ },
+ {
+  "name": "Atlantic Dentists",
+  "trade": "dentist",
+  "city": "",
+  "website": "https://AtlanticDentists.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "AtlanticDentists.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Realty Exchange",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.realtyexchangefl.com",
+  "phone": "+1 386 446 0017",
+  "source": "OpenStreetMap",
+  "page": "https://www.realtyexchangefl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Men's Groom Room Barber Lounge",
+  "trade": "hairdresser",
+  "city": "",
+  "website": "https://mgrbarberlounge.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://mgrbarberlounge.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sanford Barber Shop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.facebook.com",
+  "phone": "+1-407-328-8362",
+  "source": "OpenStreetMap",
+  "page": "www.facebook.com/sanfordbarber/",
+  "alsoCities": []
+ },
+ {
+  "name": "Saint Johns Realty",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://stjohnsrealtyco.com",
+  "phone": "+1-407-322-6123",
+  "source": "OpenStreetMap",
+  "page": "https://stjohnsrealtyco.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Professional Real Estate Company",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://professionalrealestatecompanyllc.com",
+  "phone": "+1-407-330-6700",
+  "source": "OpenStreetMap",
+  "page": "https://professionalrealestatecompanyllc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Bicikleta Bike Shop",
+  "trade": "bicycle",
+  "city": "Sanford",
+  "website": "https://www.bicikletabikeshop.com",
+  "phone": "+1-407-878-7836",
+  "source": "OpenStreetMap",
+  "page": "https://www.bicikletabikeshop.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Nails by Arisha LLC",
+  "trade": "beauty",
+  "city": "Sanford",
+  "website": "https://il.ink",
+  "phone": "+1-787-909-6286",
+  "source": "OpenStreetMap",
+  "page": "https://il.ink/Nailsbyarisha",
+  "alsoCities": []
+ },
+ {
+  "name": "Traditions Barber Shop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.facebook.com",
+  "phone": "+1-321-578-0090",
+  "source": "OpenStreetMap",
+  "page": "https://www.facebook.com/Traditions-Barbershop-1491594501158713/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida Sunshine Insurance Agency",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://www.flsunshineins.com",
+  "phone": "+1-407-878-2880",
+  "source": "OpenStreetMap",
+  "page": "https://www.flsunshineins.com",
+  "alsoCities": []
+ },
+ {
+  "name": "LA Chic' Stylz",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://lachicstylz.net",
+  "phone": "+1-407-688-6500",
+  "source": "OpenStreetMap",
+  "page": "https://lachicstylz.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "VMZ Beauty Studio",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://vmzbeautystudio.com",
+  "phone": "+1-407-732-7900",
+  "source": "OpenStreetMap",
+  "page": "https://vmzbeautystudio.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sanford Flower Shop",
+  "trade": "florist",
+  "city": "Sanford",
+  "website": "https://www.sanfordflowershop.com",
+  "phone": "+1-407-322-1822",
+  "source": "OpenStreetMap",
+  "page": "https://www.sanfordflowershop.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Pedal Driven Co.",
+  "trade": "bicycle",
+  "city": "Sanford",
+  "website": "https://www.pedaldrivenco.com",
+  "phone": "+1-407-416-7200",
+  "source": "OpenStreetMap",
+  "page": "https://www.pedaldrivenco.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Alliance Home Realty",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://www.alliancehomerealty.com",
+  "phone": "+1-407-322-7222",
+  "source": "OpenStreetMap",
+  "page": "https://www.alliancehomerealty.com",
+  "alsoCities": []
+ },
+ {
+  "name": "X'Spreshun Hair Studio",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.xspreshun.com",
+  "phone": "+1-407-323-2324",
+  "source": "OpenStreetMap",
+  "page": "https://www.xspreshun.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Madison Insurance Group Inc",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://miginsgroup.com",
+  "phone": "+1-888-981-1698",
+  "source": "OpenStreetMap",
+  "page": "https://miginsgroup.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Fresenius Kidney Care",
+  "trade": "clinic",
+  "city": "Sanford",
+  "website": "https://www.freseniuskidneycare.com",
+  "phone": "+1-800-881-5101",
+  "source": "OpenStreetMap",
+  "page": "https://www.freseniuskidneycare.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Prium Life and Health",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://priumlifeandhealth.com",
+  "phone": "+1-877-976-5333",
+  "source": "OpenStreetMap",
+  "page": "https://priumlifeandhealth.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Helix at Lake Mary",
+  "trade": "estate_agent",
+  "city": "Lake Mary",
+  "website": "https://www.helixorlando.com",
+  "phone": "+1-833-220-5669",
+  "source": "OpenStreetMap",
+  "page": "https://www.helixorlando.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Michael P. Falkowski",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://falkowskilaw.com",
+  "phone": "+1 386 257 1606",
+  "source": "OpenStreetMap",
+  "page": "https://falkowskilaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "ForEyes",
+  "trade": "optometrist",
+  "city": "Daytona Beach",
+  "website": "https://www.foreyes.com",
+  "phone": "+1 386 257 1096",
+  "source": "OpenStreetMap",
+  "page": "https://www.foreyes.com/locations/1808-west-international-speedway-blvd-daytona-beach-fl/",
+  "alsoCities": []
+ },
+ {
+  "name": "A Fresh New Me",
+  "trade": "counselling",
+  "city": "Daytona Beach",
+  "website": "https://www.afreshnewme.com",
+  "phone": "+1 386 333 9978",
+  "source": "OpenStreetMap",
+  "page": "https://www.afreshnewme.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Professional Moving & Storage",
+  "trade": "moving_company",
+  "city": "South Daytons",
+  "website": "https://professionalmovingandstorage.com",
+  "phone": "+1 844 914 6683",
+  "source": "OpenStreetMap",
+  "page": "https://professionalmovingandstorage.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Economy Dentures - Dr. Polite",
+  "trade": "dentist",
+  "city": "South Daytons",
+  "website": "http://www.economydentures.net",
+  "phone": "+1 386 333 3508",
+  "source": "OpenStreetMap",
+  "page": "http://www.economydentures.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cape Vista Dental",
+  "trade": "dentist",
+  "city": "Orange City",
+  "website": "https://dentist-orange-city.com",
+  "phone": "+1-386-774-0125",
+  "source": "OpenStreetMap",
+  "page": "https://dentist-orange-city.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "?",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://smilliedental.com",
+  "phone": "+1 386 317 4754",
+  "source": "OpenStreetMap",
+  "page": "https://smilliedental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Beautiful Hair Color Studio",
+  "trade": "hairdresser",
+  "city": "Port Orange",
+  "website": "https://www.beautifulhaircolorstudios.com",
+  "phone": "+1 386 763 0024",
+  "source": "OpenStreetMap",
+  "page": "https://www.beautifulhaircolorstudios.com/port-orange-pavilion",
+  "alsoCities": []
+ },
+ {
+  "name": "MM Nails",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://mmnailsportorange.com",
+  "phone": "+1 386 492 7861",
+  "source": "OpenStreetMap",
+  "page": "https://mmnailsportorange.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Watson Realty",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://www.watsonrealtycorp.com",
+  "phone": "+1 866 243 8193",
+  "source": "OpenStreetMap",
+  "page": "https://www.watsonrealtycorp.com/port-orange",
+  "alsoCities": []
+ },
+ {
+  "name": "Island Doctors",
+  "trade": "doctors",
+  "city": "Daytona Beach",
+  "website": "https://islanddoctors.com",
+  "phone": "+1 386 238 9217",
+  "source": "OpenStreetMap",
+  "page": "https://islanddoctors.com/location/daytona-beach-beville/",
+  "alsoCities": []
+ },
+ {
+  "name": "Peter Chiropractic and Wellness",
+  "trade": "alternative",
+  "city": "Daytona Beach",
+  "website": "https://www.porterchiropracticandwellness.com",
+  "phone": "+1 386 317 2000",
+  "source": "OpenStreetMap",
+  "page": "https://www.porterchiropracticandwellness.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Salon 31",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://www.salon31daytona.com",
+  "phone": "+1 386 872 5176",
+  "source": "OpenStreetMap",
+  "page": "https://www.salon31daytona.com/shop/",
+  "alsoCities": []
+ },
+ {
+  "name": "Lee Nails",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://lee-nails-lashes-llc.business.site",
+  "phone": "+1 386 767 5006",
+  "source": "OpenStreetMap",
+  "page": "https://lee-nails-lashes-llc.business.site/",
+  "alsoCities": []
+ },
+ {
+  "name": "After Glow",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://www.afterglowtanning.net",
+  "phone": "+1 386 310 8751",
+  "source": "OpenStreetMap",
+  "page": "https://www.afterglowtanning.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "?",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://www.kwdaytona.com",
+  "phone": "+1 386 944 2800",
+  "source": "OpenStreetMap",
+  "page": "https://www.kwdaytona.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Maxim Healthcare Group",
+  "trade": "insurance",
+  "city": "Port Orange",
+  "website": "https://www.maximhealthcare.com",
+  "phone": "+1 386 226 3493",
+  "source": "OpenStreetMap",
+  "page": "https://www.maximhealthcare.com/locations/daytona-fl",
+  "alsoCities": []
+ },
+ {
+  "name": "Passion Chiropractic",
+  "trade": "alternative",
+  "city": "Port Orange",
+  "website": "https://passionchiro.com",
+  "phone": "+1 386 947 7185",
+  "source": "OpenStreetMap",
+  "page": "https://passionchiro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Studio 78",
+  "trade": "hairdresser",
+  "city": "South Daytona",
+  "website": "https://studio78unisexhairsalon.com",
+  "phone": "+1 386 760 7929",
+  "source": "OpenStreetMap",
+  "page": "https://studio78unisexhairsalon.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "PawZazz Pet Salon",
+  "trade": "pet_grooming",
+  "city": "South Daytona",
+  "website": "https://pawzazzpetsalon.com",
+  "phone": "+1 386 492 5967",
+  "source": "OpenStreetMap",
+  "page": "https://pawzazzpetsalon.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Environics USA Inc",
+  "trade": "company",
+  "city": "Daytona Beach",
+  "website": "https://environics.fi",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://environics.fi/",
+  "alsoCities": []
+ },
+ {
+  "name": "Homes of Daytona Beach",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://homesofdaytonabeach.com",
+  "phone": "+1-386-338-8505",
+  "source": "OpenStreetMap",
+  "page": "https://homesofdaytonabeach.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Integrity Insurance Group",
+  "trade": "insurance",
+  "city": "Palm Coast",
+  "website": "https://www.iigfl.com",
+  "phone": "+1-386-259-1000",
+  "source": "OpenStreetMap",
+  "page": "https://www.iigfl.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Guardian Wraps",
+  "trade": "car_painter",
+  "city": "Sanford",
+  "website": "https://guardianwraps.com",
+  "phone": "+1 407-732-4427",
+  "source": "OpenStreetMap",
+  "page": "https://guardianwraps.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Country Club Properties Of Spruce Creek",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://SpruceCreekProperties.com",
+  "phone": "+1-386-756-6105",
+  "source": "OpenStreetMap",
+  "page": "https://SpruceCreekProperties.com",
+  "alsoCities": []
+ },
+ {
+  "name": "PRS Roofing",
+  "trade": "roofer",
+  "city": "DeBary",
+  "website": "https://prsroofpro.com",
+  "phone": "+1-800-750-9198",
+  "source": "OpenStreetMap",
+  "page": "https://prsroofpro.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Allied Veterinary Specialists",
+  "trade": "veterinary",
+  "city": "South Daytona",
+  "website": "https://alliedveterinaryspecialists.com",
+  "phone": "+1-386-287-6500",
+  "source": "OpenStreetMap",
+  "page": "https://alliedveterinaryspecialists.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "First Coast Choppers Tree Service",
+  "trade": "gardener",
+  "city": "Palm Coast",
+  "website": "https://firstcoastchopperstreeservice.com",
+  "phone": "+1-904-615-7724",
+  "source": "OpenStreetMap",
+  "page": "https://firstcoastchopperstreeservice.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Ground Effects Landscaping",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://groundeffectslandscapingfl.com",
+  "phone": "+1-386-402-0431",
+  "source": "OpenStreetMap",
+  "page": "https://groundeffectslandscapingfl.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Alper Law",
+  "trade": "lawyer",
+  "city": "Lake Mary",
+  "website": "https://www.alperlaw.com",
+  "phone": "+1-407-444-0404",
+  "source": "OpenStreetMap",
+  "page": "https://www.alperlaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "HD Drain Cleaning",
+  "trade": "plumber",
+  "city": "Ormond Beach",
+  "website": "https://hddraincleaning.com",
+  "phone": "+1-386-281-2523",
+  "source": "OpenStreetMap",
+  "page": "https://hddraincleaning.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Taxleaf Orlando",
+  "trade": "accountant",
+  "city": "Lake Mary",
+  "website": "https://taxleaforlando.com",
+  "phone": "+1-407-212-7292",
+  "source": "OpenStreetMap",
+  "page": "https://taxleaforlando.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Tidy Chap",
+  "trade": "hairdresser",
+  "city": "Palm Coast",
+  "website": "https://www.tidychap.com",
+  "phone": "+1-321-443-9259; +1-386-302-2067; +1-386-283-1653; +1-786-442-0445; +1-386-585-0356; +1-407-532-3722",
+  "source": "OpenStreetMap",
+  "page": "https://www.tidychap.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "R. Howe Electric Inc",
+  "trade": "electrician",
+  "city": "Sanford",
+  "website": "https://www.rhoweelectric.net",
+  "phone": "+1-407-714-1341",
+  "source": "OpenStreetMap",
+  "page": "https://www.rhoweelectric.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Volusia Weight Management",
+  "trade": "fitness_centre",
+  "city": "Port Orange",
+  "website": "https://volusiaweightmanagement.com",
+  "phone": "+1 386-222-2997",
+  "source": "OpenStreetMap",
+  "page": "https://volusiaweightmanagement.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Strada Services",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://stradaservices.com",
+  "phone": "+1-352-717-4741",
+  "source": "OpenStreetMap",
+  "page": "https://stradaservices.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "The Ticket Fighter",
+  "trade": "lawyer",
+  "city": "Lake Mary",
+  "website": "https://theticketfighter.com",
+  "phone": "+1-407-476-5120",
+  "source": "OpenStreetMap",
+  "page": "https://theticketfighter.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Regus Execu-Suites and Virtual Office Spaces",
+  "trade": "company",
+  "city": "",
+  "website": "http://Regus.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "http://Regus.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Marjohn SkinCare",
+  "trade": "doctors",
+  "city": "Lake Mary",
+  "website": "https://www.marjohnskincare.com",
+  "phone": "+1-407-920-6266",
+  "source": "OpenStreetMap",
+  "page": "https://www.marjohnskincare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Nika Athletics",
+  "trade": "fitness_centre",
+  "city": "DeLand",
+  "website": "https://nikaathletics.com",
+  "phone": "+1-386-703-9903",
+  "source": "OpenStreetMap",
+  "page": "https://nikaathletics.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Palm Tree Podiatry",
+  "trade": "doctors",
+  "city": "Deltona",
+  "website": "https://palmtreepodiatry.com",
+  "phone": "+1-386-777-7311",
+  "source": "OpenStreetMap",
+  "page": "https://palmtreepodiatry.com/appointments/",
+  "alsoCities": []
+ },
+ {
+  "name": "Family Health Source",
+  "trade": "doctors;dentist;pharmacy",
+  "city": "Deltona",
+  "website": "https://www.myfhs.org",
+  "phone": "+1-386-202-6025",
+  "source": "OpenStreetMap",
+  "page": "https://www.myfhs.org/",
+  "alsoCities": []
+ },
+ {
+  "name": "?",
+  "trade": "electrician",
+  "city": "Palm Coast",
+  "website": "https://www.electricianpalmcoast.com",
+  "phone": "+1-386-241-9899",
+  "source": "OpenStreetMap",
+  "page": "https://www.electricianpalmcoast.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Skin Love By Ashley",
+  "trade": "alternative",
+  "city": "Palm Coast",
+  "website": "https://www.skinlovebyashley.com",
+  "phone": "+1-386-675-8648",
+  "source": "OpenStreetMap",
+  "page": "https://www.skinlovebyashley.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Gino\u2019s Road Service & Repair",
+  "trade": "car_repair",
+  "city": "Daytona Beach",
+  "website": "https://ginostowing.com",
+  "phone": "+1-386-256-7970",
+  "source": "OpenStreetMap",
+  "page": "https://ginostowing.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Kat Preston The Barber",
+  "trade": "hairdresser",
+  "city": "Debary",
+  "website": "https://www.katprestonthebarber.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.katprestonthebarber.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Gabrielle Rogers - Salon Lofts",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://salonlofts.com",
+  "phone": "+1-407-730-0997",
+  "source": "OpenStreetMap",
+  "page": "https://salonlofts.com/gabby_rogers",
+  "alsoCities": []
+ },
+ {
+  "name": "Men's Groom Room Barber Lounge",
+  "trade": "hairdresser",
+  "city": "Lake Mary",
+  "website": "https://mensgroomroom.webflow.io",
+  "phone": "+1 407 878 3224",
+  "source": "OpenStreetMap",
+  "page": "https://mensgroomroom.webflow.io/",
+  "alsoCities": []
+ },
+ {
+  "name": "ATP Jet Center",
+  "trade": "company",
+  "city": "",
+  "website": "https://aptjetcenter.com",
+  "phone": "+1-386-385-8880",
+  "source": "OpenStreetMap",
+  "page": "https://aptjetcenter.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Southeast Volusia Family YMCA",
+  "trade": "fitness_centre",
+  "city": "",
+  "website": "https://vfymca.org",
+  "phone": "+1-386-409-9622",
+  "source": "OpenStreetMap",
+  "page": "https://vfymca.org/locations/southeast-volusia-family-ymca/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cool Solutions of Central Florida, Inc.",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://coolsolutionsacfl.com",
+  "phone": "+1-407-416-8148",
+  "source": "OpenStreetMap",
+  "page": "https://coolsolutionsacfl.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Terra-Scape",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://terra-scape.net",
+  "phone": "+1 386-465-4745",
+  "source": "OpenStreetMap",
+  "page": "https://terra-scape.net/",
+  "alsoCities": []
+ },
+ {
+  "name": "Transform Aesthetic Center",
+  "trade": "beauty",
+  "city": "New Smyrna Beach",
+  "website": "https://www.transformfl.com",
+  "phone": "+1-386-882-7830",
+  "source": "OpenStreetMap",
+  "page": "https://www.transformfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "J. Thaddeus Morgan, DMD",
+  "trade": "dentist",
+  "city": "Lake Mary",
+  "website": "https://www.lakemarydentist.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.lakemarydentist.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Cyrus Diagnostic Imaging",
+  "trade": "doctors",
+  "city": "Lake Mary",
+  "website": "https://cyrusdiagnostic.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://cyrusdiagnostic.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Craze Nails & Spa",
+  "trade": "beauty",
+  "city": "Lake Mary",
+  "website": "https://crazenailsspa.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://crazenailsspa.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "SoFlo Hot Yoga",
+  "trade": "fitness_centre",
+  "city": "Lake Mary",
+  "website": "https://soflohotyoga.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://soflohotyoga.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "G&W Roofing",
+  "trade": "roofer",
+  "city": "Edgewater",
+  "website": "https://gwroofing.com",
+  "phone": "+1-386-853-7266",
+  "source": "OpenStreetMap",
+  "page": "https://gwroofing.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Ac Guru",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://hvacrguru.com",
+  "phone": "+1-407-462-6493",
+  "source": "OpenStreetMap",
+  "page": "https://hvacrguru.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Skin with Esther",
+  "trade": "beauty",
+  "city": "Palm Coast",
+  "website": "https://www.skinwithesther.com",
+  "phone": "+1-386-283-0706",
+  "source": "OpenStreetMap",
+  "page": "https://www.skinwithesther.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "John's Appliance & Bedding",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "https://www.johnsabc.com",
+  "phone": "+1 386 446 1796",
+  "source": "OpenStreetMap",
+  "page": "https://www.johnsabc.com/locations/palm-coast",
+  "alsoCities": []
+ },
+ {
+  "name": "Stetson Health Service",
+  "trade": "doctors",
+  "city": "DeLand",
+  "website": "https://www.stetson.edu",
+  "phone": "+1 386 822 8150",
+  "source": "OpenStreetMap",
+  "page": "https://www.stetson.edu/administration/health-service/",
+  "alsoCities": []
+ },
+ {
+  "name": "Consigned Interiors",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "http://www.consignedinteriors.com",
+  "phone": "+1 386 445 2301",
+  "source": "OpenStreetMap",
+  "page": "http://www.consignedinteriors.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Z Best Rental",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "https://www.zbestrents.com",
+  "phone": "+1 386 447 6568",
+  "source": "OpenStreetMap",
+  "page": "https://www.zbestrents.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Rent-A-Wheel",
+  "trade": "tyres",
+  "city": "Daytona Beach",
+  "website": "https://www.rentawheel.com",
+  "phone": "+1 386 898 0472",
+  "source": "OpenStreetMap",
+  "page": "https://www.rentawheel.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Zahn's Flowers",
+  "trade": "florist",
+  "city": "Daytona Beach",
+  "website": "https://zahnsflowers.com",
+  "phone": "+1 386 252 3615",
+  "source": "OpenStreetMap",
+  "page": "https://zahnsflowers.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Exit Realty",
+  "trade": "estate_agent",
+  "city": "Daytona Beach",
+  "website": "https://www.exitrealtyadvantage.com",
+  "phone": "+1 386 310 4567",
+  "source": "OpenStreetMap",
+  "page": "https://www.exitrealtyadvantage.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Main Street Barber Shop",
+  "trade": "hairdresser",
+  "city": "Daytona Beach",
+  "website": "https://mainstreetbarbershopdaytonabeach.com",
+  "phone": "+1-386-253-6249",
+  "source": "OpenStreetMap",
+  "page": "https://mainstreetbarbershopdaytonabeach.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Open MRI of Daytona",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.openmriofdaytona.com",
+  "phone": "+1 386 254 6800",
+  "source": "OpenStreetMap",
+  "page": "https://www.openmriofdaytona.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Vision One",
+  "trade": "optometrist",
+  "city": "Port Orange",
+  "website": "http://sight-doc.com",
+  "phone": "+1 386 767 0068",
+  "source": "OpenStreetMap",
+  "page": "http://sight-doc.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Mental Health Transformations LLC",
+  "trade": "counselling",
+  "city": "Flagler Beach",
+  "website": "https://mentalhealthtransformations.com",
+  "phone": "+1-386-530-5158",
+  "source": "OpenStreetMap",
+  "page": "https://mentalhealthtransformations.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Approved Mortgage",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.approvedfl.com",
+  "phone": "+1-386-668-8000",
+  "source": "OpenStreetMap",
+  "page": "https://www.approvedfl.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Bob's Bike Shop",
+  "trade": "bicycle",
+  "city": "Port Orange",
+  "website": "http://www.bobsbikespo.com",
+  "phone": "+1 386 761 4691",
+  "source": "OpenStreetMap",
+  "page": "http://www.bobsbikespo.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Haynes Brothers Furniture",
+  "trade": "furniture",
+  "city": "Daytona Beach",
+  "website": "https://www.haynesbrosfurniture.com",
+  "phone": "+1 386 255 8532",
+  "source": "OpenStreetMap",
+  "page": "https://www.haynesbrosfurniture.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Facemyer Air Conditioning and Heating",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://www.fixmyacnow.com",
+  "phone": "+1-407-358-7070",
+  "source": "OpenStreetMap",
+  "page": "https://www.fixmyacnow.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida Health Care Plans",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.fhcp.com",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.fhcp.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Florida Door & Supply",
+  "trade": "hardware",
+  "city": "",
+  "website": "https://www.floridadoor.com",
+  "phone": "+1 386-253-7898",
+  "source": "OpenStreetMap",
+  "page": "https://www.floridadoor.com",
+  "alsoCities": []
+ },
+ {
+  "name": "All Creatures Veterinary Clinic",
+  "trade": "veterinary",
+  "city": "South Daytona",
+  "website": "https://AllCreaturesVC.com",
+  "phone": "+1 386 788 1990",
+  "source": "OpenStreetMap",
+  "page": "AllCreaturesVC.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Sun Coast Fence",
+  "trade": "carpenter",
+  "city": "South Daytona",
+  "website": "https://www.suncoastfenceandsupply.com",
+  "phone": "+1 386 341 0191",
+  "source": "OpenStreetMap",
+  "page": "https://www.suncoastfenceandsupply.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sims Wolfe & Kundid",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://www.doranlaw.com",
+  "phone": "+1 386 245 6284",
+  "source": "OpenStreetMap",
+  "page": "https://www.doranlaw.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Honest-1 Auto Care",
+  "trade": "car_repair",
+  "city": "South Daytona",
+  "website": "https://www.honest1daytona.com",
+  "phone": "+1 386 243 2027",
+  "source": "OpenStreetMap",
+  "page": "https://www.honest1daytona.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Investors Realty Network",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "http://www.turnitover.today",
+  "phone": "+1-407-321-6100",
+  "source": "OpenStreetMap",
+  "page": "http://www.turnitover.today/",
+  "alsoCities": []
+ },
+ {
+  "name": "Driftwood Animal Hospital",
+  "trade": "veterinary",
+  "city": "Daytona Beach",
+  "website": "https://www.driftwoodanimalhospital.com",
+  "phone": "+1 386 255 1407",
+  "source": "OpenStreetMap",
+  "page": "https://www.driftwoodanimalhospital.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "RwalLiving",
+  "trade": "estate_agent",
+  "city": "Holly Hill",
+  "website": "https://allfloridarealty.com",
+  "phone": "+1 386 760 6000",
+  "source": "OpenStreetMap",
+  "page": "https://allfloridarealty.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Dunn & Associates Insurance",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "https://www.dunn-insurance.com",
+  "phone": "+1 386 255 2477",
+  "source": "OpenStreetMap",
+  "page": "https://www.dunn-insurance.com",
+  "alsoCities": []
+ },
+ {
+  "name": "Taylor Insurance",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "http://www.taylorinsuranceofdaytona.com",
+  "phone": "+1 386 492 5986",
+  "source": "OpenStreetMap",
+  "page": "http://www.taylorinsuranceofdaytona.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Insurance World",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "https://carinsuranceworld.com",
+  "phone": "+1 386 258 7283",
+  "source": "OpenStreetMap",
+  "page": "https://carinsuranceworld.com/office-locations",
+  "alsoCities": []
+ },
+ {
+  "name": "Exhale CBD Apothecary",
+  "trade": "alternative",
+  "city": "Sanford",
+  "website": "https://exhalecbdapothecary.com",
+  "phone": "+1-407-878-0010",
+  "source": "OpenStreetMap",
+  "page": "https://exhalecbdapothecary.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Eagle Fitness Center",
+  "trade": "fitness_centre",
+  "city": "",
+  "website": "https://daytonabeach.erau.edu",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://daytonabeach.erau.edu/campus-life/eagle-fitness",
+  "alsoCities": []
+ },
+ {
+  "name": "DeBary Dental Care",
+  "trade": "dentist",
+  "city": "Debary",
+  "website": "https://debarydentalcare.com",
+  "phone": "+1-386-668-8600",
+  "source": "OpenStreetMap",
+  "page": "https://debarydentalcare.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Sandeep V. Patel, DDS",
+  "trade": "dentist",
+  "city": "",
+  "website": "https://mydaytonadental.com",
+  "phone": "+1 386 258 7500",
+  "source": "OpenStreetMap",
+  "page": "https://mydaytonadental.com/",
+  "alsoCities": []
+ },
+ {
+  "name": "Daytona Beach VA Clinic",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.va.gov",
+  "phone": "",
+  "source": "OpenStreetMap",
+  "page": "https://www.va.gov/orlando-health-care/locations/daytona-beach-va-clinic/",
+  "alsoCities": []
+ }
+]

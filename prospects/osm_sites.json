@@ -1,0 +1,1266 @@
+[
+ {
+  "name": "Salon 7 & Medi Spa",
+  "trade": "hairdresser",
+  "city": "",
+  "website": "www.salon7.vpweb.com",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "First Impressions Barbershop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "www.sanfordbarbershop.net",
+  "phone": "+1-954-609-8150",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "The Cardiovascular Center, P.A.",
+  "trade": "doctors",
+  "city": "Deltona",
+  "website": "https://www.thecvcenter.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Newman Veterinary Centers",
+  "trade": "veterinary",
+  "city": "Deltona",
+  "website": "https://www.newmanvets.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Alvarez Family Chiropractic",
+  "trade": "alternative",
+  "city": "DeLand",
+  "website": "https://alvarezchiropractic.com/",
+  "phone": "+1-386-734-2522",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Mary Lynn Realty",
+  "trade": "estate_agent",
+  "city": "Daytona Beach",
+  "website": "https://www.marylynnrealty.com/",
+  "phone": "+1 386 788 4338",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Taborda Dentistry",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://tabordadentistry.com/",
+  "phone": "+1-386-310-3060",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Lee Nails & Spa",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://www.volusiamall.net/store/lee_nails_spa",
+  "phone": "+1 386 255 2007",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Grand Living Realty",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.grandlivingrealty.net/",
+  "phone": "+1-386-447-0800",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Deltona Car Accident Lawyer Group",
+  "trade": "lawyer",
+  "city": "Deltona",
+  "website": "http://caraccident.the-company-lawyer.com/deltona-fl",
+  "phone": "+1-386-516-4188",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cat-A-Holic Cats",
+  "trade": "pet_grooming",
+  "city": "Port Orange",
+  "website": "https://cat-a-holiccats.com",
+  "phone": "+1-386-212-5523",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Rebuilding Life Esthetics",
+  "trade": "company",
+  "city": "Lake Mary",
+  "website": "http://orlandoesthetics.com",
+  "phone": "+1 407-878-7889",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Charley Baldwin Realtor",
+  "trade": "estate_agent",
+  "city": "New Smyrna Beach",
+  "website": "http://charleybaldwinrealtor.com",
+  "phone": "+1-386-689-8184",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Frankel Law Firm PLLC",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://daytonabeachfamilylawyer.com",
+  "phone": "+1-386-317-4641",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Stanley Moving & Deliveries",
+  "trade": "moving_company",
+  "city": "Port Orange",
+  "website": "https://www.stanleymovinganddeliveries.com/",
+  "phone": "+1-386-767-5090",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Tropical Auto Air Repair Center",
+  "trade": "car_repair",
+  "city": "Edgewater",
+  "website": "https://www.tropicalautofl.com/",
+  "phone": "+1-386-428-3787",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Tim Tiralosi DMD",
+  "trade": "dentist",
+  "city": "Lake Mary",
+  "website": "https://www.tiralosidental.com/",
+  "phone": "+1-407-333-1335",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "National Investigative Training Academy",
+  "trade": "company",
+  "city": "Lake Mary",
+  "website": "https://investigativeacademy.com",
+  "phone": "+1-800-730-6482",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Advanced Gastroenterology & Endoscopy Center",
+  "trade": "doctors",
+  "city": "",
+  "website": "http://www.advancedgi.org/",
+  "phone": "+1 386 763 4920",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Greg Reynolds Construction Lc",
+  "trade": "construction_company",
+  "city": "Daytona Beach",
+  "website": "https://www.gregreynoldsconstructionlc.com/",
+  "phone": "+1-386-671-2569",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Kremer Sales",
+  "trade": "company",
+  "city": "DeLand",
+  "website": "http://kremersales.com",
+  "phone": "+1-352-357-3118",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Pride Lawn Service LLC",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://pridelawnsrv.com/",
+  "phone": "+1-386-847-8471",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Darcy Diamond Realtor",
+  "trade": "estate_agent",
+  "city": "Flagler Beach",
+  "website": "https://www.darcydiamondrealtor.com/",
+  "phone": "+1 386-986-7880",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Europa Salon & Spa",
+  "trade": "hairdresser",
+  "city": "Palm Coast",
+  "website": "https://relaxateuropa.com",
+  "phone": "+1-386-597-2968",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "White Wolf Dental",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://whitewolfdental.com/",
+  "phone": "+1 386 882 9900",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Vigo Chiropractic LLC",
+  "trade": "alternative",
+  "city": "Deland",
+  "website": "https://www.vigochiropractic.com/",
+  "phone": "+1 386-624-6770",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Elegant Dominican Beauty Salon",
+  "trade": "beauty",
+  "city": "Orange City",
+  "website": "https://www.elegantdominicanbeautysalon.com/",
+  "phone": "+1-240-346-0453",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Fleur De Lis Salon",
+  "trade": "hairdresser",
+  "city": "Port Orange",
+  "website": "http://www.fleurdelissaloninc.com",
+  "phone": "+1-386-760-3515",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Park Air Inc",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://www.parkairfl.com/",
+  "phone": "+1-407-628-4254",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Venetian Nail Spa",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://venetiansalon.com/",
+  "phone": "+1 386 603 9999",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cypress Point Family Dentistry",
+  "trade": "dentist",
+  "city": "Palm Coast",
+  "website": "https://cypresspointdentist.com/",
+  "phone": "+1-386-445-6677",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Zimmet & Zimmet",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://zimmetzimmet.com/",
+  "phone": "+1-386-255-6400",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Natural Health and Wellness Chiropractic, LLC",
+  "trade": "massage",
+  "city": "Daytona Beach",
+  "website": "https://www.nhwchiro.com/",
+  "phone": "+1 386 872 7167",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Geri Westfall Real Estate",
+  "trade": "estate_agent",
+  "city": "Ormond Beach",
+  "website": "https://www.geriwestfallre.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cherise's Salon",
+  "trade": "hairdresser",
+  "city": "Daytona Beach Shores",
+  "website": "https://www.cherises.com/",
+  "phone": "+1 386 760-2035",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cash Home Buyer Florida",
+  "trade": "estate_agent",
+  "city": "Ormond Beach",
+  "website": "https://cashhomebuyerflorida.com/",
+  "phone": "+1-386-383-2085",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Electrical Energy Systems",
+  "trade": "electrician",
+  "city": "Edgewater",
+  "website": "https://electricalenergysystemsinc.com",
+  "phone": "+1 386-423-6700",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Mercado Family Law Mediation",
+  "trade": "lawyer",
+  "city": "New Smyrna Beach",
+  "website": "https://mercadofamilylaw.com/",
+  "phone": "+1-386-269-9799",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Venus Nails and Spa",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://www.thepavilionatportorange.com/store/venus_nail_and_spa",
+  "phone": "+1 386 788 6789",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Berlin & Denys Insurance",
+  "trade": "insurance",
+  "city": "New Smyrna Beach",
+  "website": "https://www.berlindenys.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "The Collaborative Divorce Center",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://masterscdc.com",
+  "phone": "+1-386-271-8044",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Wholesale Furnature Outlet",
+  "trade": "furniture",
+  "city": "Daytona Beach",
+  "website": "http://www.wfoutlets.com/",
+  "phone": "+1-386-301-4969",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Khaotic Offroad",
+  "trade": "car_repair",
+  "city": "Debary",
+  "website": "https://khaoticoffroad.com/",
+  "phone": "+1-386-848-2716",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Vogel Chiropractic Clinic",
+  "trade": "alternative",
+  "city": "South Daytona",
+  "website": "https://www.vogelchiropractic.com/",
+  "phone": "+1 386 788 4778",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Nest Luxury Living",
+  "trade": "furniture",
+  "city": "South Daytona",
+  "website": "https://designkollective.com/stores/nestluxuryliving",
+  "phone": "+1 386 238 9044",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Atlantic Dentists",
+  "trade": "dentist",
+  "city": "",
+  "website": "AtlanticDentists.com",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Realty Exchange",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.realtyexchangefl.com/",
+  "phone": "+1 386 446 0017",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Men's Groom Room Barber Lounge",
+  "trade": "hairdresser",
+  "city": "",
+  "website": "https://mgrbarberlounge.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Sanford Barber Shop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "www.facebook.com/sanfordbarber/",
+  "phone": "+1-407-328-8362",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Saint Johns Realty",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://stjohnsrealtyco.com/",
+  "phone": "+1-407-322-6123",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Professional Real Estate Company",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://professionalrealestatecompanyllc.com/",
+  "phone": "+1-407-330-6700",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Bicikleta Bike Shop",
+  "trade": "bicycle",
+  "city": "Sanford",
+  "website": "https://www.bicikletabikeshop.com/",
+  "phone": "+1-407-878-7836",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Nails by Arisha LLC",
+  "trade": "beauty",
+  "city": "Sanford",
+  "website": "https://il.ink/Nailsbyarisha",
+  "phone": "+1-787-909-6286",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Traditions Barber Shop",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.facebook.com/Traditions-Barbershop-1491594501158713/",
+  "phone": "+1-321-578-0090",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Florida Sunshine Insurance Agency",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://www.flsunshineins.com",
+  "phone": "+1-407-878-2880",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "LA Chic' Stylz",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://lachicstylz.net/",
+  "phone": "+1-407-688-6500",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "VMZ Beauty Studio",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://vmzbeautystudio.com/",
+  "phone": "+1-407-732-7900",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Sanford Flower Shop",
+  "trade": "florist",
+  "city": "Sanford",
+  "website": "https://www.sanfordflowershop.com",
+  "phone": "+1-407-322-1822",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Pedal Driven Co.",
+  "trade": "bicycle",
+  "city": "Sanford",
+  "website": "https://www.pedaldrivenco.com/",
+  "phone": "+1-407-416-7200",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Alliance Home Realty",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "https://www.alliancehomerealty.com",
+  "phone": "+1-407-322-7222",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "X'Spreshun Hair Studio",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://www.xspreshun.com/",
+  "phone": "+1-407-323-2324",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Madison Insurance Group Inc",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://miginsgroup.com",
+  "phone": "+1-888-981-1698",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Fresenius Kidney Care",
+  "trade": "clinic",
+  "city": "Sanford",
+  "website": "https://www.freseniuskidneycare.com",
+  "phone": "+1-800-881-5101",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Prium Life and Health",
+  "trade": "insurance",
+  "city": "Sanford",
+  "website": "https://priumlifeandhealth.com/",
+  "phone": "+1-877-976-5333",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "The Helix at Lake Mary",
+  "trade": "estate_agent",
+  "city": "Lake Mary",
+  "website": "https://www.helixorlando.com/",
+  "phone": "+1-833-220-5669",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Michael P. Falkowski",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://falkowskilaw.com/",
+  "phone": "+1 386 257 1606",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "ForEyes",
+  "trade": "optometrist",
+  "city": "Daytona Beach",
+  "website": "https://www.foreyes.com/locations/1808-west-international-speedway-blvd-daytona-beach-fl/",
+  "phone": "+1 386 257 1096",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "A Fresh New Me",
+  "trade": "counselling",
+  "city": "Daytona Beach",
+  "website": "https://www.afreshnewme.com/",
+  "phone": "+1 386 333 9978",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Professional Moving & Storage",
+  "trade": "moving_company",
+  "city": "South Daytons",
+  "website": "https://professionalmovingandstorage.com/",
+  "phone": "+1 844 914 6683",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Economy Dentures - Dr. Polite",
+  "trade": "dentist",
+  "city": "South Daytons",
+  "website": "http://www.economydentures.net/",
+  "phone": "+1 386 333 3508",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cape Vista Dental",
+  "trade": "dentist",
+  "city": "Orange City",
+  "website": "https://dentist-orange-city.com/",
+  "phone": "+1-386-774-0125",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "?",
+  "trade": "dentist",
+  "city": "Port Orange",
+  "website": "https://smilliedental.com/",
+  "phone": "+1 386 317 4754",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Beautiful Hair Color Studio",
+  "trade": "hairdresser",
+  "city": "Port Orange",
+  "website": "https://www.beautifulhaircolorstudios.com/port-orange-pavilion",
+  "phone": "+1 386 763 0024",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "MM Nails",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://mmnailsportorange.com/",
+  "phone": "+1 386 492 7861",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Watson Realty",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://www.watsonrealtycorp.com/port-orange",
+  "phone": "+1 866 243 8193",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Island Doctors",
+  "trade": "doctors",
+  "city": "Daytona Beach",
+  "website": "https://islanddoctors.com/location/daytona-beach-beville/",
+  "phone": "+1 386 238 9217",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Peter Chiropractic and Wellness",
+  "trade": "alternative",
+  "city": "Daytona Beach",
+  "website": "https://www.porterchiropracticandwellness.com/",
+  "phone": "+1 386 317 2000",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Salon 31",
+  "trade": "beauty",
+  "city": "Daytona Beach",
+  "website": "https://www.salon31daytona.com/shop/",
+  "phone": "+1 386 872 5176",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Lee Nails",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://lee-nails-lashes-llc.business.site/",
+  "phone": "+1 386 767 5006",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "After Glow",
+  "trade": "beauty",
+  "city": "Port Orange",
+  "website": "https://www.afterglowtanning.net/",
+  "phone": "+1 386 310 8751",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "?",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://www.kwdaytona.com/",
+  "phone": "+1 386 944 2800",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Maxim Healthcare Group",
+  "trade": "insurance",
+  "city": "Port Orange",
+  "website": "https://www.maximhealthcare.com/locations/daytona-fl",
+  "phone": "+1 386 226 3493",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Passion Chiropractic",
+  "trade": "alternative",
+  "city": "Port Orange",
+  "website": "https://passionchiro.com/",
+  "phone": "+1 386 947 7185",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Studio 78",
+  "trade": "hairdresser",
+  "city": "South Daytona",
+  "website": "https://studio78unisexhairsalon.com/",
+  "phone": "+1 386 760 7929",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "PawZazz Pet Salon",
+  "trade": "pet_grooming",
+  "city": "South Daytona",
+  "website": "https://pawzazzpetsalon.com/",
+  "phone": "+1 386 492 5967",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Environics USA Inc",
+  "trade": "company",
+  "city": "Daytona Beach",
+  "website": "https://environics.fi/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Homes of Daytona Beach",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://homesofdaytonabeach.com",
+  "phone": "+1-386-338-8505",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Integrity Insurance Group",
+  "trade": "insurance",
+  "city": "Palm Coast",
+  "website": "https://www.iigfl.com",
+  "phone": "+1-386-259-1000",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Guardian Wraps",
+  "trade": "car_painter",
+  "city": "Sanford",
+  "website": "https://guardianwraps.com/",
+  "phone": "+1 407-732-4427",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Country Club Properties Of Spruce Creek",
+  "trade": "estate_agent",
+  "city": "Port Orange",
+  "website": "https://SpruceCreekProperties.com",
+  "phone": "+1-386-756-6105",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "PRS Roofing",
+  "trade": "roofer",
+  "city": "DeBary",
+  "website": "https://prsroofpro.com/",
+  "phone": "+1-800-750-9198",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Allied Veterinary Specialists",
+  "trade": "veterinary",
+  "city": "South Daytona",
+  "website": "https://alliedveterinaryspecialists.com/",
+  "phone": "+1-386-287-6500",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "First Coast Choppers Tree Service",
+  "trade": "gardener",
+  "city": "Palm Coast",
+  "website": "https://firstcoastchopperstreeservice.com",
+  "phone": "+1-904-615-7724",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Ground Effects Landscaping",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://groundeffectslandscapingfl.com",
+  "phone": "+1-386-402-0431",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Alper Law",
+  "trade": "lawyer",
+  "city": "Lake Mary",
+  "website": "https://www.alperlaw.com/",
+  "phone": "+1-407-444-0404",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "HD Drain Cleaning",
+  "trade": "plumber",
+  "city": "Ormond Beach",
+  "website": "https://hddraincleaning.com",
+  "phone": "+1-386-281-2523",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Taxleaf Orlando",
+  "trade": "accountant",
+  "city": "Lake Mary",
+  "website": "https://taxleaforlando.com",
+  "phone": "+1-407-212-7292",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Tidy Chap",
+  "trade": "hairdresser",
+  "city": "Palm Coast",
+  "website": "https://www.tidychap.com/",
+  "phone": "+1-321-443-9259; +1-386-302-2067; +1-386-283-1653; +1-786-442-0445; +1-386-585-0356; +1-407-532-3722",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "R. Howe Electric Inc",
+  "trade": "electrician",
+  "city": "Sanford",
+  "website": "https://www.rhoweelectric.net/",
+  "phone": "+1-407-714-1341",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Volusia Weight Management",
+  "trade": "fitness_centre",
+  "city": "Port Orange",
+  "website": "https://volusiaweightmanagement.com/",
+  "phone": "+1 386-222-2997",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Strada Services",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://stradaservices.com/",
+  "phone": "+1-352-717-4741",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "The Ticket Fighter",
+  "trade": "lawyer",
+  "city": "Lake Mary",
+  "website": "https://theticketfighter.com/",
+  "phone": "+1-407-476-5120",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Regus Execu-Suites and Virtual Office Spaces",
+  "trade": "company",
+  "city": "",
+  "website": "http://Regus.com",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Marjohn SkinCare",
+  "trade": "doctors",
+  "city": "Lake Mary",
+  "website": "https://www.marjohnskincare.com/",
+  "phone": "+1-407-920-6266",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Nika Athletics",
+  "trade": "fitness_centre",
+  "city": "DeLand",
+  "website": "https://nikaathletics.com/",
+  "phone": "+1-386-703-9903",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Palm Tree Podiatry",
+  "trade": "doctors",
+  "city": "Deltona",
+  "website": "https://palmtreepodiatry.com/appointments/",
+  "phone": "+1-386-777-7311",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Family Health Source",
+  "trade": "doctors;dentist;pharmacy",
+  "city": "Deltona",
+  "website": "https://www.myfhs.org/",
+  "phone": "+1-386-202-6025",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "?",
+  "trade": "electrician",
+  "city": "Palm Coast",
+  "website": "https://www.electricianpalmcoast.com/",
+  "phone": "+1-386-241-9899",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Skin Love By Ashley",
+  "trade": "alternative",
+  "city": "Palm Coast",
+  "website": "https://www.skinlovebyashley.com/",
+  "phone": "+1-386-675-8648",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Gino\u2019s Road Service & Repair",
+  "trade": "car_repair",
+  "city": "Daytona Beach",
+  "website": "https://ginostowing.com/",
+  "phone": "+1-386-256-7970",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Kat Preston The Barber",
+  "trade": "hairdresser",
+  "city": "Debary",
+  "website": "https://www.katprestonthebarber.com",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Gabrielle Rogers - Salon Lofts",
+  "trade": "hairdresser",
+  "city": "Sanford",
+  "website": "https://salonlofts.com/gabby_rogers",
+  "phone": "+1-407-730-0997",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Men's Groom Room Barber Lounge",
+  "trade": "hairdresser",
+  "city": "Lake Mary",
+  "website": "https://mensgroomroom.webflow.io/",
+  "phone": "+1 407 878 3224",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "ATP Jet Center",
+  "trade": "company",
+  "city": "",
+  "website": "https://aptjetcenter.com",
+  "phone": "+1-386-385-8880",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Southeast Volusia Family YMCA",
+  "trade": "fitness_centre",
+  "city": "",
+  "website": "https://vfymca.org/locations/southeast-volusia-family-ymca/",
+  "phone": "+1-386-409-9622",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cool Solutions of Central Florida, Inc.",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://coolsolutionsacfl.com",
+  "phone": "+1-407-416-8148",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Terra-Scape",
+  "trade": "gardener",
+  "city": "Edgewater",
+  "website": "https://terra-scape.net/",
+  "phone": "+1 386-465-4745",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Transform Aesthetic Center",
+  "trade": "beauty",
+  "city": "New Smyrna Beach",
+  "website": "https://www.transformfl.com/",
+  "phone": "+1-386-882-7830",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "J. Thaddeus Morgan, DMD",
+  "trade": "dentist",
+  "city": "Lake Mary",
+  "website": "https://www.lakemarydentist.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Cyrus Diagnostic Imaging",
+  "trade": "doctors",
+  "city": "Lake Mary",
+  "website": "https://cyrusdiagnostic.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Craze Nails & Spa",
+  "trade": "beauty",
+  "city": "Lake Mary",
+  "website": "https://crazenailsspa.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "SoFlo Hot Yoga",
+  "trade": "fitness_centre",
+  "city": "Lake Mary",
+  "website": "https://soflohotyoga.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "G&W Roofing",
+  "trade": "roofer",
+  "city": "Edgewater",
+  "website": "https://gwroofing.com/",
+  "phone": "+1-386-853-7266",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Ac Guru",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://hvacrguru.com",
+  "phone": "+1-407-462-6493",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Skin with Esther",
+  "trade": "beauty",
+  "city": "Palm Coast",
+  "website": "https://www.skinwithesther.com/",
+  "phone": "+1-386-283-0706",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Pines Lake Animal Hospital",
+  "trade": "veterinary",
+  "city": "Palm Coast",
+  "website": "https://www.pinelakesanimal.com/",
+  "phone": "+1 386 447 7381",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "John's Appliance & Bedding",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "https://www.johnsabc.com/locations/palm-coast",
+  "phone": "+1 386 446 1796",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Stetson Health Service",
+  "trade": "doctors",
+  "city": "DeLand",
+  "website": "https://www.stetson.edu/administration/health-service/",
+  "phone": "+1 386 822 8150",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Consigned Interiors",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "http://www.consignedinteriors.com/",
+  "phone": "+1 386 445 2301",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Z Best Rental",
+  "trade": "furniture",
+  "city": "Palm Coast",
+  "website": "https://www.zbestrents.com/",
+  "phone": "+1 386 447 6568",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Rent-A-Wheel",
+  "trade": "tyres",
+  "city": "Daytona Beach",
+  "website": "https://www.rentawheel.com/",
+  "phone": "+1 386 898 0472",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Zahn's Flowers",
+  "trade": "florist",
+  "city": "Daytona Beach",
+  "website": "https://zahnsflowers.com/",
+  "phone": "+1 386 252 3615",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Exit Realty",
+  "trade": "estate_agent",
+  "city": "Daytona Beach",
+  "website": "https://www.exitrealtyadvantage.com/",
+  "phone": "+1 386 310 4567",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Main Street Barber Shop",
+  "trade": "hairdresser",
+  "city": "Daytona Beach",
+  "website": "https://mainstreetbarbershopdaytonabeach.com/",
+  "phone": "+1-386-253-6249",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Open MRI of Daytona",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.openmriofdaytona.com/",
+  "phone": "+1 386 254 6800",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Vision One",
+  "trade": "optometrist",
+  "city": "Port Orange",
+  "website": "http://sight-doc.com/",
+  "phone": "+1 386 767 0068",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Mental Health Transformations LLC",
+  "trade": "counselling",
+  "city": "Flagler Beach",
+  "website": "https://mentalhealthtransformations.com/",
+  "phone": "+1-386-530-5158",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Approved Mortgage",
+  "trade": "estate_agent",
+  "city": "Palm Coast",
+  "website": "https://www.approvedfl.com/",
+  "phone": "+1-386-668-8000",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Bob's Bike Shop",
+  "trade": "bicycle",
+  "city": "Port Orange",
+  "website": "http://www.bobsbikespo.com/",
+  "phone": "+1 386 761 4691",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Haynes Brothers Furniture",
+  "trade": "furniture",
+  "city": "Daytona Beach",
+  "website": "https://www.haynesbrosfurniture.com/",
+  "phone": "+1 386 255 8532",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Facemyer Air Conditioning and Heating",
+  "trade": "hvac",
+  "city": "Sanford",
+  "website": "https://www.fixmyacnow.com/",
+  "phone": "+1-407-358-7070",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Florida Health Care Plans",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.fhcp.com/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Florida Door & Supply",
+  "trade": "hardware",
+  "city": "",
+  "website": "https://www.floridadoor.com",
+  "phone": "+1 386-253-7898",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "All Creatures Veterinary Clinic",
+  "trade": "veterinary",
+  "city": "South Daytona",
+  "website": "AllCreaturesVC.com",
+  "phone": "+1 386 788 1990",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Sun Coast Fence",
+  "trade": "carpenter",
+  "city": "South Daytona",
+  "website": "https://www.suncoastfenceandsupply.com/",
+  "phone": "+1 386 341 0191",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Sims Wolfe & Kundid",
+  "trade": "lawyer",
+  "city": "Daytona Beach",
+  "website": "https://www.doranlaw.com/",
+  "phone": "+1 386 245 6284",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Honest-1 Auto Care",
+  "trade": "car_repair",
+  "city": "South Daytona",
+  "website": "https://www.honest1daytona.com/",
+  "phone": "+1 386 243 2027",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Investors Realty Network",
+  "trade": "estate_agent",
+  "city": "Sanford",
+  "website": "http://www.turnitover.today/",
+  "phone": "+1-407-321-6100",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Driftwood Animal Hospital",
+  "trade": "veterinary",
+  "city": "Daytona Beach",
+  "website": "https://www.driftwoodanimalhospital.com/",
+  "phone": "+1 386 255 1407",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "RwalLiving",
+  "trade": "estate_agent",
+  "city": "Holly Hill",
+  "website": "https://allfloridarealty.com/",
+  "phone": "+1 386 760 6000",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Dunn & Associates Insurance",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "https://www.dunn-insurance.com",
+  "phone": "+1 386 255 2477",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Taylor Insurance",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "http://www.taylorinsuranceofdaytona.com/",
+  "phone": "+1 386 492 5986",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Insurance World",
+  "trade": "insurance",
+  "city": "Daytona Beach",
+  "website": "https://carinsuranceworld.com/office-locations",
+  "phone": "+1 386 258 7283",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Exhale CBD Apothecary",
+  "trade": "alternative",
+  "city": "Sanford",
+  "website": "https://exhalecbdapothecary.com/",
+  "phone": "+1-407-878-0010",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Eagle Fitness Center",
+  "trade": "fitness_centre",
+  "city": "",
+  "website": "https://daytonabeach.erau.edu/campus-life/eagle-fitness",
+  "phone": "",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "DeBary Dental Care",
+  "trade": "dentist",
+  "city": "Debary",
+  "website": "https://debarydentalcare.com/",
+  "phone": "+1-386-668-8600",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Sandeep V. Patel, DDS",
+  "trade": "dentist",
+  "city": "",
+  "website": "https://mydaytonadental.com/",
+  "phone": "+1 386 258 7500",
+  "source": "OpenStreetMap"
+ },
+ {
+  "name": "Daytona Beach VA Clinic",
+  "trade": "clinic",
+  "city": "Daytona Beach",
+  "website": "https://www.va.gov/orlando-health-care/locations/daytona-beach-va-clinic/",
+  "phone": "",
+  "source": "OpenStreetMap"
+ }
+]

@@ -1,0 +1,31 @@
+audited 369 could not verify 44 facebook-only 19
+ 1.  94.0  Fleur De Lis Salon                     hairdresser      Port Orange  http://www.fleurdelissaloninc.com/
+ 2.  80.0  Mid Florida Pool & Spa                 pool service     New Smyrna B 
+ 3.  80.0  Next Level Pool Cleaning and Supplies  pool service     Edgewater    https://nextlevelpoolcleaning.com/
+ 4.  80.0  EverGreen Landscapes                   lawn care / land Palm Coast   https://www.evergreenlandscapes.co/
+ 5.  80.0  ReFine Pressure Washing and Exteriors  pressure washing Palm Coast   https://refinepressurewashingandexterior
+ 6.  72.0  Lee Nails                              beauty           Port Orange  https://lee-nails-lashes-llc.business.si
+ 7.  70.0  Lightyear Electric LLC                 electrician      New Smyrna B https://lightyearelectricl.wixsite.com/m
+ 8.  67.0  Nord Pest Control                      pest control     Edgewater    https://www.nordpestcontrol.com/
+ 9.  63.0  Port Orange Pest Control               pest control     Port Orange  https://portorangepest.com/
+10.  63.0  Port Orange Car Doctor                 auto repair      Port Orange  https://haamacon.com/portorangecardoctor
+11.  63.0  R.J.P Handyman LLC                     handyman         New Smyrna B https://rjpcmp.wixsite.com/rjphandymanll
+12.  61.2  Terry Blanks Jr DDS Family Dental Care dentist          DeLand       https://www.terryblanksjrdds.com/
+13.  61.0  Port Orange Pools                      pool service     Daytona Beac http://portorangepools.com/
+14.  60.0  Nest Luxury Living                     furniture        South Dayton https://designkollective.com/
+15.  60.0  Main Street Barber Shop                hairdresser      Daytona Beac https://mainstreetbarbershopdaytonabeach
+16.  60.0  Bob's Bike Shop                        bicycle          Port Orange  http://www.bobsbikespo.com/
+17.  59.0  Bulldog Lawn & Landscaping             lawn care / land Port Orange  https://www.bulldoglawnandlandscaping.co
+18.  59.0  All Pools Matter LLC                   pool service     Edgewater    https://www.allpoolsmatter.com/
+19.  55.0  Ormond Lawn Care                       lawn care / land Ormond Beach https://www.ormondlawncare.com/
+20.  55.0  Beautiful Hair Color Studio            hairdresser      Port Orange  https://www.beautifulhaircolorstudios.co
+21.  52.0  On-Demand Handyman                     handyman         Ormond Beach https://www.odhmfl.com/
+22.  52.0  Sun Coast Fence                        carpenter        South Dayton https://www.suncoastfenceandsupply.com/
+23.  50.4  Venetian Nail Spa                      beauty           Daytona Beac https://venetiansalon.com/
+24.  50.0  Daytona Softwash                       pressure washing Daytona Beac https://daytonasoftwash.com/
+25.  48.0  Charley Baldwin Realtor                estate_agent     New Smyrna B 
+26.  48.0  Kremer Sales                           company          DeLand       
+27.  46.0  NSB Pools                              pool service     New Smyrna B http://nsbpools.com/
+28.  45.0  Imperial Pest Prevention               pest control     Daytona Beac https://www.imperialpestprevent.com/
+29.  45.0  Natural Health and Wellness Chiropract massage          Daytona Beac https://www.nhwchiro.com/
+30.  45.0  Cherise's Salon                        hairdresser      Daytona Beac https://www.cherises.com/

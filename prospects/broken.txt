@@ -1,0 +1,22 @@
+Advanced Air Home Services | https://www.advancedairandheat.com | HTTP 403
+Green Wing Lawn and Pest Services | https://www.greenwingservices.com | HTTP 403
+Mid Florida Pool & Spa | http://midfloridapoolspa.com | page.goto: net::ERR_NAME_NOT_RESOLVED at
+Next Level Pool Cleaning and Supplies | https://nextlevelpoolcleaning.com | HTTP 500
+Dial Duron Service Co. | https://www.dialduron.com | HTTP 403
+AmeriTech AC & Heating | https://ameritechfl.com | HTTP 429
+EverGreen Landscapes | https://www.evergreenlandscapes.co | HTTP 404
+ReFine Pressure Washing and Exteriors | https://refinepressurewashingandexteriors.com | HTTP 404
+Deltona Car Accident Lawyer Group | http://caraccident.the-company-lawyer.com | page.goto: net::ERR_NAME_NOT_RESOLVED at
+Rebuilding Life Esthetics | http://orlandoesthetics.com | page.goto: net::ERR_NAME_NOT_RESOLVED at
+Charley Baldwin Realtor | http://charleybaldwinrealtor.com | page.goto: net::ERR_NAME_NOT_RESOLVED at
+Kremer Sales | http://kremersales.com | page.goto: net::ERR_NAME_NOT_RESOLVED at
+Nest Luxury Living | https://designkollective.com | HTTP 530
+LA Chic' Stylz | https://lachicstylz.net | HTTP 404
+Watson Realty | https://www.watsonrealtycorp.com | HTTP 403
+Lee Nails | https://lee-nails-lashes-llc.business.site | HTTP 404
+Studio 78 | https://studio78unisexhairsalon.com | HTTP 403
+PRS Roofing | https://prsroofpro.com | HTTP 403
+Bob's Bike Shop | http://www.bobsbikespo.com | HTTP 444
+Haynes Brothers Furniture | https://www.haynesbrosfurniture.com | HTTP 403
+Florida Health Care Plans | https://www.fhcp.com | HTTP 403
+Investors Realty Network | http://www.turnitover.today | HTTP 403
