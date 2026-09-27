@@ -2,3 +2,5 @@ node_modules
 out/shots/
 __pycache__/
 mockups/
+ormond/*.json
+83apps-ormond-prospects.xlsx

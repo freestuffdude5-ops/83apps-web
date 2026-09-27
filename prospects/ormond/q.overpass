@@ -1,0 +1,9 @@
+[out:json][timeout:90];
+(
+  nwr["name"]["shop"](29.22,-81.20,29.37,-81.02);
+  nwr["name"]["craft"](29.22,-81.20,29.37,-81.02);
+  nwr["name"]["amenity"~"restaurant|cafe|fast_food|bar|pub|ice_cream|car_repair|car_wash|veterinary|dentist|doctors|clinic"](29.22,-81.20,29.37,-81.02);
+  nwr["name"]["office"](29.22,-81.20,29.37,-81.02);
+  nwr["name"]["leisure"~"fitness_centre|sports_centre"](29.22,-81.20,29.37,-81.02);
+);
+out tags center;
