@@ -25,3 +25,8 @@ gmaps/*-dl.*
 gmaps/*-hh.*
 gmaps/areas.done
 83apps-ALL-broken-websites.*
+gmaps/candidates.json
+gmaps/placeids.json
+gmaps/recency.json
+gmaps/*.log
+83apps-ACTIVE-leads.*
