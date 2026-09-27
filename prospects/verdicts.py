@@ -7,11 +7,6 @@ T3 = '3 · Free builder web address'
 
 VERIFIED = {
     # name: (tier, what we saw, angle)
-    'Main Street Barber Shop': (T1, 'Their domain now shows gambling spam: the old address lapsed or was taken over. Anyone who clicks it from Google Maps lands on spam.',
-        'Urgent and easy to show: "your web address is showing gambling ads". Offer a new site + a fresh domain, booking link.'),
-    'HD Drain Cleaning': (T1, 'Their listed website redirects to an unrelated, broken site (israelgalvan.com).',
-        'Plumber with no working site: every Google click is a lost emergency call. One-page site with tap-to-call.'),
-    'Mid Florida Pool & Spa': (T1, 'Domain no longer exists (checked twice).', 'Replacement site, fast; recurring-service quote form.'),
     'Next Level Pool Cleaning and Supplies': (T1, 'Homepage returns a server error (HTTP 500, checked twice).', 'Replacement site; weekly-service signup form.'),
     'EverGreen Landscapes': (T1, 'Homepage returns "page not found" (404, checked twice).', 'Replacement site with a free-estimate form.'),
     'ReFine Pressure Washing and Exteriors': (T1, 'Homepage returns "page not found" (404, checked twice).', 'Replacement site; before/after gallery + quote form.'),
@@ -55,4 +50,8 @@ FINE = {
     'JSA Lawncare': 'Looks fine',
     'Vision One': 'Looks fine',
     'Beautiful Hair Color Studio': 'Unclear; low priority',
+    # listed address was stale (OpenStreetMap); the business moved and the old domain now shows spam
+    'Main Street Barber Shop': 'Moved to daytonabarbershop.com, which works well (old address now shows spam)',
+    'HD Drain Cleaning': 'Moved to daytonadraincleaning.com, which works well (old address now shows spam)',
+    'Mid Florida Pool & Spa': 'Listed as CLOSED on Yelp',
 }
