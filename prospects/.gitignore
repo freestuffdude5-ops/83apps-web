@@ -7,3 +7,7 @@ ormond/*.json
 ormond-broken-sites/
 ormond-broken-sites.zip
 ormond/broken-shots/
+gmaps/*.json
+gmaps/*.log
+gmaps/shots/
+gmaps/node_modules
