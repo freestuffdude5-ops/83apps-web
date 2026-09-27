@@ -89,7 +89,7 @@ let i = 0;
 async function worker() {
   while (i < queue.length) {
     const t = queue[i++];
-    let r; try { r = await check(t); } catch (e) { r = { ...t, verdict: 'UNVERIFIABLE', why: String(e).slice(0, 100) }; }
+    let r; try { r = await Promise.race([check(t), new Promise((_, j) => setTimeout(() => j(new Error('check timed out')), 150000))]); } catch (e) { r = { ...t, verdict: 'UNVERIFIABLE', why: String(e).slice(0, 100) }; }
     results.push(r);
     if (results.length % 10 === 0) fs.writeFileSync(outFile, JSON.stringify(results, null, 1));
     if (r.verdict !== 'OK') console.log(`${r.verdict.padEnd(12)} ${r.name.slice(0, 34).padEnd(34)} ${r.website}  ${r.why}`);
