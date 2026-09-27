@@ -9,10 +9,13 @@ SOCIAL = re.compile(r'facebook\.com|instagram\.com|linktr\.ee|yelp\.com|nextdoor
 BOOKING = re.compile(r'booksy|vagaro|styleseat|glossgenius|square\.site|squareup|fresha|schedulicity|gocheckin|vidobooking|mindbody|toasttab|clover\.com|doordash|ubereats|grubhub|menufy|pizzamico|chownow|order\.online|business\.site|wixsite|godaddysites|sites\.google|weebly\.com|localsearch\.com|edan\.io|jany\.io|setmore|acuity', re.I)
 
 P = json.load(open(sys.argv[1]))['places']
+CITIES = sys.argv[3].split('|') if len(sys.argv) > 3 else ['Ormond Beach']
+CITY = re.compile('|'.join(re.escape(c) + ',' for c in CITIES))
 rows = []
 for p in P.values():
     a = p.get('address') or ''
-    if not re.search(r'Ormond Beach|3217[46]', a): continue
+    if not re.search(CITY, a): continue
+    p['city'] = next((c for c in CITIES if c + ',' in a), '')
     if p.get('closed'): continue
     if CHAIN.search(p.get('name') or ''): continue
     w = p.get('website') or ''

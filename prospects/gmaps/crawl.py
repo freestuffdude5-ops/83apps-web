@@ -70,7 +70,7 @@ if __name__ == '__main__':
         url = search_url(q)
         if not url: print('NO URL (blocked?)', q); time.sleep(20); continue
         got = 0
-        for off in (0, 20, 40):
+        for off in range(0, 20 * int(os.environ.get('PAGES', '3')), 20):
             d = page(url, off)
             if d is None: break
             ps = find_places(d, [])

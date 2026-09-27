@@ -2,7 +2,11 @@
     python3 report.py
 Writes ../83apps-ormond-google-verified.xlsx and copies broken-site screenshots to ../ormond-google-broken/.
 """
-import json, os, re, shutil
+import json, os, re, shutil, sys
+AREA = sys.argv[1] if len(sys.argv) > 1 else 'Ormond Beach'
+SLUG = re.sub(r'[^a-z]+', '-', AREA.lower()).strip('-')
+OUTDIR = f'../{SLUG}-google-broken' if len(sys.argv) > 1 else '../ormond-google-broken'
+XLSX = f'../83apps-{SLUG}-google-verified.xlsx' if len(sys.argv) > 1 else '../83apps-ormond-google-verified.xlsx'
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
@@ -38,10 +42,10 @@ for r in T:
     elif r['kind'] in ('social', 'booking/free page') and rv(r) >= 5: social.append(r)
 for L in (broken, check, nosite, social): L.sort(key=lambda r: -rv(r))
 
-os.makedirs('../ormond-google-broken', exist_ok=True)
+os.makedirs(OUTDIR, exist_ok=True)
 for i, r in enumerate(broken, 1):
     if r.get('shot') and os.path.exists(r['shot']):
-        r['shotfile'] = f"{i:02d}-{os.path.basename(r['shot'])}"; shutil.copy(r['shot'], '../ormond-google-broken/' + r['shotfile'])
+        r['shotfile'] = f"{i:02d}-{os.path.basename(r['shot'])}"; shutil.copy(r['shot'], OUTDIR + '/' + r['shotfile'])
 
 
 def say(r):
@@ -67,7 +71,7 @@ def sheet(ws, color, cols, data):
     ws.freeze_panes = 'C2'; ws.auto_filter.ref = ws.dimensions
 
 
-base = [('#', lambda r, i: i, 5), ('Business', lambda r, i: r['name'], 30), ('Type', lambda r, i: cat(r), 22),
+base = [('#', lambda r, i: i, 5), ('Business', lambda r, i: r['name'], 30), ('City', lambda r, i: r.get('city', ''), 16), ('Type', lambda r, i: cat(r), 22),
         ('Google rating', lambda r, i: r.get('rating'), 9), ('Google reviews', lambda r, i: r.get('reviews'), 9)]
 tail = [('Address', lambda r, i: (r.get('address') or '').replace(', United States', ''), 34), ('Phone', lambda r, i: r.get('phone'), 15),
         ('Google Maps', lambda r, i: maps_link(r['cid']), 34), ('Contacted?', lambda r, i: '', 11), ('Notes', lambda r, i: '', 30)]
@@ -81,7 +85,7 @@ sheet(wb.create_sheet('Facebook or booking page only'), '1F4E79', base + [('Link
 ws5 = wb.create_sheet('How this was built')
 for line in [
     'Source: Google Maps. Each business\'s rating, review count and website link are exactly what its Google profile shows (read 2026-09-27).',
-    f'Searched 152 business categories in Ormond Beach and Ormond-by-the-Sea; {len(T)} independent, open businesses (chains, franchises and closed places removed).',
+    f'Searched 152 business categories in {AREA}; {len(T)} independent, open businesses (chains, franchises and closed places removed).',
     'Broken website (verified): the website link on the Google profile was tested twice from a real browser. Listed only if the failure is unambiguous:',
     '   domain does not exist / expired, "not found" homepage, parked or for-sale page, expired or suspended hosting, builder "site not connected", or server-down error.',
     'Check on your phone: slow timeouts, repeated server errors, or pages that looked like spam to us. These may be real problems or temporary / network-specific.',
@@ -90,7 +94,7 @@ for line in [
     'Outreach: personal visits, calls or one-to-one emails only; no automated texts or robocalls (Florida FTSA / TCPA).',
 ]: ws5.append([line])
 ws5.column_dimensions['A'].width = 140
-wb.save('../83apps-ormond-google-verified.xlsx')
+wb.save(XLSX)
 print(f'broken {len(broken)}  check {len(check)}  no-website {len(nosite)}  social/booking {len(social)}')
 for r in broken[:40]:
     print(f"{r['name'][:34]:34} {r.get('rating')}/{r.get('reviews')}  {r['website'][:40]:40} {r.get('why')}")

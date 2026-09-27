@@ -14,3 +14,8 @@ gmaps/node_modules
 83apps-ormond-google-verified.xlsx
 ormond-google-broken/
 ormond-google-broken.zip
+gmaps/*-po.*
+gmaps/*-db.*
+83apps-*-google-verified.xlsx
+*-google-broken/
+*-google-broken.zip
