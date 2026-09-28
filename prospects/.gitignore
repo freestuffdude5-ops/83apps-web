@@ -30,3 +30,5 @@ gmaps/placeids.json
 gmaps/recency.json
 gmaps/*.log
 83apps-ACTIVE-leads.*
+gmaps/guesses.json
+gmaps/*.txt

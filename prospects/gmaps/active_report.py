@@ -10,6 +10,9 @@ from openpyxl.utils import get_column_letter
 MAX_DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 365
 C = json.load(open('candidates.json'))
 R = json.load(open('recency.json'))
+import os
+G = json.load(open('guesses.json')) if os.path.exists('guesses.json') else {}
+MALL = re.compile(r'shopping (mall|center|centre|plaza)|plaza|outlet mall|business park|office park|apartment', re.I)
 ALREADY = {n.lower() for n in """Smash & Dash|Daytona Blackgold Cycles Inc|FLORIDA FAST TOWING - Local & Long Distance Towing|Precision Elite Athletics|Pro Spray Refinishing LLC|J & M Services|Roy & Company|East Coast Painting|P & P Irrigation and Landscaping|Port Orange MOBiL Complete Auto Repair|Allegiance Tree Care|Port Orange Auto Repair|Higher standards tree care|A1 Septic and Sanitation LLC|GBS Sod & Landscape|Debbie's Mobile Pet Care|Stor-It Boat & RV Center|The Veranda Pampering Salon|Sliding Door Repair Ormond Beach|Osborn Construction & Design|Beachside Dog Grooming|Pirana Grill|Sol Wellness Yoga Studio""".split('|')}
 
 
@@ -39,19 +42,21 @@ active, unknown = [], []
 for r in C:
     x = R.get(r['cid'], {})
     if x.get('permClosed') or x.get('tempClosed'): continue
+    if MALL.search(', '.join(r.get('cats') or [])) or re.search(r'shopping (center|plaza)|promenade$| plaza$', r['name'], re.I): continue
+    r['guess'] = G.get(r['cid'])
     r['newestDays'] = x.get('newestDays'); r['already'] = r['name'].lower() in ALREADY
     if r['newestDays'] is None: unknown.append(r)
     elif r['newestDays'] <= MAX_DAYS: active.append(r)
 key = lambda r: -(r.get('reviews') or 0)
 cols = [('#', 5), ('Lead type', 16), ('Business', 30), ('Area', 16), ('City', 14), ('Type', 20), ('Google rating', 8), ('Google reviews', 8),
         ('Newest review', 14), ('Website on Google', 30), ('What customers see', 32), ('Address', 32), ('Phone', 15), ('Google Maps', 34),
-        ('What to say', 50), ('Already in Client Desk', 10), ('Contacted?', 10), ('Notes', 24)]
+        ('What to say', 50), ('Check first', 30), ('Already in Client Desk', 10), ('Contacted?', 10), ('Notes', 24)]
 
 
 def row(i, r):
     return [i, r['lead'], r['name'], r['area'], r.get('city'), ', '.join((r.get('cats') or [])[:2]), r.get('rating'), r.get('reviews'),
             age_text(r.get('newestDays')), r.get('website') or '', r.get('why') or '', (r.get('address') or '').replace(', United States', ''),
-            r.get('phone'), maps_link(r), say(r), 'yes' if r['already'] else '', '', '']
+            r.get('phone'), maps_link(r), say(r), (f"Probably has a site not linked on Google: {r['guess']} (pitch: fix the Google link, then upgrade)" if r.get('guess') else ''), 'yes' if r['already'] else '', '', '']
 
 
 wb = Workbook(); first = True
