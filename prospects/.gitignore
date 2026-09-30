@@ -32,3 +32,4 @@ gmaps/*.log
 83apps-ACTIVE-leads.*
 gmaps/guesses.json
 gmaps/*.txt
+outreach/
