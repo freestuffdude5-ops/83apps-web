@@ -15,6 +15,7 @@ ap.add_argument('--workers', type=int, default=12)
 ap.add_argument('--scope', default='leads')
 ap.add_argument('--limit', type=int, default=0)
 ap.add_argument('--minreviews', type=int, default=2)
+ap.add_argument('--enrich', action='store_true', help='re-read active leads already checked, to fill the profile fields (claimed, photos, hours, attributes, description)')
 args = ap.parse_args()
 
 TEMPLATE = open(os.path.join(HERE, 'pb_template.txt')).read().strip()
@@ -24,6 +25,9 @@ from fl_sites import kind_of
 db = sqlite3.connect(args.db, check_same_thread=False, timeout=120)
 db.execute('PRAGMA journal_mode=WAL')
 db.execute('CREATE TABLE IF NOT EXISTS activity(cid TEXT PRIMARY KEY, newest_ts REAL, newest_days INTEGER, seen INTEGER, perm_closed INTEGER, temp_closed INTEGER, total_reviews INTEGER, err TEXT, ts REAL)')
+for _c, _t in (('claimed', 'INTEGER'), ('photos', 'INTEGER'), ('hours', 'TEXT'), ('attrs', 'TEXT'), ('descr', 'TEXT'), ('r90', 'INTEGER'), ('r365', 'INTEGER')):
+    try: db.execute(f'ALTER TABLE activity ADD COLUMN {_c} {_t}')
+    except sqlite3.OperationalError: pass
 lock = threading.Lock()
 
 
@@ -57,7 +61,17 @@ def parse(txt):
     if rel: days.append(min(rel))
     newest = max(stamps) / 1e6 if stamps else None
     tot = re.search(r'"([\d,]+) reviews?"', txt)
-    return dict(newest_ts=newest, newest_days=min(days) if days else None, seen=max(len(stamps), len(rel)),
+    ph = re.search(r'"([\d,]+)\+? [Pp]hotos?"', txt)
+    hrs = {}
+    for d_, h_ in re.findall(r'\["(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)",\d,\[\d+,\d+,\d+\],\[\["([^"]+)"', txt):
+        hrs.setdefault(d_[:3], h_.replace('\\u2013', '-').replace('–', '-').replace('\u202f', ' ').replace('\u2009', ' '))
+    attrs = list(dict.fromkeys(re.findall(r'\["/geo/type/establishment_poi/[a-z_0-9]+","([^"]+)"', txt)))
+    dm = re.search(r'\["((?:[^"\\]|\\.){20,1200})"\],\["https://www\.google\.com/local/place/rap/merchantdescription', txt)
+    r90 = sum(1 for x in stamps if now - x <= 90 * 864e8); r365 = sum(1 for x in stamps if now - x <= 365 * 864e8)
+    return dict(claimed=0 if 'Claim this business' in txt else 1, photos=int(ph.group(1).replace(',', '')) if ph else None,
+                hours='; '.join(f'{k} {v}' for k, v in hrs.items()) or None, attrs=', '.join(attrs[:12]) or None,
+                descr=(dm.group(1).encode().decode('unicode_escape', 'ignore')[:600] if dm else None), r90=r90 if stamps else None, r365=r365 if stamps else None,
+                newest_ts=newest, newest_days=min(days) if days else None, seen=max(len(stamps), len(rel)),
                 perm_closed=int('Permanently closed' in txt), temp_closed=int('Temporarily closed' in txt),
                 total_reviews=int(tot.group(1).replace(',', '')) if tot else None)
 
@@ -78,7 +92,9 @@ def work(cid):
         if out is None:
             db.execute('INSERT OR REPLACE INTO activity(cid,err,ts) VALUES(?,?,?)', (cid, 'no data', time.time()))
         else:
-            db.execute('INSERT OR REPLACE INTO activity VALUES(?,?,?,?,?,?,?,?,?)', (cid, out['newest_ts'], out['newest_days'], out['seen'], out['perm_closed'], out['temp_closed'], out['total_reviews'], None, time.time()))
+            db.execute('INSERT OR REPLACE INTO activity(cid,newest_ts,newest_days,seen,perm_closed,temp_closed,total_reviews,err,ts,claimed,photos,hours,attrs,descr,r90,r365) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                       (cid, out['newest_ts'], out['newest_days'], out['seen'], out['perm_closed'], out['temp_closed'], out['total_reviews'], None, time.time(),
+                        out['claimed'], out['photos'], out['hours'], out['attrs'], out['descr'], out['r90'], out['r365']))
         db.commit()
         work.n += 1
         if work.n % 300 == 0: print(work.n, flush=True)
@@ -94,7 +110,11 @@ if __name__ == '__main__':
         if k != 'own site': return True
         v = sites.get(w)
         return v is not None and v != 'OK'
-    todo = [(c, r) for c, w, r in rows if c not in done and (args.scope == 'all' or is_lead(w))]
+    if args.enrich:
+        need = {c for (c,) in db.execute('SELECT cid FROM activity WHERE err IS NULL AND claimed IS NULL AND newest_days<=365')}
+        todo = [(c, r) for c, w, r in rows if c in need and is_lead(w)]
+    else:
+        todo = [(c, r) for c, w, r in rows if c not in done and (args.scope == 'all' or is_lead(w))]
     todo.sort(key=lambda x: -(x[1] or 0))
     todo = [c for c, _ in todo]
     if args.limit: todo = todo[:args.limit]
