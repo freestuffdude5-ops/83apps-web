@@ -33,3 +33,5 @@ gmaps/*.log
 gmaps/guesses.json
 gmaps/*.txt
 outreach/
+fl/data/
+fl/*.log
