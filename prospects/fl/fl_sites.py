@@ -65,8 +65,7 @@ def check(url):
     try: host = urllib.parse.urlparse(url).hostname or ''
     except Exception: host = ''
     if not host: return dict(url=url, host='', dns=None, status=0, final='', title='', verdict='UNVERIFIABLE', why='bad URL')
-    st = doh(host)
-    if st == 3: return dict(url=url, host=host, dns=3, status=0, final='', title='', verdict='BROKEN', why='Domain does not exist (expired)')
+    st = None          # DNS is only looked up if the page can't be loaded (saves a TLS handshake per site)
     last = None
     for i in range(2):
         status, final, body, rc, err = fetch(url)
@@ -79,6 +78,8 @@ def check(url):
         if status and status < 400 and not any(r.search(hay) for r, _ in BROKEN) and not WALL.search(hay) and not PROXY.search(hay[:400]):
             last.update(verdict='CHECK' if SPAM.search(hay) else 'OK', why='shows spam (may be cloaked)' if SPAM.search(hay) else 'loads'); return last
         if i == 0: time.sleep(2)
+    st = doh(host); last['dns'] = st
+    if st == 3: return dict(url=url, host=host, dns=3, status=0, final='', title='', verdict='BROKEN', why='Domain does not exist (expired)')
     hay = f'{title} {text} {err}'
     rule = next((w for r, w in BROKEN if r.search(hay)), None)
     if status == 0 and rc == 6 or (status == 0 and 'resolve' in err.lower()):
@@ -104,7 +105,7 @@ def kind_of(w):
 
 if __name__ == '__main__':
     done = {r[0] for r in db.execute('SELECT url FROM sites')}
-    urls = [w for (w,) in db.execute("SELECT DISTINCT website FROM places WHERE website IS NOT NULL AND website<>'' AND closed=0")]
+    urls = [w for (w, _) in db.execute("SELECT website, MAX(COALESCE(reviews, 1)) m FROM places WHERE website IS NOT NULL AND website<>'' AND closed=0 GROUP BY website ORDER BY m DESC")]
     todo = [u for u in urls if kind_of(u) == 'own site' and u not in done]
     if args.limit: todo = todo[:args.limit]
     print(len(todo), 'sites to check;', len(done), 'already done', flush=True)
