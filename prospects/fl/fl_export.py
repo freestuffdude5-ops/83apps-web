@@ -30,6 +30,12 @@ act = {r['cid']: r for r in db.execute('SELECT * FROM activity WHERE err IS NULL
 P = [dict(r) for r in db.execute('SELECT * FROM places')]
 
 
+zip_city = collections.defaultdict(collections.Counter)
+for p in P:
+    if p['zip'] and p['city']: zip_city[p['zip']][p['city']] += 1
+zip_city = {z: c.most_common(1)[0][0] for z, c in zip_city.items()}
+
+
 def norm(n): return re.sub(r'[^a-z0-9 ]', '', (n or '').lower().replace('&', ' and ')).strip()
 
 
@@ -49,7 +55,14 @@ def age_text(d):
 
 rows = []
 for p in P:
-    if not p['zip']: continue          # not a Florida address
+    addr = p['address'] or ''
+    am = re.search(r',\s*([A-Z]{2})\s+(\d{5})', addr)
+    if am and am.group(1) != 'FL': continue                 # out-of-state result near the border
+    qz = re.search(r'(\d{5})$', p['first_query'] or '')
+    service_area = not addr                                 # no public street address (service-area business)
+    zipc = p['zip'] or (am.group(2) if am else '') or (qz.group(1) if qz else '')
+    if not zipc: continue
+    p['zip'] = zipc; p['city'] = p['city'] or zip_city.get(zipc, '')
     w = p.get('website') or ''
     kind = kind_of(w)
     a = act.get(p['cid'])
@@ -86,12 +99,13 @@ for p in P:
     elif wsite == 'Could not verify': note.append(f'Site could not be verified from our network ({wwhy}).')
     elif wsite in ('No website', 'Facebook/social page only', 'Booking/free page only'): note.append(wsite + ' on the Google profile: confirm there is no newer site.')
     if reviews and days is not None: note.append(f'{reviews} reviews, newest {age_text(days)}.')
+    if service_area: note.append('No public street address (service-area business): location is the ZIP it was found in.')
     if is_chain: note.append('Looks like a chain / multi-location business.')
     if excluded: note.append('Category excluded (church/school/government/etc).')
     if closed: note.append('Closed on Google.')
     rows.append(dict(
         cid=p['cid'], place_id=p['place_id'] or '', name=p['name'], category=catstr, address=(p['address'] or '').replace(', United States', ''), city=p['city'], zip=p['zip'],
-        county=county, lat=p['lat'], lng=p['lng'], phone=p['phone'] or '', rating=p['rating'], reviews=reviews,
+        service_area=int(service_area), county=county, lat=p['lat'], lng=p['lng'], phone=p['phone'] or '', rating=p['rating'], reviews=reviews,
         newest_review_days=days, newest_review=age_text(days), activity=active, website=w, website_type=kind, website_status=wsite, website_detail=wwhy,
         website_verified_by=wby, lead=int(lead), priority=pr, chain=int(is_chain), excluded=int(excluded), closed=int(bool(closed or temp)),
         maps_url=(f'https://www.google.com/maps/place/?q=place_id:{p["place_id"]}' if p['place_id'] else f'https://www.google.com/maps/search/?api=1&query={(p["name"] or "").replace(" ", "+")}+{p["zip"] or ""}'),
