@@ -10,7 +10,11 @@ the last SAT_ROUNDS categories added fewer than SAT_NEW new businesses, so empty
 import json, re, sqlite3, sys, os, time, threading, argparse, random
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'gmaps'))
+import crawl as _crawl
 from crawl import search_url, page, find_places, extract, sg
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import fastget
+_crawl.get = fastget.get      # reuse connections: ~3x less CPU than spawning curl per request
 
 SAT_ROUNDS, SAT_NEW, MIN_ROUNDS = 5, 3, 12
 HERE = os.path.dirname(os.path.abspath(__file__))

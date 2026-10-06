@@ -32,9 +32,11 @@ def url_for(cid):
     return 'https://www.google.com' + re.sub(r'0x[0-9a-f]+%3A0x[0-9a-f]+', hexid, TEMPLATE, count=1)
 
 
+import fastget
+
+
 def fetch(cid):
-    r = subprocess.run(['curl', '-sS', '-m', '30', '-A', UA, '-H', 'Accept-Language: en-US,en', url_for(cid)], capture_output=True, text=True, errors='replace')
-    return r.stdout
+    return fastget.get(url_for(cid))
 
 
 UNIT = {'hour': 0, 'day': 1, 'week': 7, 'month': 30, 'year': 365}
