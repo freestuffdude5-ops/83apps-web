@@ -12,8 +12,10 @@ ap.add_argument('--limit', type=int, default=0)
 args = ap.parse_args()
 db = sqlite3.connect(args.db, timeout=120)
 os.makedirs(os.path.join(HERE, 'data', 'shots'), exist_ok=True)
-rows = db.execute("""SELECT DISTINCT s.url, s.host FROM sites s JOIN places p ON p.website = s.url
-  WHERE s.method='curl' AND s.verdict IN ('BROKEN','CHECK','UNVERIFIABLE') AND COALESCE(s.dns,0)<>3 AND p.closed=0 AND (p.reviews IS NULL OR p.reviews>=2)""").fetchall()
+rows = db.execute("""SELECT s.url, s.host FROM sites s JOIN places p ON p.website = s.url JOIN activity a ON a.cid = p.cid
+  WHERE s.method='curl' AND s.verdict IN ('BROKEN','CHECK','UNVERIFIABLE') AND COALESCE(s.dns,0)<>3 AND p.closed=0
+    AND a.newest_days<=365 AND COALESCE(p.reviews,a.total_reviews,0)>=2
+  GROUP BY s.url ORDER BY CASE s.verdict WHEN 'BROKEN' THEN 0 WHEN 'CHECK' THEN 1 ELSE 2 END, MAX(COALESCE(p.reviews,a.total_reviews,0)) DESC""").fetchall()
 if args.limit: rows = rows[:args.limit]
 print(len(rows), 'sites to confirm in a browser', flush=True)
 for i in range(0, len(rows), args.chunk):
