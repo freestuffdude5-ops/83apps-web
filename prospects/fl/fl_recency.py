@@ -77,8 +77,9 @@ def work(cid):
             db.execute('INSERT OR REPLACE INTO activity(cid,err,ts) VALUES(?,?,?)', (cid, 'no data', time.time()))
         else:
             db.execute('INSERT OR REPLACE INTO activity VALUES(?,?,?,?,?,?,?,?,?)', (cid, out['newest_ts'], out['newest_days'], out['seen'], out['perm_closed'], out['temp_closed'], out['total_reviews'], None, time.time()))
+        db.commit()
         work.n += 1
-        if work.n % 300 == 0: db.commit(); print(work.n, flush=True)
+        if work.n % 300 == 0: print(work.n, flush=True)
 work.n = 0
 
 

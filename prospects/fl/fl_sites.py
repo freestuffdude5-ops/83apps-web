@@ -114,8 +114,9 @@ if __name__ == '__main__':
         r = check(u)
         with lock:
             db.execute('INSERT OR REPLACE INTO sites VALUES(?,?,?,?,?,?,?,?,?,?)', (r['url'], r['host'], r['dns'], r['status'], r['final'], r['title'], r['verdict'], r['why'], 'curl', time.time()))
+            db.commit()
             n += 1
-            if n % 200 == 0: db.commit(); print(n, flush=True)
+            if n % 200 == 0: print(n, flush=True)
     with ThreadPoolExecutor(args.workers) as ex: list(ex.map(work, todo))
     db.commit()
     from collections import Counter
