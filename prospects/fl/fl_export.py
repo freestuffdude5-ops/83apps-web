@@ -16,7 +16,7 @@ from fl_sites import kind_of
 
 src = open(os.path.join(HERE, '..', 'gmaps', 'targets.py')).read()
 CHAIN = re.compile(re.search(r'CHAIN = re\.compile\(r"([^"]+)"', src).group(1), re.I)
-SKIPCAT = re.compile(r'church|government|school|park|library|post office|hospital|city hall|association|non-profit|atm|apartment|condominium|hotel|motel|resort|gas station|real estate rental|mobile home|cemetery|courthouse|police|fire station|university|college|clinic|medical center|urgent care|emergency|department of|county|bank|credit union|storage unit', re.I)
+SKIPCAT = re.compile(r'church|government|school|park|library|post office|hospital|city hall|association|non-profit|atm|apartment|condominium|hotel|motel|resort|gas station|real estate rental|mobile home|cemetery|courthouse|police|fire station|university|college|clinic|medical center|urgent care|emergency|department of|county|bank|credit union|storage unit|shopping|mall|plaza|business park|office park|industrial|airport|stadium|arena|amusement|tourist attraction|campground|rv park|lodging|bed & breakfast|golf course|convention|community center|senior center|nursing home|assisted living|rehabilitation|marina|vacation home|holiday home|timeshare|property management|housing|residential|neighborhood|subdivision|home owners|homeowners|gated community|trailer park|manufactured home|community', re.I)
 geo = json.load(open(os.path.join(HERE, 'fl_geo.json')))
 z2c = geo['zip2county']
 city2county = {}
