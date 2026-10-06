@@ -13,7 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--db', default=os.path.join(HERE, 'data', 'fl.db'))
 ap.add_argument('--workers', type=int, default=24)
 ap.add_argument('--limit', type=int, default=0)
-args = ap.parse_args()
+args, _unknown = ap.parse_known_args()
 
 SOCIAL = re.compile(r'facebook\.com|instagram\.com|linktr\.ee|yelp\.com|nextdoor\.com|tiktok\.com|twitter\.com|x\.com/|youtube\.com|linkedin\.com|pinterest\.com', re.I)
 BOOKING = re.compile(r'booksy|vagaro|styleseat|glossgenius|square\.site|squareup|fresha|schedulicity|gocheckin|vidobooking|mindbody|toasttab|clover\.com|doordash|ubereats|grubhub|menufy|chownow|order\.online|business\.site|wixsite|godaddysites|sites\.google|weebly\.com|localsearch\.com|edan\.io|jany\.io|setmore|acuity|opentable|resy\.com|booking\.com|airbnb|vrbo|offeringtree|linkin\.bio|carrd\.co|beacons\.ai|bit\.ly|google\.com/maps|goo\.gl|maps\.app', re.I)

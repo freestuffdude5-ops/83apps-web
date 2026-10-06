@@ -86,7 +86,7 @@ work.n = 0
 if __name__ == '__main__':
     done = {r[0] for r in db.execute('SELECT cid FROM activity WHERE err IS NULL')}
     sites = {u: v for u, v in db.execute('SELECT url, verdict FROM sites')}
-    rows = db.execute('SELECT cid, website, reviews FROM places WHERE closed=0 AND reviews>=?', (args.minreviews,)).fetchall()
+    rows = db.execute('SELECT cid, website, reviews FROM places WHERE closed=0 AND (reviews IS NULL OR reviews>=?)', (args.minreviews,)).fetchall()
     def is_lead(w):
         k = kind_of(w)
         if k != 'own site': return True
