@@ -97,13 +97,14 @@ def flush():
 
 def work(cid):
     out = None; best = None
-    for i in range(10):
+    for i in range(6):
         try:
             t = fetch(cid); out = parse(t)
             if out is not None:
-                best = out
+                if best is None or out['seen'] >= best['seen']: best = out
                 if out['seen'] > 0: break      # full response; the stripped-down variant has no review list
-            time.sleep(0.3 + random.random() * 0.7)
+                if out['total_reviews'] is not None and out['total_reviews'] < 2: break   # genuinely has no reviews to read
+            time.sleep(0.2 + random.random() * 0.4)
         except Exception:
             time.sleep(2)
     out = best
