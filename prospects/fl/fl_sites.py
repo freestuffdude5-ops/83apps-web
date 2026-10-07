@@ -140,7 +140,7 @@ if __name__ == '__main__':
     if args.quality:
         okq = {u for (u,) in db.execute("SELECT url FROM sites WHERE verdict='OK' AND viewport IS NULL")}
         act = {c for (c,) in db.execute('SELECT cid FROM activity WHERE newest_days<=365')}
-        ranked = db.execute("SELECT website, MAX(COALESCE(reviews,1)) m FROM places WHERE website<>'' AND closed=0 AND cid IN (SELECT cid FROM activity WHERE newest_days<=365) GROUP BY website ORDER BY m DESC").fetchall()
+        ranked = db.execute("SELECT website, MAX(reviews) m FROM places WHERE website<>'' AND closed=0 AND reviews>=10 GROUP BY website ORDER BY m DESC").fetchall()
         todo = [u for u, _ in ranked if u in okq]
     if args.shard:
         _i, _n = map(int, args.shard.split('/')); todo = todo[_i::_n]
