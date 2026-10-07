@@ -15,6 +15,7 @@ ap.add_argument('--workers', type=int, default=12)
 ap.add_argument('--scope', default='leads')
 ap.add_argument('--limit', type=int, default=0)
 ap.add_argument('--minreviews', type=int, default=2)
+ap.add_argument('--shard', default='', help='i/n: process only every n-th business (run several processes in parallel)')
 ap.add_argument('--enrich', action='store_true', help='re-read active leads already checked, to fill the profile fields (claimed, photos, hours, attributes, description)')
 args = ap.parse_args()
 
@@ -117,6 +118,8 @@ if __name__ == '__main__':
         todo = [(c, r) for c, w, r in rows if c not in done and (args.scope == 'all' or is_lead(w))]
     todo.sort(key=lambda x: -(x[1] or 0))
     todo = [c for c, _ in todo]
+    if args.shard:
+        _i, _n = map(int, args.shard.split('/')); todo = todo[_i::_n]
     if args.limit: todo = todo[:args.limit]
     print(len(todo), 'to check', flush=True)
     with ThreadPoolExecutor(args.workers) as ex: list(ex.map(work, todo))
