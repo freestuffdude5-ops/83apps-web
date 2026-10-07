@@ -5,7 +5,7 @@ Verdicts: OK / BROKEN / CHECK / UNVERIFIABLE. BROKEN and CHECK are later confirm
     python3 fl_sites.py [--db data/fl.db] [--workers 24] [--limit N]
 Resumable: sites already in the `sites` table are skipped.
 """
-import json, re, sqlite3, subprocess, sys, os, time, threading, argparse, urllib.request, urllib.parse
+import json, re, sqlite3, subprocess, sys, os, time, threading, argparse, urllib.request, urllib.parse, random
 from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -35,6 +35,7 @@ UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 
 db = sqlite3.connect(args.db, check_same_thread=False, timeout=120)
 db.execute('PRAGMA journal_mode=WAL')
+db.execute('PRAGMA synchronous=NORMAL')
 db.execute('CREATE TABLE IF NOT EXISTS sites(url TEXT PRIMARY KEY, host TEXT, dns INTEGER, status INTEGER, final TEXT, title TEXT, verdict TEXT, why TEXT, method TEXT, ts REAL)')
 for _c, _t in (('https', 'INTEGER'), ('viewport', 'INTEGER'), ('generator', 'TEXT'), ('copyright', 'INTEGER'), ('bytes', 'INTEGER'), ('ms', 'INTEGER'), ('emails', 'TEXT'), ('facebook', 'TEXT'), ('instagram', 'TEXT')):
     try: db.execute(f'ALTER TABLE sites ADD COLUMN {_c} {_t}')
@@ -146,17 +147,28 @@ if __name__ == '__main__':
     if args.limit: todo = todo[:args.limit]
     print(len(todo), 'sites to check;', len(done), 'already done', flush=True)
     n = 0
+    def retry(fn):
+        for _ in range(60):
+            try: return fn()
+            except sqlite3.OperationalError as e:
+                if 'locked' not in str(e) and 'busy' not in str(e): raise
+                time.sleep(0.5 + random.random())
+    SQL = 'INSERT OR REPLACE INTO sites(url,host,dns,status,final,title,verdict,why,method,ts,https,viewport,generator,copyright,bytes,ms,emails,facebook,instagram) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+    buf = []
+    def flush():
+        rows = buf[:]; del buf[:]
+        if rows: retry(lambda: (db.executemany(SQL, rows), db.commit()))      # one short transaction, so other processes never wait long
     def work(u):
         global n
-        r = check(u)
+        try: r = check(u)
+        except Exception as e: r = dict(url=u, host='', dns=None, status=0, final='', title='', verdict='UNVERIFIABLE', why=f'checker error {str(e)[:60]}')
         with lock:
-            db.execute('INSERT OR REPLACE INTO sites(url,host,dns,status,final,title,verdict,why,method,ts,https,viewport,generator,copyright,bytes,ms,emails,facebook,instagram) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                       (r['url'], r['host'], r['dns'], r['status'], r['final'], r['title'], r['verdict'], r['why'], 'curl', time.time(),
+            buf.append((r['url'], r['host'], r['dns'], r['status'], r['final'], r['title'], r['verdict'], r['why'], 'curl', time.time(),
                         r.get('https'), r.get('viewport'), r.get('generator'), r.get('copyright'), r.get('bytes'), r.get('ms'), r.get('emails'), r.get('facebook'), r.get('instagram')))
-            db.commit()
             n += 1
-            if n % 200 == 0: print(n, flush=True)
+            if len(buf) >= 50: flush()
+            if n % 400 == 0: print(n, flush=True)
     with ThreadPoolExecutor(args.workers) as ex: list(ex.map(work, todo))
-    db.commit()
+    flush()
     from collections import Counter
     print(Counter(v for (v,) in db.execute('SELECT verdict FROM sites')))

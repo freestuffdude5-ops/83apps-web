@@ -25,6 +25,7 @@ from fl_sites import kind_of
 
 db = sqlite3.connect(args.db, check_same_thread=False, timeout=120)
 db.execute('PRAGMA journal_mode=WAL')
+db.execute('PRAGMA synchronous=NORMAL')
 db.execute('CREATE TABLE IF NOT EXISTS activity(cid TEXT PRIMARY KEY, newest_ts REAL, newest_days INTEGER, seen INTEGER, perm_closed INTEGER, temp_closed INTEGER, total_reviews INTEGER, err TEXT, ts REAL)')
 for _c, _t in (('claimed', 'INTEGER'), ('photos', 'INTEGER'), ('hours', 'TEXT'), ('attrs', 'TEXT'), ('descr', 'TEXT'), ('r90', 'INTEGER'), ('r365', 'INTEGER')):
     try: db.execute(f'ALTER TABLE activity ADD COLUMN {_c} {_t}')
@@ -77,6 +78,23 @@ def parse(txt):
                 total_reviews=int(tot.group(1).replace(',', '')) if tot else None)
 
 
+BUF = []
+SQL = 'INSERT OR REPLACE INTO activity(cid,newest_ts,newest_days,seen,perm_closed,temp_closed,total_reviews,err,ts,claimed,photos,hours,attrs,descr,r90,r365) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+
+
+def _retry(fn):
+    for _ in range(60):
+        try: return fn()
+        except sqlite3.OperationalError as e:
+            if 'locked' not in str(e) and 'busy' not in str(e): raise
+            time.sleep(0.5 + random.random())
+
+
+def flush():
+    rows = BUF[:]; del BUF[:]
+    if rows: _retry(lambda: (db.executemany(SQL, rows), db.commit()))      # one short transaction
+
+
 def work(cid):
     out = None; best = None
     for i in range(10):
@@ -89,16 +107,13 @@ def work(cid):
         except Exception:
             time.sleep(2)
     out = best
+    row = ((cid, None, None, None, None, None, None, 'no data', time.time(), None, None, None, None, None, None, None) if out is None else
+           (cid, out['newest_ts'], out['newest_days'], out['seen'], out['perm_closed'], out['temp_closed'], out['total_reviews'], None, time.time(),
+            out['claimed'], out['photos'], out['hours'], out['attrs'], out['descr'], out['r90'], out['r365']))
     with lock:
-        if out is None:
-            db.execute('INSERT OR REPLACE INTO activity(cid,err,ts) VALUES(?,?,?)', (cid, 'no data', time.time()))
-        else:
-            db.execute('INSERT OR REPLACE INTO activity(cid,newest_ts,newest_days,seen,perm_closed,temp_closed,total_reviews,err,ts,claimed,photos,hours,attrs,descr,r90,r365) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                       (cid, out['newest_ts'], out['newest_days'], out['seen'], out['perm_closed'], out['temp_closed'], out['total_reviews'], None, time.time(),
-                        out['claimed'], out['photos'], out['hours'], out['attrs'], out['descr'], out['r90'], out['r365']))
-        db.commit()
-        work.n += 1
-        if work.n % 300 == 0: print(work.n, flush=True)
+        BUF.append(row); work.n += 1
+        if len(BUF) >= 50: flush()
+        if work.n % 400 == 0: print(work.n, flush=True)
 work.n = 0
 
 
@@ -123,5 +138,5 @@ if __name__ == '__main__':
     if args.limit: todo = todo[:args.limit]
     print(len(todo), 'to check', flush=True)
     with ThreadPoolExecutor(args.workers) as ex: list(ex.map(work, todo))
-    db.commit()
+    flush()
     print('DONE', db.execute('SELECT COUNT(*) FROM activity WHERE err IS NULL').fetchone()[0])
