@@ -13,6 +13,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--db', default=os.path.join(HERE, 'data', 'fl.db'))
 ap.add_argument('--workers', type=int, default=24)
 ap.add_argument('--limit', type=int, default=0)
+ap.add_argument('--minreviews', type=int, default=0, help='skip sites whose businesses all have fewer reviews (unknown counts are kept)')
+ap.add_argument('--shard', default='', help='i/n: process only every n-th site starting at i (run several processes in parallel)')
 ap.add_argument('--quality', action='store_true', help='re-fetch working sites that have no quality signals yet (active businesses, most reviews first)')
 args, _unknown = ap.parse_known_args()
 
@@ -132,13 +134,15 @@ def kind_of(w):
 
 if __name__ == '__main__':
     done = {r[0] for r in db.execute('SELECT url FROM sites')}
-    urls = [w for (w, _) in db.execute("SELECT website, MAX(COALESCE(reviews, 1)) m FROM places WHERE website IS NOT NULL AND website<>'' AND closed=0 GROUP BY website ORDER BY m DESC")]
+    urls = [w for (w, _) in db.execute("SELECT website, MAX(COALESCE(reviews, 2)) m FROM places WHERE website IS NOT NULL AND website<>'' AND closed=0 GROUP BY website HAVING m >= ? ORDER BY m DESC", (args.minreviews,))]
     todo = [u for u in urls if kind_of(u) == 'own site' and u not in done]
     if args.quality:
         okq = {u for (u,) in db.execute("SELECT url FROM sites WHERE verdict='OK' AND viewport IS NULL")}
         act = {c for (c,) in db.execute('SELECT cid FROM activity WHERE newest_days<=365')}
         ranked = db.execute("SELECT website, MAX(COALESCE(reviews,1)) m FROM places WHERE website<>'' AND closed=0 AND cid IN (SELECT cid FROM activity WHERE newest_days<=365) GROUP BY website ORDER BY m DESC").fetchall()
         todo = [u for u, _ in ranked if u in okq]
+    if args.shard:
+        _i, _n = map(int, args.shard.split('/')); todo = todo[_i::_n]
     if args.limit: todo = todo[:args.limit]
     print(len(todo), 'sites to check;', len(done), 'already done', flush=True)
     n = 0

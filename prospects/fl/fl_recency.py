@@ -103,7 +103,7 @@ work.n = 0
 
 if __name__ == '__main__':
     done = {r[0] for r in db.execute('SELECT cid FROM activity WHERE err IS NULL')}
-    sites = {u: v for u, v in db.execute('SELECT url, verdict FROM sites')}
+    sites = {u: ('WEAK' if v == 'OK' and ((vp == 0) or (hs == 0) or (cp is not None and cp <= 2018)) else v) for u, v, vp, hs, cp in db.execute('SELECT url, verdict, viewport, https, copyright FROM sites')}
     rows = db.execute('SELECT cid, website, reviews FROM places WHERE closed=0 AND (reviews IS NULL OR reviews>=?)', (args.minreviews,)).fetchall()
     def is_lead(w):
         k = kind_of(w)
