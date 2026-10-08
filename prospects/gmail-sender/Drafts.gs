@@ -17,9 +17,12 @@ const FOLLOWUP_DAYS = 5;
 const P = () => PropertiesService.getScriptProperties();
 
 function setup() {
+  Logger.log('Account: ' + Session.getEffectiveUser().getEmail() + '  (must be hayden@83appstudio.com)');
   ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
   ScriptApp.newTrigger('tick').timeBased().everyMinutes(5).create();
-  tick();
+  Logger.log('5-minute timer created.');
+  const n = prepareDrafts();
+  Logger.log('Drafts finished with screenshots this run: ' + n + '. Any left over are done by the timer within 5 minutes.');
   Logger.log('Running. Finished drafts with screenshots are in Gmail > Drafts.');
 }
 function stop() { ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t)); Logger.log('Stopped.'); }
@@ -33,7 +36,10 @@ function tick() {
 /** Turns every [[83auto]] draft into a finished draft with the screenshots embedded. */
 function prepareDrafts() {
   const started = Date.now();
-  const raw = GmailApp.getDrafts().map(d => ({ d: d, m: d.getMessage() })).filter(x => x.m.getPlainBody().indexOf('[[83auto]]') >= 0);
+  const all = GmailApp.getDrafts();
+  const raw = all.map(d => ({ d: d, m: d.getMessage() })).filter(x => x.m.getPlainBody().indexOf('[[83auto]]') >= 0);
+  console.log('Drafts in Gmail: ' + all.length + ', waiting for screenshots: ' + raw.length);
+  let done = 0;
   for (const x of raw) {
     if (Date.now() - started > 4 * 60000) break;          // stay under Apps Script's time limit; the rest go next run
     const e = parseDraft_(x.m);
@@ -46,7 +52,10 @@ function prepareDrafts() {
     GmailApp.createDraft(e.to, e.subject, e.body, { htmlBody: toHtml_(e.body, e.imgs.length), inlineImages: inline, name: FROM_NAME });
     if (e.followup) P().setProperty('fu:' + e.to, JSON.stringify({ subject: e.subject, text: e.followup }));
     x.d.deleteDraft();
+    done++;
+    console.log('Finished draft for ' + e.to);
   }
+  return done;
 }
 
 /** 5+ days after you sent one with no reply: a follow-up draft (Re: same subject; you press Send). */
