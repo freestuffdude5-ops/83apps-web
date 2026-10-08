@@ -32,7 +32,21 @@ def greeting(raw_name, name, vertical, email='', reviews=()):
         if m.group(3) and not re.search(r',|Realtor|PA|CPA|DDS|DMD|LMHC', m.group(0)) and n.lower() not in FIRST: continue
         if (n.lower() in FIRST or _person_in_reviews(n, reviews)) and (n.lower() in (email or '').lower() or _person_in_reviews(n, reviews)):
             return f'Hi {n},', n
-    return (f'Hi {name} team,' if len(name) <= 28 else 'Hi there,'), None
+    dr = re.match(r"Dr\.?\s+(?:[A-Z][a-z]+\s+)*([A-Z][a-z'-]{2,})$", name.strip())
+    if dr: return f'Hi Dr. {dr.group(1)},', None
+    team = team_name(name)
+    return (f'Hi {team} team,' if 2 < len(team) <= 28 and team.lower() != 'the' else 'Hi there,'), None
+
+
+def plain_name(name):
+    """'El Taco Grande, LLC.' -> 'El Taco Grande', 'Cafe Lucia, Lake Weir' -> 'Cafe Lucia'."""
+    n = re.split(r',| \| | - ', name)[0].strip()
+    return re.sub(r'\s+(?:LLC|L\.L\.C|Inc|Corp|Co)\.?$', '', n, flags=re.I).strip() or name
+
+
+def team_name(name):
+    """plain_name without a leading 'The': 'The Roque Pub' -> 'Roque Pub'."""
+    return re.sub(r'^The\s+', '', plain_name(name)).strip()
 
 
 def where(county):
@@ -107,7 +121,7 @@ def compliment(lead):
 
 
 def compose(lead, D, has_reviews_img):
-    name = D['name']
+    name = plain_name(D['name'])
     issues = verified_issues(lead)
     hi, first = greeting(lead['name'], name, D.get('vertical'), lead.get('email', ''), lead.get('review_list'))
     if not issues:
