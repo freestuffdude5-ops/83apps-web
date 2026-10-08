@@ -26,6 +26,12 @@ it says "Authenticating email with DKIM". Check all three with https://www.mail-
 8. Outreach > 2. Send a test to myself. Check it on your phone and computer.
 9. Outreach > 3. Start automatic sending.
 
+## Autopilot (automatic leads + images)
+`../autopilot` builds leads, concept images and emails and adds them to this sheet by itself. Setup:
+`../autopilot/README.md` > "Connect it to the Google Sheet". New rows arrive with a "view image" link and an
+`approved` checkbox. Set `AUTO_APPROVE` to YES to skip the ticking. Before each first email the website claim is
+re-checked (`RECHECK_BEFORE_SEND`), so nothing goes out that stopped being true.
+
 ## Day to day
 - Replies land in your normal inbox, in the same thread. The sheet marks them `replied` and stops the follow-up.
 - "Not interested / unsubscribe / stop" replies are marked `opted out` and added to the Suppression tab automatically.

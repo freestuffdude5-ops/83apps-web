@@ -35,3 +35,6 @@ gmaps/*.txt
 outreach/
 fl/data/
 fl/*.log
+autopilot/data/
+autopilot/.env
+autopilot/out/

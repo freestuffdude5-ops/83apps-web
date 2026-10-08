@@ -7,11 +7,17 @@
  *
  * Setup (once): Extensions > Apps Script, paste this file, add the "Gmail API" service
  * (Services +), reload the sheet, then use the Outreach menu: Set up sheet > Send a test to myself > Start.
+ *
+ * Autopilot: the lead engine (prospects/autopilot) posts finished leads here (row + concept images saved to Drive)
+ * through a web app deployment protected by WEBAPP_TOKEN. Before each first email, the website claims in the
+ * email ("didn't load", "Not secure", "not mobile-friendly", "footer says 2017") are re-checked; if the site changed,
+ * the lead is skipped instead of sending something that is no longer true.
  */
 
 const TAB = { SETTINGS: 'Settings', LEADS: 'Leads', SUPP: 'Suppression', LOG: 'Log' };
 const LEAD_COLS = ['approved', 'business', 'email', 'subject', 'body', 'image_file', 'followup_body',
   'status', 'sent_at', 'thread_id', 'message_id', 'followup_at', 'replied_at', 'notes'];
+const EXTRA_COLS = ['preview', 'category', 'county', 'website', 'claims', 'lead_id', 'added_at'];
 const DEFAULTS = [
   ['FROM_NAME', 'Hayden | 83 App Studio', 'Name people see in their inbox'],
   ['SIGNATURE', 'Hayden\n83 App Studio\nHayden@83appstudio.com', 'Added under every email'],
@@ -27,6 +33,9 @@ const DEFAULTS = [
   ['FOLLOWUPS_ENABLED', 'YES', 'YES or NO'],
   ['IMAGE_FOLDER', '83 Apps Outreach Images', 'Google Drive folder holding the screenshots named in image_file'],
   ['PAUSED', 'NO', 'Set to YES to pause instantly'],
+  ['AUTO_APPROVE', 'NO', 'YES = leads the autopilot adds are approved automatically (no ticking). NO = tick "approved" yourself after looking at the preview'],
+  ['RECHECK_BEFORE_SEND', 'YES', 'Re-check the website claim in each email right before sending; skip the lead if the site changed'],
+  ['WEBAPP_TOKEN', '', 'Password the autopilot uses to add leads. Filled in by Set up sheet. Keep it private'],
   ['START_DATE', '', 'Filled in when you press Start (used for the ramp)'],
 ];
 const OPT_OUT_RE = /\b(unsubscribe|remove me|take me off|stop emailing|do not (contact|email)|don'?t (contact|email)|not interested|no thank)/i;
@@ -38,6 +47,7 @@ function onOpen() {
     .addItem('1. Set up sheet', 'setup')
     .addItem('2. Send a test to myself', 'sendTest')
     .addItem('3. Start automatic sending', 'start')
+    .addItem('Connect the autopilot', 'connectHelp')
     .addSeparator()
     .addItem('Stop automatic sending', 'stop')
     .addItem('Check replies now', 'checkReplies')
@@ -55,7 +65,10 @@ function setup() {
   }
   let l = ss.getSheetByName(TAB.LEADS) || ss.insertSheet(TAB.LEADS);
   if (l.getLastRow() < 1) l.getRange(1, 1, 1, LEAD_COLS.length).setValues([LEAD_COLS]).setFontWeight('bold');
+  const have = l.getRange(1, 1, 1, Math.max(1, l.getLastColumn())).getValues()[0].map(h => String(h).trim());
+  EXTRA_COLS.filter(c => have.indexOf(c) < 0).forEach((c, k) => l.getRange(1, have.length + k + 1).setValue(c).setFontWeight('bold'));
   l.setFrozenRows(1);
+  if (!String(settings_().WEBAPP_TOKEN || '').trim()) setSetting_('WEBAPP_TOKEN', Utilities.getUuid().replace(/-/g, ''));
   let p = ss.getSheetByName(TAB.SUPP) || ss.insertSheet(TAB.SUPP);
   if (p.getLastRow() < 1) p.getRange(1, 1, 1, 3).setValues([['email', 'reason', 'date']]).setFontWeight('bold');
   let g = ss.getSheetByName(TAB.LOG) || ss.insertSheet(TAB.LOG);
@@ -119,6 +132,10 @@ function sendNextInitial_(st) {
     if (!/^[^\s@,;]+@[^\s@,;]+\.[a-z]{2,}$/i.test(email)) { setCells_(sheet, rowNum, col, { status: 'bad email' }); continue; }
     if (supp.has(email)) { setCells_(sheet, rowNum, col, { status: 'skipped: on suppression list' }); continue; }
     if (!hasMx_(email.split('@')[1])) { setCells_(sheet, rowNum, col, { status: 'bad email: domain has no mail server' }); continue; }
+    if (yes_(st.RECHECK_BEFORE_SEND) && col.claims >= 0 && String(r[col.claims] || '').trim()) {
+      const changed = recheckClaims_(r[col.website], r[col.claims]);
+      if (changed) { setCells_(sheet, rowNum, col, { status: 'skipped: ' + changed }); log_('skipped', r[col.business], email, changed); continue; }
+    }
     try {
       const res = sendMail_(st, { to: email, subject: r[col.subject], body: r[col.body], images: imageBlobs_(st, r[col.image_file]) });
       setCells_(sheet, rowNum, col, { status: 'sent', sent_at: new Date(), thread_id: res.threadId, message_id: res.messageId });
@@ -260,6 +277,125 @@ function threadHasReply_(threadId, rowNum, sheet, col, email, business) {
   return false;
 }
 
+
+// ---------------------------------------------------------------- autopilot: web app the lead engine posts to
+/** Deploy > New deployment > Web app (Execute as: Me, Who has access: Anyone). The token keeps everyone else out. */
+function doPost(e) {
+  let req;
+  try { req = JSON.parse(e.postData.contents); } catch (err) { return json_({ ok: false, error: 'bad JSON' }); }
+  const st = settings_();
+  if (!String(st.WEBAPP_TOKEN || '').trim() || req.token !== String(st.WEBAPP_TOKEN).trim()) return json_({ ok: false, error: 'bad token' });
+  const lock = LockService.getScriptLock();
+  if (!lock.tryLock(30000)) return json_({ ok: false, error: 'busy, retry' });
+  try {
+    if (req.action === 'ping') return json_({ ok: true, stats: stats_() });
+    if (req.action === 'stats') return json_({ ok: true, stats: stats_() });
+    if (req.action === 'addLead') return json_(addLead_(st, req.lead || {}, req.images || []));
+    return json_({ ok: false, error: 'unknown action' });
+  } catch (err) {
+    return json_({ ok: false, error: String(err.message || err) });
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function addLead_(st, lead, images) {
+  const email = String(lead.email || '').trim().toLowerCase();
+  if (!email || !lead.business || !lead.body) return { ok: false, error: 'missing email/business/body' };
+  if (suppression_().has(email)) return { ok: false, error: 'duplicate: on suppression list' };
+  const { sheet, rows, col } = leads_();
+  const dupe = rows.some(r => String(r[col.email]).trim().toLowerCase() === email || (lead.lead_id && col.lead_id >= 0 && r[col.lead_id] === lead.lead_id));
+  if (dupe) return { ok: false, error: 'duplicate: already in Leads' };
+  const folder = imageFolder_(st);
+  let preview = '';
+  images.forEach((img, k) => {
+    const old = folder.getFilesByName(img.name);
+    while (old.hasNext()) old.next().setTrashed(true);
+    const f = folder.createFile(Utilities.newBlob(Utilities.base64Decode(img.b64), 'image/jpeg', img.name));
+    if (k === 0) preview = f.getUrl();
+  });
+  const header = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0].map(h => String(h).trim());
+  const auto = yes_(st.AUTO_APPROVE);
+  const vals = Object.assign({}, lead, { approved: auto, status: '', preview: '', added_at: new Date() });
+  const row = header.map(h => (h in vals && h !== 'preview') ? vals[h] : '');
+  sheet.appendRow(row);
+  const n = sheet.getLastRow();
+  sheet.getRange(n, col.approved + 1).insertCheckboxes();
+  if (auto) sheet.getRange(n, col.approved + 1).check();
+  if (col.preview >= 0 && preview) sheet.getRange(n, col.preview + 1).setFormula('=HYPERLINK("' + preview + '","view image")');
+  log_('added', lead.business, email, 'from autopilot' + (auto ? ' (auto-approved)' : ''));
+  return { ok: true, row: n };
+}
+
+function imageFolder_(st) {
+  const it = DriveApp.getFoldersByName(st.IMAGE_FOLDER);
+  return it.hasNext() ? it.next() : DriveApp.createFolder(st.IMAGE_FOLDER);
+}
+
+function stats_() {
+  const { rows, col } = leads_();
+  const out = { total: rows.length, waiting: 0, unapproved: 0, sent: 0, replied: 0 };
+  rows.forEach(r => {
+    const s = String(r[col.status] || '').trim();
+    if (!s && yes_(r[col.approved])) out.waiting++;
+    if (!s && !yes_(r[col.approved])) out.unapproved++;
+    if (/^(sent|followed up)$/.test(s)) out.sent++;
+    if (s === 'replied') out.replied++;
+  });
+  return out;
+}
+
+function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
+
+function connectHelp() {
+  const st = settings_();
+  alert_('To let the autopilot add leads to this sheet:\n\n1. In the Apps Script editor: Deploy > New deployment > type: Web app.\n' +
+    '2. Execute as: Me. Who has access: Anyone. Deploy, approve, copy the Web app URL.\n' +
+    '3. Give the autopilot that URL and this token:\n\n' + st.WEBAPP_TOKEN + '\n\n(OUTREACH_WEBAPP_URL and OUTREACH_TOKEN in autopilot/.env)');
+}
+
+// ---------------------------------------------------------------- re-check website claims right before sending
+/** Returns null if every claim is still true, or a short reason if the website changed. */
+function recheckClaims_(website, claims) {
+  const list = String(claims).split(',').map(x => x.trim()).filter(Boolean);
+  if (!website || !list.length) return null;
+  const res = fetchFollow_(String(website));
+  for (const c of list) {
+    if (c === 'broken') {
+      if (res.error) continue;
+      if (res.code === 401 || res.code === 403 || res.code === 429) return 'website could not be re-checked (HTTP ' + res.code + '), check it yourself';
+      if (res.code >= 400) continue;
+      if (/buy this domain|for sale|expired|suspended|not found|isn.t connected|no site here|default page|welcome to nginx|it works!/i.test(res.body.slice(0, 20000))) continue;
+      if (res.body.replace(/<[^>]+>/g, '').trim().length < 40) continue;
+      return 'website works again (claim "didn\'t load" no longer true)';
+    }
+    if (res.error || res.code >= 400) return 'website could not be re-checked (' + (res.error || 'HTTP ' + res.code) + ')';
+    if (c === 'not_secure' && /^https:/i.test(res.url)) return 'website now redirects to https (claim "Not secure" no longer true)';
+    if (c === 'not_mobile_vp' && /<meta[^>]+name=["']?viewport/i.test(res.body)) return 'website now has a mobile layout (claim no longer true)';
+    const m = c.match(/^old_(\d{4})$/);
+    if (m) {
+      const years = (res.body.match(/(?:©|&copy;|copyright)\s*(?:\d{4}\s*[-–]\s*)?(\d{4})/gi) || []).map(x => Number(x.slice(-4)));
+      if (years.length && Math.max.apply(null, years) > Number(m[1])) return 'footer year changed (claim no longer true)';
+    }
+  }
+  return null;
+}
+
+function fetchFollow_(url) {
+  let u = url;
+  for (let hop = 0; hop < 7; hop++) {
+    let r;
+    try { r = UrlFetchApp.fetch(u, { followRedirects: false, muteHttpExceptions: true, validateHttpsCertificates: true, headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126 Safari/537.36' } }); }
+    catch (e) { return { error: String(e.message || e).slice(0, 80), url: u, code: 0, body: '' }; }
+    const code = r.getResponseCode();
+    const h = r.getAllHeaders();
+    const loc = h.Location || h.location;
+    if (code >= 300 && code < 400 && loc) { u = /^https?:/i.test(loc) ? loc : (u.match(/^https?:\/\/[^/]+/i)[0] + (loc[0] === '/' ? '' : '/') + loc); continue; }
+    return { url: u, code: code, body: r.getContentText() || '' };
+  }
+  return { error: 'too many redirects', url: u, code: 0, body: '' };
+}
+
 // ---------------------------------------------------------------- test & status
 function sendTest() {
   const st = settings_();
@@ -303,10 +439,11 @@ function leads_() {
   const header = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0].map(h => String(h).trim());
   const col = {};
   LEAD_COLS.forEach(c => { col[c] = header.indexOf(c); if (col[c] < 0) throw new Error('Leads tab is missing the column "' + c + '"'); });
+  EXTRA_COLS.forEach(c => { col[c] = header.indexOf(c); });
   const rows = last > 1 ? sheet.getRange(2, 1, last - 1, header.length).getValues() : [];
   return { sheet, rows, col };
 }
-function setCells_(sheet, rowNum, col, values) { Object.keys(values).forEach(k => sheet.getRange(rowNum, col[k] + 1).setValue(values[k])); }
+function setCells_(sheet, rowNum, col, values) { Object.keys(values).forEach(k => { if (col[k] >= 0) sheet.getRange(rowNum, col[k] + 1).setValue(values[k]); }); }
 function suppression_() {
   const s = SpreadsheetApp.getActive().getSheetByName(TAB.SUPP);
   if (!s || s.getLastRow() < 2) return new Set();
