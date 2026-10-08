@@ -25,20 +25,21 @@ function setup() {
   ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
   ScriptApp.newTrigger('tick').timeBased().everyMinutes(5).create();
   Logger.log('5-minute timer created.');
-  const n = prepareDrafts();
+  const n = prepareDrafts_();
   Logger.log('Drafts finished with screenshots this run: ' + n + '. Any left over are done by the timer within 5 minutes.');
   Logger.log('Running. Finished drafts with screenshots are in Gmail > Drafts.');
 }
 function stop() { ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t)); Logger.log('Stopped.'); }
 
 function tick() {
+  console.log('Account: ' + Session.getEffectiveUser().getEmail());
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(1000)) return;
-  try { prepareDrafts(); prepareFollowups(); } finally { lock.releaseLock(); }
+  try { prepareDrafts_(); prepareFollowups_(); } finally { lock.releaseLock(); }
 }
 
 /** Turns every [[83auto]] draft into a finished draft with the screenshots embedded. */
-function prepareDrafts() {
+function prepareDrafts_() {
   const started = Date.now();
   const all = GmailApp.getDrafts();
   const raw = all.map(d => ({ d: d, m: d.getMessage() })).filter(x => x.m.getPlainBody().indexOf('[[83auto]]') >= 0);
@@ -63,7 +64,7 @@ function prepareDrafts() {
 }
 
 /** 5+ days after you sent one with no reply: a follow-up draft (Re: same subject; you press Send). */
-function prepareFollowups() {
+function prepareFollowups_() {
   const me = Session.getEffectiveUser().getEmail().toLowerCase();
   const all = P().getProperties();
   Object.keys(all).filter(k => k.indexOf('fu:') === 0).forEach(k => {
