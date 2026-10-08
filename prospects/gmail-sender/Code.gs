@@ -15,6 +15,8 @@
  */
 
 const TAB = { SETTINGS: 'Settings', LEADS: 'Leads', SUPP: 'Suppression', LOG: 'Log' };
+/** Your personal copy has a password filled in here, so the autopilot can connect with nothing to set up. Never share it. */
+const BUILTIN_TOKEN = '';
 const LEAD_COLS = ['approved', 'business', 'email', 'subject', 'body', 'image_file', 'followup_body',
   'status', 'sent_at', 'thread_id', 'message_id', 'followup_at', 'replied_at', 'notes'];
 const EXTRA_COLS = ['preview', 'category', 'county', 'website', 'claims', 'lead_id', 'added_at'];
@@ -283,11 +285,22 @@ function threadHasReply_(threadId, rowNum, sheet, col, email, business) {
 function doPost(e) {
   let req;
   try { req = JSON.parse(e.postData.contents); } catch (err) { return json_({ ok: false, error: 'bad JSON' }); }
-  const st = settings_();
-  if (!String(st.WEBAPP_TOKEN || '').trim() || req.token !== String(st.WEBAPP_TOKEN).trim()) return json_({ ok: false, error: 'bad token' });
+  const ss = SpreadsheetApp.getActive();
+  const st0 = ss.getSheetByName(TAB.SETTINGS) ? settings_() : {};
+  const okTok = (BUILTIN_TOKEN && req.token === BUILTIN_TOKEN) || (String(st0.WEBAPP_TOKEN || '').trim() && req.token === String(st0.WEBAPP_TOKEN).trim());
+  if (!okTok) return json_({ ok: false, error: 'bad token' });
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(30000)) return json_({ ok: false, error: 'busy, retry' });
   try {
+    ensureSetup_();
+    const st = settings_();
+    if (req.action === 'setSettings') {
+      const allowed = DEFAULTS.map(d => d[0]).filter(k => k !== 'WEBAPP_TOKEN' && k !== 'START_DATE');
+      Object.keys(req.values || {}).filter(k => allowed.indexOf(k) >= 0).forEach(k => setSetting_(k, req.values[k]));
+      return json_({ ok: true, settings: settings_() });
+    }
+    if (req.action === 'start') { start(); return json_({ ok: true, running: ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'tick'), stats: stats_() }); }
+    if (req.action === 'stop') { stop_(false); return json_({ ok: true, running: false }); }
     if (req.action === 'ping') return json_({ ok: true, stats: stats_() });
     if (req.action === 'stats') return json_({ ok: true, stats: stats_() });
     if (req.action === 'addLead') return json_(addLead_(st, req.lead || {}, req.images || []));
@@ -297,6 +310,18 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/** Creates the tabs / adds missing columns the first time the autopilot connects, so no manual "Set up sheet" is needed. */
+function ensureSetup_() {
+  const ss = SpreadsheetApp.getActive();
+  const l = ss.getSheetByName(TAB.LEADS);
+  const need = !ss.getSheetByName(TAB.SETTINGS) || !l || !ss.getSheetByName(TAB.SUPP) || !ss.getSheetByName(TAB.LOG) ||
+    EXTRA_COLS.some(c => l.getRange(1, 1, 1, Math.max(1, l.getLastColumn())).getValues()[0].map(String).indexOf(c) < 0);
+  if (need) setup();
+  const s = ss.getSheetByName(TAB.SETTINGS);
+  const keys = s.getRange(2, 1, Math.max(1, s.getLastRow() - 1), 1).getValues().map(r => r[0]);
+  DEFAULTS.filter(d => keys.indexOf(d[0]) < 0).forEach(d => s.appendRow(d));
 }
 
 function addLead_(st, lead, images) {

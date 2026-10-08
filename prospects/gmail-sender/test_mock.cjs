@@ -133,4 +133,7 @@ ok(st(rowOf('Auto 1')).status === 'sent', 'still-broken site: email sent');
 ok(String(st(rowOf('Auto 2')).status).startsWith('skipped: website works again'), 'site that came back: skipped, not sent');
 ok(st(rowOf('Auto 3')).status === 'sent', 'still not secure + same footer year: sent');
 ok(String(st(rowOf('Auto 4')).status).includes('now redirects to https'), 'site that moved to https: skipped');
+const ss2 = post({ token: tok, action: 'setSettings', values: { MAILING_ADDRESS: 'PO Box 9, Ormond Beach, FL 32174', AUTO_APPROVE: 'NO', WEBAPP_TOKEN: 'hacked' } });
+ok(ss2.ok && ss2.settings.MAILING_ADDRESS.startsWith('PO Box 9') && ss2.settings.WEBAPP_TOKEN === tok, 'remote settings update (token itself cannot be changed)');
+ok(post({ token: tok, action: 'start' }).ok, 'remote start');
 console.log('log rows:', sheets.Log.data.length - 1); for (const b of ['Auto 1','Auto 2','Auto 3','Auto 4']) console.log(b, st(rowOf(b)).status, st(rowOf(b)).approved);
