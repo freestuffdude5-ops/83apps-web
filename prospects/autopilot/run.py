@@ -25,7 +25,7 @@ ap.add_argument('step')
 ap.add_argument('--count', type=int, default=50)
 ap.add_argument('--limit', type=int, default=0)
 ap.add_argument('--county', default='')
-ap.add_argument('--kinds', default='site,broken')
+ap.add_argument('--kinds', default='site,broken,booking,facebook,working,nosite')
 ap.add_argument('--vertical', default='')
 ap.add_argument('--cids', default='')
 ap.add_argument('--workers', type=int, default=4)
@@ -74,8 +74,12 @@ def select():
     if args.county: where.append('county IN (%s)' % ','.join("'%s'" % c.strip().replace("'", '') for c in args.county.split(',')))
     if args.cids: where = ['cid IN (%s)' % ','.join("'%s'" % c for c in args.cids.split(','))]
     alts = []
-    if 'site' in kinds: alts.append("(website_type='own site' AND email_on_site!='' AND (weak_lead=1 OR website_status IN ('Needs checking','Broken website')))")
+    if 'site' in kinds: alts.append("(website_type='own site' AND (weak_lead=1 OR website_status='Needs checking'))")
     if 'broken' in kinds: alts.append("(website_type='own site' AND website_status='Broken website')")
+    if 'booking' in kinds: alts.append("(website_status='Booking/free page only')")
+    if 'facebook' in kinds: alts.append("(website_status='Facebook/social page only' AND website LIKE '%facebook.com%')")
+    if 'working' in kinds: alts.append("(lead=0 AND website_type='own site' AND email_on_site!='')")
+    if 'nosite' in kinds: alts.append("(website_status='No website')")
     if not args.cids: where.append('(' + ' OR '.join(alts) + ')')
     q = 'SELECT * FROM businesses WHERE ' + ' AND '.join(where)
     import verticals
@@ -86,12 +90,12 @@ def select():
         if vfilter and verticals.pick([c.strip() for c in (r['category'] or '').split(',')])['key'] not in vfilter: continue
         pr = {'A': 30, 'B': 15}.get(r['priority'], 0)
         rec = 20 if (r['newest_review_days'] or 999) <= 60 else 10 if (r['newest_review_days'] or 999) <= 180 else 0
-        score = pr + rec + min(25, (r['reviews'] or 0) / 8) + ((r['rating'] or 0) - 4) * 10 + (10 if r['website_status'] == 'Broken website' else 0)
+        score = pr + rec + min(25, (r['reviews'] or 0) / 8) + ((r['rating'] or 0) - 4) * 10 + {'Broken website': 10, 'Booking/free page only': 8, 'Facebook/social page only': 6}.get(r['website_status'], 0)
         picked.append((score, r))
     picked.sort(key=lambda x: -x[0])
     n = 0
     for score, r in picked[:args.count]:
-        kind = 'broken' if r['website_status'] == 'Broken website' else 'site'
+        kind = {'Broken website': 'broken', 'Booking/free page only': 'booking', 'Facebook/social page only': 'facebook', 'No website': 'nosite'}.get(r['website_status'], 'site')
         db.execute('INSERT OR IGNORE INTO leads(cid,name,kind,county,category,website,score,stage,email,email_src,updated) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
                    (r['cid'], r['name'], kind, r['county'], r['category'], r['website'], round(score, 1), 'new', None, None, time.time()))
         n += 1
@@ -137,6 +141,8 @@ def site_state(p, website):
 
 def probe():
     todo = rows('new', args.limit)
+    for r in [x for x in todo if x['kind'] == 'nosite']: set_(r['cid'], stage='probed', probe={'state': 'none'})
+    todo = [x for x in todo if x['kind'] != 'nosite']
     if not todo: print('nothing to probe'); return
     inp = os.path.join(DATA, 'probe_in.json'); outp = os.path.join(DATA, 'probe_out.jsonl')
     json.dump([dict(cid=r['cid'], website=r['website']) for r in todo], open(inp, 'w'))
@@ -149,6 +155,11 @@ def probe():
     for r in todo:
         p = got.get(r['cid'])
         if not p: continue
+        if r['kind'] in ('booking', 'facebook'):
+            p['state'] = 'page'
+            if r['kind'] == 'facebook': p['logo'] = None; p['images'] = []; p['bg'] = []
+            if p.get('error'): set_(r['cid'], stage='skipped', skip='could not open their page: ' + p['error'][:80], probe=p); continue
+            set_(r['cid'], stage='probed', probe=p); continue
         state, why = site_state(p, r['website'])
         p['state'], p['why'] = state, why
         if state == 'unknown': set_(r['cid'], stage='skipped', skip=f'could not verify the website ({why})', probe=p); continue
@@ -163,14 +174,23 @@ def emails_step():
     import emails as E
     todo = rows('probed', args.limit)
 
+    exdb = sqlite3.connect(EXPORT, check_same_thread=False)
+
     def one(r):
         p = json.loads(r['probe'])
-        found = E.from_probe(p) if p.get('state') == 'ok' else []
+        owned = r['kind'] in ('booking', 'facebook')
+        found = E.from_probe(p) if p.get('state') in ('ok', 'page') else []
         src_note = ''
-        if not found or p.get('state') == 'broken':
+        if r['kind'] in ('site', 'broken', 'working') and (not found or p.get('state') == 'broken'):
             wb, snap = E.wayback(r['website']); found += wb; src_note = f' (Wayback {snap})' if snap else ''
-        e, src, why = E.choose(found, r['website'], r['name'])
+        e, src, why = E.choose(found, r['website'], r['name'], owned_page=owned)
+        if not e:
+            with LOCK: b = exdb.execute('SELECT city, phone FROM businesses WHERE cid=?', (r['cid'],)).fetchone()
+            yp = E.yellowpages(r['name'], b[0], b[1]) if b else []
+            if yp: e, src, why = E.choose(yp, r['website'] if r['kind'] in ('site', 'broken', 'working') else '', r['name'], owned_page=False); src_note = ''
         if not e: set_(r['cid'], stage='skipped', skip='no trustworthy email: ' + why); return
+        if src and r['kind'] in ('booking', 'facebook') and not src.startswith('YellowPages'):
+            src = src.replace('homepage', 'page').replace('printed on site', 'printed') + (' on their Facebook page' if r['kind'] == 'facebook' else ' on their booking page')
         set_(r['cid'], stage='emailed', email=e, email_src=(src or '') + src_note)
     with ThreadPoolExecutor(3) as ex: list(ex.map(one, todo))
     print('emails done', len(todo))
@@ -194,6 +214,10 @@ def assemble(r):
     lead['broken_why'] = lead['probe'].get('why')
     lead['broken_evidence'] = (lead['probe'].get('error') or f"HTTP {lead['probe'].get('status')}: {lead['probe'].get('title')}")[:160]
     lead['county'] = r['county']
+    lead['kind'] = r['kind']
+    lead['email'] = r.get('email') or ''
+    lead['gp_website'] = gp.get('website')
+    lead['gp_full'] = bool(gp.get('review_list') or gp.get('hours'))
     lead['override'] = json.loads(r['override']) if r.get('override') else {}
     if gp.get('closed'): lead['closed_now'] = True
     return lead
@@ -206,7 +230,9 @@ def build():
     for r in todo:
         lead = assemble(r)
         if not compose.verified_issues(lead):
-            set_(r['cid'], stage='skipped', skip='website checked out fine in a real browser (secure, mobile-friendly, current), nothing honest to point out'); continue
+            why = ('website checked out fine in a real browser (secure, mobile-friendly, current), nothing honest to point out' if r['kind'] in ('site', 'broken', 'working')
+                   else "could not confirm what their Google listing links to right now")
+            set_(r['cid'], stage='skipped', skip=why); continue
         if lead.get('closed_now'): set_(r['cid'], stage='skipped', skip='Google now shows it as permanently closed'); continue
         d = os.path.join(DATA, 'out', slug_of(r))
         try:

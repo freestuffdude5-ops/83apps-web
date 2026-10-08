@@ -10,6 +10,20 @@ Florida DB ──select──▶ probe (real browser) ──▶ emails (site / W
   + screenshots) ──▶ compose (verified claims only) ──▶ push (Sheet row + images in Drive) ──▶ Code.gs sends, follows up, re-checks
 ```
 
+## Where the leads and emails come from
+| Lead type (Florida DB) | Active, 5+ reviews | Where the email comes from | Opening line (verified) |
+|---|---|---|---|
+| Broken website | ~9,500 | Wayback copy of their old site | "I tapped the Website button on your Google listing and X didn't load" |
+| Booking/free page only (Square, GlossGenius, Vagaro, free Wix...) | ~10,000 | printed on their own booking page | "your Google listing sends people to your Square page rather than a website of your own" |
+| Facebook-only | ~13,900 | the public "Intro" on their Facebook page | "the only website on your Google listing is your Facebook page" |
+| No website | ~68,000 | their YellowPages listing (matched by phone, or exact name + city) | "your Google listing doesn't have a website linked at all" |
+| Own site, outdated or unchecked | ~12,700 | mailto/printed on their site | "Chrome marked it Not secure" / "shrunk-down desktop page on a phone" / "footer still says © 2017" |
+| Working site with an email | ~13,800 | their site | only if one of the flaws above is really there |
+
+Measured yield (test batches): about 3 in 10 for broken, booking and Facebook, 1 in 10 for no-website.
+That's roughly 15,000+ emailable businesses statewide. "Your listing links to Facebook/Square/nothing" is re-read from
+the live Google listing when the image is built. If Google sends back an incomplete listing, the lead is skipped.
+
 ## What each lead gets, automatically
 - **Real data, one request:** name, phone, address, hours, rating and review count from Google Maps
   (`gplace.py`). Also Google's summary, the owner's description, the "people mention" topics, business photos,

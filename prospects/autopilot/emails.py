@@ -15,9 +15,10 @@ FREE = {'gmail.com', 'yahoo.com', 'aol.com', 'hotmail.com', 'outlook.com', 'iclo
         'charter.net', 'windstream.net', 'frontier.com', 'juno.com', 'netzero.net', 'mac.com', 'rocketmail.com', 'zoho.com'}
 BAD_LOCAL = re.compile(r'^(no-?reply|do-?not-?reply|bugreport|abuse|postmaster|hostmaster|privacy|compliance|dmca|legal|webmaster|admin@wordpress|'
                        r'example|test|email|name|your(name|email)?|user|username|someone|john(doe)?|jane|sentry|wordpress|support@(wix|godaddy|squarespace))$', re.I)
-BAD_DOMAIN = re.compile(r'(example\.|domain\.com|email\.com|yourdomain|sentry|wixpress|wix\.com|squarespace|godaddy|moatable|chime\.me|'
-                        r'kvcore|boomtown|placester|sitebuilder|weebly|jimdo|duda|yola|mysite|website\.com|company\.com|'
-                        r'schema\.org|w3\.org|png|jpg|jpeg|gif|webp|svg|css|js)$|\.(png|jpe?g|gif|webp|svg)$', re.I)
+BAD_DOMAIN = re.compile(r'(^|\.)(example|domain|email|yourdomain|sentry|sentry-next|wixpress|wix|squarespace|godaddy|godaddysites|moatable|chime|'
+                        r'kvcore|boomtown|placester|sitebuilder|weebly|jimdo|duda|yola|mysite|mystore|website|company|booksy|vagaro|glossgenius|'
+                        r'squareup|square|setmore|fresha|toasttab|facebook|fb|instagram|canva|schedulicity|styleseat|acuityscheduling|calendly|'
+                        r'linktr|wixsite|google|schema|w3|ingest|menufy|yelp|yellowpages)\.|\.(png|jpe?g|gif|webp|svg|css|js)$', re.I)
 SESSION = requests.Session()
 SESSION.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36'
 _mx = {}
@@ -53,14 +54,18 @@ def has_mx(domain):
     return ok
 
 
-def choose(found, website, name=''):
-    """found = [(email, source, strength)] -> best (email, source, why) or (None, None, reason)."""
-    site = root(host_of(website)) if website else ''
+def choose(found, website, name='', owned_page=False):
+    """found = [(email, source, strength)] -> best (email, source, why) or (None, None, reason).
+    owned_page: the emails were printed on the business's own booking/Facebook page, so a personal mailbox there is theirs."""
+    site = root(host_of(website)) if website and not owned_page else ''
     tokens = {t for t in re.findall(r'[a-z]{4,}', (name or '').lower())} - {'llc', 'inc', 'services', 'service', 'company', 'florida'}
     best, reasons = None, []
+    allc = {clean(r) for r, _, _ in found} - {None}
     for raw, src, strength in found:
         e = clean(raw)
         if not e: continue
+        if any(o != e and e.endswith(o) and re.match(r'^[a-z]+$', e[:len(e) - len(o)]) for o in allc): continue   # "account" + email glued by page text
+        if owned_page: strength = max(strength, 2)
         local, dom = e.split('@')
         if BAD_LOCAL.match(local) or BAD_LOCAL.match(e) or BAD_DOMAIN.search(dom): reasons.append(f'{e}: placeholder/platform'); continue
         if dom == site or root(dom) == site: score = 3
@@ -76,6 +81,32 @@ def choose(found, website, name=''):
     mx = has_mx(e.split('@')[1])
     if mx is False: return None, None, f'{e}: domain has no mail server (would bounce)'
     return e, best[2], 'ok' if mx else 'MX lookup failed'
+
+
+def yellowpages(name, city, phone):
+    """Email from the business's YellowPages listing, matched by phone number, or by near-identical name in the same city."""
+    from difflib import SequenceMatcher
+    digits = re.sub(r'\D', '', phone or '')[-10:]
+    norm = lambda x: ' '.join(re.sub(r'\b(inc|llc|corp|co|the|and|of)\b', '', re.sub(r'[^a-z0-9 ]', '', x.lower().replace('&', ' and '))).split())
+    try:
+        r = SESSION.get('https://www.yellowpages.com/search', params={'search_terms': name, 'geo_location_terms': f'{city}, FL'}, timeout=30)
+    except Exception:
+        return []
+    for b in re.split(r'<div class="result"', r.text)[1:10]:
+        ph = re.sub(r'\D', '', ' '.join(re.findall(r'class="phones phone primary"[^>]*>([^<]+)', b)))
+        bn = re.findall(r'class="business-name"[^>]*>(?:<span>)?([^<]+)', b)
+        loc = ' '.join(re.findall(r'class="locality"[^>]*>([^<]+)', b)).lower()
+        by_phone = bool(digits) and ph[-10:] == digits
+        if not (by_phone or (SequenceMatcher(None, norm(name), norm(bn[0] if bn else '')).ratio() >= 0.9 and (city or '').lower() in loc)): continue
+        em = re.findall(r'mailto:([^"?]+)', b)
+        link = re.search(r'href="(/[^"]+/mip/[^"]+)"', b)
+        if not em and link:
+            time.sleep(0.6)
+            try: em = re.findall(r'mailto:([^"?]+)', SESSION.get('https://www.yellowpages.com' + link.group(1), timeout=30).text)
+            except Exception: em = []
+        how = 'phone match' if by_phone else 'name+city match'
+        return [(x, f'YellowPages listing ({how})', 3 if by_phone else 2) for x in em]
+    return []
 
 
 def from_probe(r):
