@@ -21,6 +21,7 @@ console.log('83 Drafts script loaded.');
 function myFunction() { setup(); }
 
 function setup() {
+  P().setProperty('installed', '1');
   Logger.log('Account: ' + Session.getEffectiveUser().getEmail() + '  (must be hayden@83appstudio.com)');
   ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
   ScriptApp.newTrigger('tick').timeBased().everyMinutes(5).create();
@@ -153,3 +154,6 @@ function fetchFollow_(url) {
   }
   return { error: 'too many redirects', url: u, code: 0, body: '' };
 }
+
+// First time this file runs at all (whatever is selected next to Run): install the timer and finish the drafts.
+if (!P().getProperty('installed')) setup();
