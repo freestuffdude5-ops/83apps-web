@@ -25,7 +25,7 @@ OPTOUT = "If you'd rather not hear from me, just reply and let me know."
 
 db = sqlite3.connect(os.path.join(HERE, 'data', 'autopilot.db'), timeout=60)
 db.row_factory = sqlite3.Row
-for c, t in (('hosted', 'TEXT'), ('sent_at', 'REAL'), ('thread_id', 'TEXT'), ('followup_at', 'REAL'), ('outcome', 'TEXT')):
+for c, t in (('drafted_at', 'REAL'), ('hosted', 'TEXT'), ('sent_at', 'REAL'), ('thread_id', 'TEXT'), ('followup_at', 'REAL'), ('outcome', 'TEXT')):
     try: db.execute(f'ALTER TABLE leads ADD COLUMN {c} {t}')
     except sqlite3.OperationalError: pass
 db.execute('CREATE TABLE IF NOT EXISTS suppression(email TEXT PRIMARY KEY, reason TEXT, ts REAL)')
@@ -114,7 +114,7 @@ def nxt(n):
         due.append(dict(cid=r['cid'], kind='followup', to=r['email'], threadId=r['thread_id'], subject='Re: ' + m['subject'],
                         body=m['followup_body'] + '\n\n' + SIGN_TXT + '\n\n' + OPTOUT,
                         html=html_of(m['followup_body'], [])))
-    for r in db.execute("SELECT * FROM leads WHERE stage IN ('built','pushed') AND hosted IS NOT NULL AND sent_at IS NULL AND outcome IS NULL ORDER BY score DESC"):
+    for r in db.execute("SELECT * FROM leads WHERE stage IN ('built','pushed') AND hosted IS NOT NULL AND sent_at IS NULL AND drafted_at IS NULL AND outcome IS NULL ORDER BY score DESC"):
         if len(due) >= n: break
         if r['email'] in supp or any(d['to'] == r['email'] for d in due): continue
         m = json.loads(r['mail']); imgs = json.loads(r['hosted'])
@@ -151,6 +151,22 @@ def status():
     print('sent emails:', ' '.join(r[0] for r in db.execute('SELECT email FROM leads WHERE sent_at IS NOT NULL')))
 
 
+def draftbody(cid):
+    """Plain-text draft for Outreach.gs: hidden [[marker]] lines + the email + signature."""
+    r = db.execute('SELECT * FROM leads WHERE cid LIKE ?', ('%' + cid,)).fetchone()
+    m = json.loads(r['mail']); imgs = [u.split('83apps-web/', 1)[1] for u in json.loads(r['hosted'])]
+    body = m['body']
+    if len(imgs) < 2: body = body.replace('There are two screenshots below: the homepage, and a reviews section built from your own Google reviews.', "There's a screenshot below.")
+    lines = ['[[83auto]]', '[[img:' + '|'.join(imgs) + ']]']
+    if m.get('claim_keys'): lines += ['[[site:' + (r['website'] or '') + ']]', '[[claims:' + m['claim_keys'] + ']]']
+    lines.append('[[followup:' + m['followup_body'].replace('\n', ' ') + ']]')
+    print(json.dumps(dict(to=r['email'], subject=m['subject'], body='\n'.join(lines) + '\n' + body + '\n\n' + SIGN_TXT + '\n\n' + OPTOUT)))
+
+
+def drafted(cid):
+    db.execute('UPDATE leads SET drafted_at=? WHERE cid LIKE ?', (time.time(), '%' + cid)); db.commit()
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if a[0] == 'host': host()
@@ -158,3 +174,5 @@ if __name__ == '__main__':
     elif a[0] == 'sent': sent(a[1], a[2] if len(a) > 2 else '', len(a) > 3 and a[3] == 'followup')
     elif a[0] == 'mark': mark(a[1], a[2])
     elif a[0] == 'status': status()
+    elif a[0] == 'draftbody': draftbody(a[1])
+    elif a[0] == 'drafted': drafted(a[1])
