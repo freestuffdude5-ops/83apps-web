@@ -15,6 +15,10 @@ const IMG_BASE = 'https://raw.githubusercontent.com/freestuffdude5-ops/83apps-we
 const FROM_NAME = 'Hayden | 83 App Studio';
 const FOLLOWUP_DAYS = 5;
 const P = () => PropertiesService.getScriptProperties();
+console.log('83 Drafts script loaded.');
+
+/** Whatever is selected next to Run (myFunction or setup), it does the setup. */
+function myFunction() { setup(); }
 
 function setup() {
   Logger.log('Account: ' + Session.getEffectiveUser().getEmail() + '  (must be hayden@83appstudio.com)');
