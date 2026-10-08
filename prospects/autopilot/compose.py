@@ -8,7 +8,8 @@ from emails import host_of
 
 SHOT = ("My sites start at $250 depending on what you need. You choose the look and what goes on it, and every site is set up "
         "so Google and AI search tools can read your services, hours and reviews.")
-ASK = "Want me to send over the full page and a quick quote?"
+ASK = ("Do you have 15 minutes this week for a quick Zoom? I'll walk you through the full design and we can talk about what you'd want on it. "
+       "Just reply with a day and time that works.")
 PERSON = re.compile(r"^(?:Dr\.?\s+)?([A-Z][a-z]{2,})\s+(?:[A-Z]\.?\s+)?[A-Z][a-zA-Z'\-]+(?:,|\s+-|\s+(?:Realtor|PhD|Ph\.D|DDS|DMD|CPA|Esq|LMHC|LCSW|MD|PA|Photography|Photo|Insurance|Law|State Farm|Allstate|Events|Designs?|Studio|Consulting|Realty|Group|Tutoring|Training|Fitness|Coaching|Counseling|Therapy)\b|$)")
 
 
@@ -134,7 +135,8 @@ def compose(lead, D, has_reviews_img):
              if has_reviews_img else "There's a screenshot below.")
     body = f"{hi}\n\n{opener}\n\n{lead_in}\n\n{SHOT} {shots}\n\n{ASK}"
     follow = (f"Hi{(' ' + first) if first else ''}, just following up on the homepage concept I sent over for {name}. Sites start at $250, "
-              f"and you decide the look and what goes on it. Want me to send the full page (it opens right in your browser) and a quick quote?")
+              f"and you decide the look and what goes on it. Do you have 15 minutes this week for a quick Zoom? I'll walk you through the full design. "
+              f"Just reply with a day and time that works.")
     if key == 'broken':
         subject, alt = 'The website link on your Google listing', f'A homepage idea for {name}'
     elif key in NEWSITE:
