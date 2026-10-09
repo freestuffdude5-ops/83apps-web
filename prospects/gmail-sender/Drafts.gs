@@ -236,5 +236,5 @@ function fetchFollow_(url) {
   return { error: 'too many redirects', url: u, code: 0, body: '' };
 }
 
-// First time this file runs at all (whatever is selected next to Run): install the timer and finish the drafts.
-if (!P().getProperty('installed')) setup();
+// Whenever this file runs (whatever is selected next to Run) and the 5-minute timer is missing: install it.
+if (!ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'tick')) setup();
