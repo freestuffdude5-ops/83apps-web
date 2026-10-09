@@ -34,85 +34,136 @@ function setup() {
   ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
   ScriptApp.newTrigger('tick').timeBased().everyMinutes(5).create();
   Logger.log('5-minute timer created.');
-  const n = prepareDrafts_();
-  Logger.log('Drafts finished with screenshots this run: ' + n + '. Any left over are done by the timer within 5 minutes.');
+  const live = scanDrafts_();
+  Logger.log('Drafts finished with screenshots this run: ' + live.made + '. Outreach drafts waiting to send: ' + Object.keys(live.queue).length + '.');
   Logger.log(AUTO_SEND ? 'Running. It sends one email at a time, Mon-Fri 9 AM-4 PM New York time.' : 'Running. Finished drafts with screenshots are in Gmail > Drafts.');
 }
 function stop() { ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t)); Logger.log('Stopped.'); }
 
 function tick() {
-  console.log('Account: ' + Session.getEffectiveUser().getEmail());
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(1000)) return;
   try {
-    prepareDrafts_();
-    prepareFollowups_();
-    if (AUTO_SEND) sendNext_();
+    const live = scanDrafts_();
+    const due = AUTO_SEND ? followupsDue_(live) : (followupDrafts_(live), 0);
+    const status = AUTO_SEND ? sendNext_(live) : 'drafts only';
+    console.log('Queue: ' + Object.keys(live.queue).length + ' outreach drafts, ' + due + ' follow-ups due. ' + status);
   } finally { lock.releaseLock(); }
 }
 
-/** Turns every [[83auto]] draft into a finished draft with the screenshots embedded. */
-function prepareDrafts_() {
+/** Looks at Gmail > Drafts ONCE per run and reads only drafts it hasn't seen before (keeps Gmail usage tiny).
+ *  [[83auto]] drafts get their screenshots; finished outreach drafts go in the send queue (q:<draftId>). */
+function scanDrafts_() {
   const started = Date.now();
-  const all = GmailApp.getDrafts();
-  const raw = all.map(d => ({ d: d, m: d.getMessage() })).filter(x => x.m.getPlainBody().indexOf('[[83auto]]') >= 0);
-  console.log('Drafts in Gmail: ' + all.length + ', waiting for screenshots: ' + raw.length);
+  const drafts = GmailApp.getDrafts();
+  const ids = {}; drafts.forEach(d => { ids[d.getId()] = d; });
+  const props = P().getProperties();
+  const ign = JSON.parse(props.ign || '{}');
+  const queue = {};
+  Object.keys(props).filter(k => k.indexOf('q:') === 0).forEach(k => {
+    const id = k.slice(2);
+    if (ids[id]) queue[id] = JSON.parse(props[k]);
+    else markGone_(k, JSON.parse(props[k]));              // you sent it (or deleted it) yourself
+  });
   let done = 0;
-  for (const x of raw) {
-    if (Date.now() - started > 4 * 60000) break;          // stay under Apps Script's time limit; the rest go next run
-    const e = parseDraft_(x.m);
-    if (e.claims) {
-      const changed = recheckClaims_(e.site, e.claims);
-      if (changed) { x.d.deleteDraft(); console.log('Removed draft to ' + e.to + ': ' + changed); continue; }
+  for (const d of drafts) {
+    const id = d.getId();
+    if (queue[id] || ign[id]) continue;
+    if (Date.now() - started > 4 * 60000) break;           // stay under Apps Script's time limit; the rest go next run
+    const m = d.getMessage();
+    const text = m.getPlainBody();
+    if (text.indexOf('[[83auto]]') >= 0) {
+      const e = parseDraft_(m);
+      if (e.claims) {
+        const changed = recheckClaims_(e.site, e.claims);
+        if (changed) { d.deleteDraft(); console.log('Removed draft to ' + e.to + ': ' + changed); continue; }
+      }
+      const inline = {};
+      e.imgs.forEach((u, k) => { inline['concept' + (k + 1)] = UrlFetchApp.fetch(/^https?:/.test(u) ? u : IMG_BASE + u).getBlob().setName('concept' + (k + 1) + '.jpg'); });
+      const nd = GmailApp.createDraft(e.to, e.subject, e.body, { htmlBody: toHtml_(e.body, e.imgs.length), inlineImages: inline, name: FROM_NAME });
+      if (e.followup) P().setProperty('fu:' + e.to, JSON.stringify({ subject: e.subject, text: e.followup }));
+      const q = { to: e.to, subject: e.subject, site: e.site, claims: e.claims, at: Date.now() + done };
+      P().setProperty('q:' + nd.getId(), JSON.stringify(q)); queue[nd.getId()] = q;
+      d.deleteDraft(); done++;
+      console.log('Finished draft for ' + e.to);
+      continue;
     }
-    const inline = {};
-    e.imgs.forEach((u, k) => { inline['concept' + (k + 1)] = UrlFetchApp.fetch(/^https?:/.test(u) ? u : IMG_BASE + u).getBlob().setName('concept' + (k + 1) + '.jpg'); });
-    GmailApp.createDraft(e.to, e.subject, e.body, { htmlBody: toHtml_(e.body, e.imgs.length), inlineImages: inline, name: FROM_NAME });
-    if (e.followup) P().setProperty('fu:' + e.to, JSON.stringify({ subject: e.subject, text: e.followup, site: e.site, claims: e.claims }));
-    x.d.deleteDraft();
-    done++;
-    console.log('Finished draft for ' + e.to);
+    const to = (m.getTo() || '').replace(/.*<([^>]+)>.*/, '$1').trim().toLowerCase();
+    const f = props['fu:' + to] && JSON.parse(props['fu:' + to]);
+    if (f && !f.sentAt && m.getSubject() === f.subject) {   // a finished outreach draft from before this version
+      const q = { to: to, subject: f.subject, site: f.site || '', claims: f.claims || '', at: m.getDate().getTime() };
+      P().setProperty('q:' + id, JSON.stringify(q)); queue[id] = q;
+    } else ign[id] = 1;                                       // your own draft: never touched, never read again
   }
-  return done;
+  P().setProperty('ign', JSON.stringify(ign));
+  // follow-up records whose email already went out before this version: start their 5-day clock now
+  const queuedTo = {}; Object.keys(queue).forEach(id => { queuedTo[queue[id].to] = 1; });
+  Object.keys(props).filter(k => k.indexOf('fu:') === 0).forEach(k => {
+    const f = JSON.parse(props[k]);
+    if (!f.sentAt && !queuedTo[k.slice(3)]) { f.sentAt = Date.now(); P().setProperty(k, JSON.stringify(f)); }
+  });
+  return { drafts: ids, queue: queue, made: done };
 }
 
-/** 5+ days after an email went out with no reply: a follow-up (Re: same subject). Auto mode queues it to send in the
- *  same conversation; otherwise it becomes a draft you send. */
-function prepareFollowups_() {
+function markGone_(qkey, q) {
+  P().deleteProperty(qkey);
+  const k = 'fu:' + q.to, raw = P().getProperty(k);
+  if (raw) { const f = JSON.parse(raw); if (!f.sentAt) { f.sentAt = Date.now(); P().setProperty(k, JSON.stringify(f)); } }
+}
+
+/** Follow-up records 5+ days old: looks at the conversation ONCE. Reply or bounce -> done; no reply -> due. */
+function followupsDue_() {
   const me = Session.getEffectiveUser().getEmail().toLowerCase();
   const all = P().getProperties();
+  let due = 0;
   Object.keys(all).filter(k => k.indexOf('fu:') === 0).forEach(k => {
     const to = k.slice(3), f = JSON.parse(all[k]);
-    if (f.due) return;                                      // already waiting to be sent
+    if (f.due) { due++; return; }
+    if (!f.sentAt || Date.now() - f.sentAt < FOLLOWUP_DAYS * 86400000) return;
     const th = GmailApp.search('in:sent to:' + to + ' subject:"' + f.subject.replace(/"/g, '') + '"', 0, 1)[0];
-    if (!th) return;                                        // not sent yet
+    if (!th) { P().deleteProperty(k); return; }             // never actually sent (draft deleted)
     const msgs = th.getMessages();
+    const first = msgs[0].getDate().getTime();
+    if (Date.now() - first < FOLLOWUP_DAYS * 86400000) { f.sentAt = first; P().setProperty(k, JSON.stringify(f)); return; }
     if (msgs.some(m => m.getFrom().toLowerCase().indexOf(me) < 0)) {   // they replied, or it bounced
       if (msgs.some(m => /mailer-daemon|postmaster/i.test(m.getFrom()))) suppress_(to, 'bounced');
       P().deleteProperty(k); return;
     }
-    if (Date.now() - msgs[0].getDate().getTime() < FOLLOWUP_DAYS * 86400000) return;
-    if (AUTO_SEND) { f.due = th.getId(); P().setProperty(k, JSON.stringify(f)); return; }
+    f.due = th.getId(); P().setProperty(k, JSON.stringify(f)); due++;
+  });
+  return due;
+}
+
+/** Drafts-only mode: follow-ups become drafts you send. */
+function followupDrafts_() {
+  const all = P().getProperties();
+  Object.keys(all).filter(k => k.indexOf('fu:') === 0).forEach(k => {
+    const f = JSON.parse(all[k]);
+    if (!f.sentAt || Date.now() - f.sentAt < FOLLOWUP_DAYS * 86400000) return;
+    const to = k.slice(3), me = Session.getEffectiveUser().getEmail().toLowerCase();
+    const th = GmailApp.search('in:sent to:' + to + ' subject:"' + f.subject.replace(/"/g, '') + '"', 0, 1)[0];
+    P().deleteProperty(k);
+    if (!th || th.getMessages().some(m => m.getFrom().toLowerCase().indexOf(me) < 0)) return;
     const body = f.text + '\n\n' + signature_();
     GmailApp.createDraft(to, /^re:/i.test(f.subject) ? f.subject : 'Re: ' + f.subject, body, { htmlBody: toHtml_(body, 0), name: FROM_NAME });
-    P().deleteProperty(k);
   });
 }
 
 /** Sends ONE email if it's business hours, today's limit isn't reached and the random gap has passed.
- *  Follow-ups go first, then the oldest finished outreach draft. */
-function sendNext_() {
-  if (GmailApp.getUserLabelByName('83 pause')) { console.log('Paused (Gmail label "83 pause" exists).'); return; }
+ *  Follow-ups go first, then the oldest finished outreach draft. Returns a one-line status for the log. */
+function sendNext_(live) {
   const now = new Date();
   const dow = Number(Utilities.formatDate(now, TZ, 'u')), hour = Number(Utilities.formatDate(now, TZ, 'H'));
-  if (dow > 5 || hour < 9 || hour >= 16) return;
-  if (Date.now() < Number(P().getProperty('nextAt') || 0)) return;
+  if (dow > 5 || hour < 9 || hour >= 16) return 'Outside sending hours (Mon-Fri 9 AM-4 PM New York).';
+  const nextAt = Number(P().getProperty('nextAt') || 0);
+  if (Date.now() < nextAt) return 'Next send after ' + Utilities.formatDate(new Date(nextAt), TZ, 'h:mm a') + '.';
   const today = Utilities.formatDate(now, TZ, 'yyyy-MM-dd');
   if (!P().getProperty('start')) P().setProperty('start', today);
   const week = Math.floor((Date.parse(today) - Date.parse(P().getProperty('start'))) / (7 * 86400000));
   const limit = RAMP[Math.min(week, RAMP.length - 1)];
   const count = Number(P().getProperty('day:' + today) || 0);
-  if (count >= limit) return;
+  if (count >= limit) return 'Daily limit reached (' + count + ' of ' + limit + ').';
+  if (GmailApp.getUserLabelByName('83 pause')) return 'Paused (Gmail label "83 pause" exists).';
   const supp = JSON.parse(P().getProperty('supp') || '{}');
   const me = Session.getEffectiveUser().getEmail().toLowerCase();
   const all = P().getProperties();
@@ -136,25 +187,25 @@ function sendNext_() {
 
   // 2. the oldest finished outreach draft
   if (!sent) {
-    const queue = GmailApp.getDrafts().map(d => ({ d: d, m: d.getMessage() })).filter(x => {
-      x.to = (x.m.getTo() || '').replace(/.*<([^>]+)>.*/, '$1').trim().toLowerCase();
-      x.f = all['fu:' + x.to] && JSON.parse(all['fu:' + x.to]);
-      return x.f && !x.f.due && x.m.getSubject() === x.f.subject && x.m.getPlainBody().indexOf('[[83auto]]') < 0;
-    }).sort((a, b) => a.m.getDate() - b.m.getDate());
-    for (const x of queue) {
-      if (supp[x.to]) { x.d.deleteDraft(); P().deleteProperty('fu:' + x.to); console.log('Skipped ' + x.to + ' (on the do-not-contact list)'); continue; }
-      if (x.f.claims) {
-        const changed = recheckClaims_(x.f.site, x.f.claims);
-        if (changed) { x.d.deleteDraft(); P().deleteProperty('fu:' + x.to); console.log('Removed draft to ' + x.to + ': ' + changed); continue; }
+    const order = Object.keys(live.queue).sort((a, b) => live.queue[a].at - live.queue[b].at);
+    for (const id of order) {
+      const q = live.queue[id], d = live.drafts[id];
+      P().deleteProperty('q:' + id); delete live.queue[id];
+      if (supp[q.to]) { d.deleteDraft(); P().deleteProperty('fu:' + q.to); console.log('Skipped ' + q.to + ' (on the do-not-contact list)'); continue; }
+      if (q.claims) {
+        const changed = recheckClaims_(q.site, q.claims);
+        if (changed) { d.deleteDraft(); P().deleteProperty('fu:' + q.to); console.log('Removed draft to ' + q.to + ': ' + changed); continue; }
       }
-      x.d.send();
-      sent = 'email to ' + x.to; break;
+      d.send();
+      const k = 'fu:' + q.to, raw = P().getProperty(k);
+      if (raw) { const f = JSON.parse(raw); f.sentAt = Date.now(); P().setProperty(k, JSON.stringify(f)); }
+      sent = 'email to ' + q.to; break;
     }
   }
-  if (!sent) return;
+  if (!sent) return 'Nothing to send.';
   P().setProperty('day:' + today, String(count + 1));
   P().setProperty('nextAt', String(Date.now() + (GAP_MIN[0] + Math.random() * (GAP_MIN[1] - GAP_MIN[0])) * 60000));
-  console.log('Sent ' + sent + ' (' + (count + 1) + ' of ' + limit + ' today)');
+  return 'Sent ' + sent + ' (' + (count + 1) + ' of ' + limit + ' today).';
 }
 
 function suppress_(email, why) {
