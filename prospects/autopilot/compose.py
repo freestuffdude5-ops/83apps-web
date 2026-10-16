@@ -30,6 +30,7 @@ def greeting(raw_name, name, vertical, email='', reviews=()):
     for m in re.finditer(r"\b(?:[Bb]y|[Ww]ith)\s+([A-Z][a-z]{2,})\b|\b([A-Z][a-z]{2,})'s\b|^(?:Dr\.?\s+)?([A-Z][a-z]{2,})\s+[A-Z][a-z]+(?:,|\s*$|\s+(?:Realtor|PA|P\.A\.|CPA|DDS|DMD|LMHC|Insurance|Law|Photography|Events|Designs?|Studio|Consulting|Tutoring|Training|Fitness|Coaching))", raw_name):
         n = next(g for g in m.groups() if g)
         if m.group(3) and not re.search(r',|Realtor|PA|CPA|DDS|DMD|LMHC', m.group(0)) and n.lower() not in FIRST: continue
+        if m.group(2) and n.lower() not in FIRST: continue          # "Peek's Printing" is not a person called Peek
         if (n.lower() in FIRST or _person_in_reviews(n, reviews)) and (n.lower() in (email or '').lower() or _person_in_reviews(n, reviews)):
             return f'Hi {n},', n
     dr = re.match(r"Dr\.?\s+(?:[A-Z][a-z]+\s+)*([A-Z][a-z'-]{2,})$", name.strip())

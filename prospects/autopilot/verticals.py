@@ -35,7 +35,8 @@ g('pool', r'pool|spa repair|hot tub', 'fresh', 'Pool service', ['A cleaner pool,
 g('clean', r'clean|maid|janitorial|carpet|pressure wash|power wash|window clean|junk|haul|moving|mover|dumpster|waste', 'fresh', 'Cleaning', ['Come home to *clean*.', 'Make it look *new* again.', 'We do the dirty work. *You relax*.'], 'Get a free quote', 'Get a quote', Q, form=('Get a free quote', 'It takes 30 seconds.'))
 g('pest', r'pest|termite|exterminat|mosquito|wildlife', 'fresh', 'Pest control', ['Keep the pests *out*.', 'A pest-free home, *finally*.'], 'Get a free quote', 'Get a quote', Q, form=('Get a free quote', 'Tell us what you\'re seeing.'))
 g('paint', r'paint', 'fresh', 'Painting', ['A fresh coat, *done right*.', 'Color that makes it *home*.'], 'Get a free estimate', 'Free estimate', Q, form=('Get a free estimate', 'Tell us about the project.'))
-g('handy', r'handyman|appliance|repair service|garage|home inspector|inspection|home improvement|installation', 'fresh', 'Home services', ['Fix it list? *Handled*.', 'Repairs done *right*.'], 'Request service', 'Get help', Q, form=('Request service', 'Tell us what needs fixing.'))
+g('inspect', r'home inspector|inspection', 'clean', 'Home inspection', ['Know your home *inside and out*.', 'Buy with *confidence*.'], 'Book an inspection', 'Book', Q)
+g('handy', r'handyman|appliance|repair service|garage|home improvement|installation', 'fresh', 'Home services', ['Fix it list? *Handled*.', 'Repairs done *right*.'], 'Request service', 'Get help', Q, form=('Request service', 'Tell us what needs fixing.'))
 # ---- food & drink (editorial)
 F = ['Menu', 'Reviews', 'About', 'Visit']
 g('breakfast', r'diner|breakfast|brunch|pancake|waffle', 'edit', 'Breakfast & brunch', ['Breakfast, *done right*.', 'Come hungry. *Leave happy*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
@@ -46,9 +47,9 @@ g('bbq', r'barbecue|bbq|smokehouse', 'edit', 'Barbecue', ['Low and slow, *the ri
 g('nutri', r'nutrition|health food|smoothie|juice|acai|protein|supplement|vitamin', 'edit', 'Healthy fuel', ['Fuel your *day*.', 'Feel good, *taste good*.'], 'See the menu', 'Menu', ['Menu', 'Reviews', 'About', 'Visit'], reviews_h2='Why guests *come back*', services_h2='On the *menu*')
 g('bake', r'bakery|cake|cupcake|dessert|donut|cookie|ice cream|gelato|frozen yogurt|chocolate|candy|sweet', 'edit', 'Sweets', ['Made fresh. *Made happy*.', 'A little *sweetness* every day.'], 'Order now', 'Order', ['Menu', 'Custom orders', 'Reviews', 'Visit'], reviews_h2='Why guests *come back*', services_h2='On the *menu*')
 g('cafe', r'coffee|cafe|café|\btea\b|juice|smoothie|kava|kombucha', 'edit', 'Coffee & more', ['Your new favorite *stop*.', 'Good coffee, *good company*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
-g('bar', r'\bbar\b|pub|brewery|tavern|lounge|wine|cocktail|taproom|grill', 'edit', 'Food & drinks', ['Cold drinks. *Good times*.', 'Your new *local*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
+g('bar', r'(?<!brow )(?<!lash )(?<!nail )(?<!dry )\bbar\b|\bpub\b|brewery|tavern|lounge|wine|cocktail|taproom', 'edit', 'Food & drinks', ['Cold drinks. *Good times*.', 'Your new *local*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
 g('cater', r'cater|food truck|personal chef|meal prep', 'edit', 'Catering', ['Food that makes the *party*.', 'Feed the crowd, *the right way*.'], 'Get a catering quote', 'Get a quote', ['Menus', 'Events', 'Reviews', 'Contact'], reviews_h2='What *clients* say', services_h2='What we *serve*')
-g('food', r'restaurant|food|kitchen|eatery|deli|sandwich|burger|chicken|wings|bistro|steak|italian|chinese|thai|indian|japanese|cuban|caribbean|greek|mediterranean|vietnamese|korean|soul|southern|cajun|hawaiian|peruvian|colombian|venezuelan|puerto|haitian|jamaican|halal|vegan|buffet|noodle|ramen|pho|hot dog', 'edit', 'Restaurant', ['Good food. *Good people*.', 'Come hungry. *Leave happy*.', 'A table is *waiting*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
+g('food', r'restaurant|food|kitchen|eatery|\bdeli\b|sandwich|burger|chicken|wings|bistro|steak|italian|chinese|thai|indian|japanese|cuban|caribbean|greek|mediterranean|vietnamese|korean|soul|southern|cajun|hawaiian|peruvian|colombian|venezuelan|puerto|haitian|jamaican|halal|vegan|buffet|noodle|ramen|\bpho\b|hot dog', 'edit', 'Restaurant', ['Good food. *Good people*.', 'Come hungry. *Leave happy*.', 'A table is *waiting*.'], 'See the menu', 'Menu', F, reviews_h2='Why guests *come back*', services_h2='On the *menu*')
 # ---- beauty / pets / wellness / events (soft)
 B = ['Services', 'Gallery', 'Reviews', 'Visit']
 g('chiro0', r'chiropract|physical therap|sports medicine|rehab', 'clean', 'Chiropractic care', ['Move better. *Feel* better.', 'Get back to *feeling like you*.'], 'Book a visit', 'Book', ['Services', 'About', 'Reviews', 'Contact'], reviews_h2='What *patients* say')
@@ -58,7 +59,7 @@ g('nail', r'nail|lash|brow|wax|makeup|beauty|esthetic|facial|skin|tanning|med sp
 g('hair', r'hair|salon|barber|stylist|blowout|braid|extension', 'soft', 'Salon', ['Hair you\'ll *love* to wear.', 'Look good. *Feel* better.'], 'Book an appointment', 'Book', B)
 g('spa', r'\bspa\b|massage|wellness|reiki|acupunct|float|sauna|holistic|naturopath', 'soft', 'Wellness', ['Slow down. *Breathe*.', 'Time for *you*.'], 'Book a session', 'Book', B)
 g('yoga', r'yoga|pilates|barre|meditation|dance', 'soft', 'Studio', ['Find your *balance*.', 'Move, breathe, *feel better*.'], 'See the schedule', 'Classes', ['Classes', 'Teachers', 'Reviews', 'Visit'])
-g('photo', r'photograph|video|film|studio|drone|aerial', 'soft', 'Photography', ['Moments worth *keeping*.', 'Your story, *beautifully* told.'], 'Check availability', 'Book', ['Portfolio', 'Packages', 'Reviews', 'Contact'], reviews_h2='What *clients* say', services_h2='What I *shoot*')
+g('photo', r'photograph|videograph|video production|film|drone|aerial', 'soft', 'Photography', ['Moments worth *keeping*.', 'Your story, *beautifully* told.'], 'Check availability', 'Book', ['Portfolio', 'Packages', 'Reviews', 'Contact'], reviews_h2='What *clients* say', services_h2='What I *shoot*')
 g('rental', r'party (equipment )?rental|bounce|tent rental|equipment rental|rental service', 'soft', 'Party rentals', ['Make the party *unforgettable*.', 'Everything for a *great* party.'], 'Check availability', 'Book', ['Rentals', 'Gallery', 'Reviews', 'Contact'], reviews_h2='What *customers* say', services_h2='What we *rent*')
 g('event', r'event|wedding|party planner|venue|banquet|decor|balloon|bridal', 'soft', 'Events', ['Celebrations, *beautifully* done.', 'Your day, *perfectly* planned.'], 'Check your date', 'Check date', ['Services', 'Gallery', 'Reviews', 'Contact'], reviews_h2='What *clients* say')
 g('flower', r'florist|flower', 'soft', 'Florist', ['Flowers for every *moment*.'], 'Order flowers', 'Order', ['Shop', 'Weddings', 'Reviews', 'Visit'])
@@ -83,11 +84,23 @@ g('tech', r'computer|it services|software|web|tech|phone repair|cell phone|elect
 g('biz', r'.', 'clean', 'Local business', ['Proudly serving *{city}*.', 'Here to *help*.'], 'Contact us', 'Contact', P)
 
 
-def pick(categories):
-    hay = ' | '.join(categories or [])
-    for x in G:
-        if x['re'].search(hay): return x
-    return G[-1]
+GENERIC = {'restaurant', 'american restaurant', 'new american restaurant', 'lunch restaurant', 'family restaurant', 'service establishment',
+           'store', 'shop', 'corporate office', 'business center'}
+
+
+def pick(categories, name=''):
+    """Each Google category gets its best design; of those, the one the business NAME also points to wins
+    ("Perla's Nails": hair salon + nail salon -> nails), else the first specific category, else the first one."""
+    cands = []
+    for c in categories or []:
+        x = next((x for x in G[:-1] if x['re'].search(c)), None)
+        if x: cands.append((c, x))
+    if not cands: return G[-1]
+    for c, x in cands:
+        if name and x['re'].search(name): return x
+    for c, x in cands:
+        if c.strip().lower() not in GENERIC: return x
+    return cands[0][1]
 
 
 ARCH = {
