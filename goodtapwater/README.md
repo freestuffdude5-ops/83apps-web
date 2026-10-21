@@ -4,14 +4,17 @@ The site for [goodtapwater.com](https://goodtapwater.com). It replaces the old W
 
 ```
 goodtapwater/
-├── index.html          the whole homepage (HTML, CSS and JS in one file)
-├── privacy/index.html  privacy policy (keeps the old /privacy/ URL working)
-├── assets/             logo, mascot, product photos, icons, social share image
+├── index.html      the whole homepage (HTML, CSS and JS in one file)
+├── privacy.html    privacy policy (served at /privacy)
+├── *.webp, *.png   logo, mascot, product photos and icons
+├── og-image.jpg    image shown when the link is shared
 ├── favicon.ico
 ├── site.webmanifest
 ├── robots.txt
 └── sitemap.xml
 ```
+
+Everything sits in one folder with no subfolders on purpose: Cloudflare's dashboard upload flattens folders, which broke earlier uploads.
 
 Old links like `/#packages`, `/#why`, `/#reviews`, `/#faq` and `/#appointment` still go to the right sections.
 
@@ -28,7 +31,7 @@ python3 -m http.server 8000
 1. **Connect the contact form.** At the bottom of `index.html`, set `FORM_ENDPOINT`. A free [Formspree](https://formspree.io) form works as is: create a form, then paste its URL (`https://formspree.io/f/xxxxxxx`). Requests arrive by email.
    Until it's set, the form doesn't lose anyone. It checks their details, then gives them a one-tap button to send everything to (386) 387-8505 as a text, plus a Call button.
 2. **Double-check the claims.** Prices, package contents, "Fast installation" and "Priority service support" were carried over from the old site. Change anything that isn't final.
-3. **Review the privacy policy** (`privacy/index.html`). It's a plain-English starter, not legal advice. Add a mailing address and mention any analytics or ad pixels you add.
+3. **Review the privacy policy** (`privacy.html`). It's a plain-English starter, not legal advice. Add a mailing address and mention any analytics or ad pixels you add.
 4. **Add real reviews** to the "Our promise" section once customers agree to be quoted.
 
 ## Hosting
@@ -37,6 +40,8 @@ Any static host works. The simplest options:
 
 - **Netlify or Cloudflare Pages**: drag the `goodtapwater` folder in (or connect this repo with `goodtapwater` as the publish directory), then point the domain's DNS at it.
 - **Current web host**: back up the WordPress site, then upload the contents of `goodtapwater/` to the site root (`public_html`).
+
+To update the live site on Cloudflare: Workers & Pages → goodtapwater → upload a zip of this folder's files (not the folder itself).
 
 ## Editing
 
